@@ -1,0 +1,21 @@
+# Explicit experimental hybrid, NOT a commercial A100 memory configuration.
+schema_version: 1
+profile: a100a_compute_five_stack_tokenstack_v1
+hardware_profile: tokenstack_hardware.yaml
+stacks: 5
+gpu:
+  model: A100a
+  devices: 1
+  precision: W16A16
+  compute_utilization: 0.8 # AttAcc src/config.py MAX_COMPUTE_UTIL; not calibrated for small GEMMs
+  launch_overhead_cycles: 0 # excluded, TODO: calibrate CUDA launch/occupancy for an end-to-end LLM
+  source: AttAcc src/config.py make_xpu_config; src/model.py Layer.get_flops
+memory:
+  gpu_capacity_bank_fraction: 0.5 # engineering partition: upper half of each Capacity bank for weights/activations
+  transfer_chunk_bytes: 256 # engineering DMA packet size; partial packets retain byte masks
+  cache_model: none # every declared memory operand transferred; L1/L2 sizes are provenance only
+timing:
+  kernel_policy: load_compute_store # conservative dependency model; no intra-kernel compute/memory overlap
+  clock: hardware_clock_ps
+  foreground: last_foreground_callback_minus_issue
+  background: report_separate_drain_horizon

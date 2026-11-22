@@ -1,0 +1,2 @@
+terminate called after throwing an instance of 'Ramulator::InitializationError'
+  what():  In implementation HBM3-PIM, param name "timing::nRFC" is already registered.

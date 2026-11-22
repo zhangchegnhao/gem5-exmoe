@@ -1,0 +1,9 @@
+run_id=20261104-repro-check
+attacc_commit=c60005143a6b492d7ef83231723386478b59a506
+ramulator_commit=b7c70275f04126c647edb989270cc429776955d1
+dhead=128
+nhead=1
+seqlen=128
+maxlen=128
+dbyte=2
+command=experiments/attacc_baseline_20261104/scripts/run_smoke.sh 20261104-repro-check 128 1 128 128 

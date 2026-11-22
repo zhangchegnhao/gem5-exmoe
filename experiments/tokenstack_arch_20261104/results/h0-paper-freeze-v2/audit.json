@@ -1,0 +1,135 @@
+{
+  "blockers": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5"
+  ],
+  "candidate_die_bytes": {
+    "capacity": 2147483648,
+    "compute": 1073741824
+  },
+  "unit_alternatives": {
+    "capacity": {
+      "figure_derived_card_bytes": 42949672960,
+      "table2_literal_card_bytes": 40000000000,
+      "difference_bytes": 2949672960,
+      "relative_difference": 0.07374182400000007
+    },
+    "compute": {
+      "figure_derived_card_bytes": 21474836480,
+      "table2_literal_card_bytes": 20000000000,
+      "difference_bytes": 1474836480,
+      "relative_difference": 0.07374182400000007
+    }
+  },
+  "schema_version": 1,
+  "audit_status": "passed",
+  "audit_kind": "static_evidence_and_dimensions",
+  "hardware_simulation_run": false,
+  "paper_spec_frozen": false,
+  "milestone_status": "H0_partial_paper_freeze_blocked",
+  "candidate_runtime_supported": true,
+  "parameter_count": 39,
+  "paper_sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834",
+  "checks": [
+    "H0-provenance",
+    "H0-paper-pin",
+    "H0-geometry",
+    "H0-capacity",
+    "H0-units",
+    "H0-no-double-halving",
+    "H0-config",
+    "H0-timing",
+    "H0-completion",
+    "H0-k8v4",
+    "H0-link-budget-scope",
+    "H0-refresh-unsupported"
+  ],
+  "prototype": {
+    "domain_decodable_bytes": 1073741824,
+    "mapped_window_bytes": 1048576,
+    "banks_per_pc_across_ranks": 32,
+    "tck_ps": 769,
+    "preset_trailing_tck_ps_overridden": 1300,
+    "read_issue_to_data_cycles": 21,
+    "write_issue_to_recovery_cycles": 29,
+    "pim_result_ready_cycles": null,
+    "pim_bytes": null
+  },
+  "candidate_density_Mib_per_channel": {
+    "capacity": 1024,
+    "compute": 512
+  },
+  "link_budget": {
+    "tsv_bytes_per_second_per_stack": 896000000000,
+    "ucie_bytes_per_second_per_stack": 512000000000,
+    "source_and_target_hops_debit_same_budget": true,
+    "physical_overlap_with_nBL_verified": false
+  },
+  "sources": {
+    "fig3": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "base_die": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "layout": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "quant": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "table2": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "sweep": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/references/tokenstack_arxiv_2605.05639v2.pdf",
+      "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834"
+    },
+    "dram": {
+      "path": "/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/dram/impl/HBM3-PIM.cpp",
+      "sha256": "2bd686b3c47a5bc9a4c4da909aad45e212473b046bc532cc212e3ba22cf2abff"
+    },
+    "mapper": {
+      "path": "/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp",
+      "sha256": "05a3403d4d1c11102361ec3a6a67502a1559234e1218ddd4ed148bdb873bccd1"
+    },
+    "attacc_config": {
+      "path": "/home/ubuntu22/gem5/attacc_simulator/ramulator2/attacc_bank.yaml",
+      "sha256": "90f47ee655e12bdc87ed27590d1b7bdbc2a3e111db318de69ee0c9bb13e69185"
+    },
+    "controller": {
+      "path": "/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/dram_controller/impl/hbm3_pim_controller.cpp",
+      "sha256": "de32666b385f33f7e396fe0c2d36be4658a3ce637b22aa0504a331f90c1e2cd7"
+    },
+    "scheduler": {
+      "path": "/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/dram_controller/impl/scheduler/pim_scheduler.cpp",
+      "sha256": "771811ab34b6aa9d4aff4c24e85aa3b2246d6f45bd2e95b763f2030fbc46a0ff"
+    },
+    "prototype": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/config/tokenstack_layered.yaml",
+      "sha256": "1c1e9821318e1b36163fb91b634cf06c2bde9790e79c3e53032391d446934a82"
+    },
+    "contract": {
+      "path": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/spec/paper_hardware_contract.md",
+      "sha256": "b99b5171b3f72620fbec7cbb184072096458333ab53975ecf7dfe4b76e1dd622"
+    }
+  },
+  "limitations": [
+    "Paper unit/Bank ambiguity unresolved",
+    "Runtime requires explicit engineering refresh timings",
+    "Legacy PIM callback is issue; Fabric adds configured result tail",
+    "No physical TSV overlap calibration"
+  ],
+  "paper_freeze_gate": {
+    "required": true,
+    "passed": false
+  }
+}

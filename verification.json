@@ -1,0 +1,38 @@
+[
+  {
+    "cpu_mode": "timing",
+    "workload": "hello",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204535-timing-3/hello"
+  },
+  {
+    "cpu_mode": "timing",
+    "workload": "matmul",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204535-timing-3/matmul"
+  },
+  {
+    "cpu_mode": "atomic",
+    "workload": "hello",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204554-atomic-3/hello"
+  },
+  {
+    "cpu_mode": "atomic",
+    "workload": "matmul",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204554-atomic-3/matmul"
+  },
+  {
+    "cpu_mode": "o3",
+    "workload": "hello",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/hello"
+  },
+  {
+    "cpu_mode": "o3",
+    "workload": "matmul",
+    "result": "PASS",
+    "output": "/home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/matmul"
+  }
+]

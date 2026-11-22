@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/tmp/tokenstack-clean-release-zgmtme8v/experiments/tokenstack_arch_20261104/scripts/verify_ramulator_regression.py", line 60, in <module>
+    main()
+  File "/tmp/tokenstack-clean-release-zgmtme8v/experiments/tokenstack_arch_20261104/scripts/verify_ramulator_regression.py", line 43, in main
+    raise RuntimeError(f"{mode}: statistics differ from baseline")
+RuntimeError: bg: statistics differ from baseline

@@ -1,0 +1,107 @@
+{
+  "topology-1": {
+    "requests": 36,
+    "read_bytes": 512,
+    "write_bytes": 512,
+    "complete_cycle": 113,
+    "refresh_commands": 0
+  },
+  "topology-2": {
+    "requests": 72,
+    "read_bytes": 1024,
+    "write_bytes": 1024,
+    "complete_cycle": 113,
+    "refresh_commands": 0
+  },
+  "topology-5": {
+    "requests": 180,
+    "read_bytes": 2560,
+    "write_bytes": 2560,
+    "complete_cycle": 113,
+    "refresh_commands": 0
+  },
+  "large-promotion": {
+    "requests": 234,
+    "read_bytes": 1184,
+    "write_bytes": 6304,
+    "complete_cycle": 865,
+    "refresh_commands": 0
+  },
+  "large-demotion": {
+    "requests": 234,
+    "read_bytes": 6304,
+    "write_bytes": 1184,
+    "complete_cycle": 774,
+    "refresh_commands": 0
+  },
+  "convert-896": {
+    "requests": 72,
+    "read_bytes": 384,
+    "write_bytes": 1920,
+    "complete_cycle": 301,
+    "refresh_commands": 0
+  },
+  "convert-1": {
+    "requests": 72,
+    "read_bytes": 384,
+    "write_bytes": 1920,
+    "complete_cycle": 2624,
+    "refresh_commands": 0
+  },
+  "tail-1": {
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 143,
+    "refresh_commands": 0
+  },
+  "tail-8": {
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 222,
+    "refresh_commands": 0
+  },
+  "tail-32": {
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 702,
+    "refresh_commands": 0
+  },
+  "mixed-refresh-1": {
+    "requests": 197,
+    "read_bytes": 2816,
+    "write_bytes": 2560,
+    "complete_cycle": 5316,
+    "refresh_commands": 4352
+  },
+  "mixed-refresh-2": {
+    "requests": 197,
+    "read_bytes": 2816,
+    "write_bytes": 2560,
+    "complete_cycle": 5514,
+    "refresh_commands": 9216
+  },
+  "mixed-refresh-5": {
+    "requests": 197,
+    "read_bytes": 2816,
+    "write_bytes": 2560,
+    "complete_cycle": 5241,
+    "refresh_commands": 21760
+  },
+  "cross-stack-host-2560": {
+    "requests": 16,
+    "read_bytes": 256,
+    "write_bytes": 256,
+    "complete_cycle": 152,
+    "refresh_commands": 0
+  },
+  "cross-stack-host-1": {
+    "requests": 16,
+    "read_bytes": 256,
+    "write_bytes": 256,
+    "complete_cycle": 484,
+    "refresh_commands": 0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "hardware_contract_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "experiments/tokenstack_arch_20261104/tests/test_hardware_contract.py"
+    ],
+    "exit_code": 0,
+    "tests": 9
+  },
+  "layered_and_closed_loop_regression": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "experiments/tokenstack_arch_20261104/tests/test_layered.py",
+      "experiments/tokenstack_arch_20261104/tests/test_closed_loop.py"
+    ],
+    "exit_code": 0,
+    "tests": 7,
+    "duration_seconds": 1.638,
+    "note": "Executed earlier in this turn; raw terminal output was not archived. No baseline 273/822/2094 rerun this turn."
+  },
+  "paper_freeze_gate": {
+    "directory": "../h0-freeze-gate-v1",
+    "exit_code": 2,
+    "expected_exit_code": 2
+  },
+  "changes": "H0 specification and audit only; no simulator source changes or rebuild"
+}

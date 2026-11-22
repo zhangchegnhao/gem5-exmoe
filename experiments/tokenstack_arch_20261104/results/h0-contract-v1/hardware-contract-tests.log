@@ -1,0 +1,14 @@
+test_double_halving_rejected (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_missing_provenance_rejected (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_non_power_of_two_geometry_rejected (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_open_questions_forbid_freeze (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_pinned_source_config_and_dimension_audit (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_silent_unit_relabel_rejected (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_stack_bandwidth_cannot_be_granted_per_layer (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_unknown_requires_question_and_cannot_be_verified (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+test_unsupported_refresh_cannot_claim_executable (experiments.tokenstack_arch_20261104.tests.test_hardware_contract.HardwareContractTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.257s
+
+OK

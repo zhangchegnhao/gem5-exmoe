@@ -1,0 +1,12 @@
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-release-v3/ramulator-complete.patch:166: trailing whitespace.
+      "channel", "pseudochannel", "rank", "bankgroup", "bank", "row", "column",    
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-release-v3/ramulator-complete.patch:268: trailing whitespace.
+          /*** Pseudo Channel ***/ 
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-release-v3/ramulator-complete.patch:297: trailing whitespace.
+          /*** Rank (or different BankGroup) (Table 3 — Array Access Timings Counted Individually Per Pseudo Channel, JESD-235C) ***/  
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-release-v3/ramulator-complete.patch:311: trailing whitespace.
+          /// nCCDS is the minimal latency for column commands 
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-release-v3/ramulator-complete.patch:314: trailing whitespace.
+          /// RD <-> WR, Minimum Read to Write, Assuming tWPRE = 1 tCK                          
+warning: 抑制下仍有 185 个空白字符误用
+warning: 190 行新增了空白字符误用。

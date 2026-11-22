@@ -1,0 +1,81 @@
+# Two independent HBM3-PIM timing trees; Capacity accepts normal RD/WR only.
+# Same synthetic 32 B bursts, 16 KiB Buffer, one DMA, depth-8 job queue as legacy.
+# Base addresses and region_bytes are B. Two 1 MiB mapped windows; not Die capacity.
+# Compute global base=1 GiB; both layers decode offsets starting at local address 0.
+# base_die_link_GBps=896 decimal GB/s per Stack: paper experiment assumption.
+# compressed_num/den=3/8 K8V4 vs FP16; metadata excluded, throughput-matched conversion.
+# domain_switch_guard_cycles=64 DRAM cycles: synthetic conservative assumption,
+# checked against layer RD/WR drain latencies. TODO: calibrate shared bus switching.
+# Same 769 ps tCK required across domains; layer timings may differ.
+# Full paper layer counts/capacities, concurrent DMA and command-level overlap TODO.
+Frontend:
+  impl: TokenStackTrace
+  clock_ratio: 1
+  path: TO_BE_SET_BY_RUNNER
+  request_log: TO_BE_SET_BY_RUNNER
+  job_log: TO_BE_SET_BY_RUNNER
+  resource_log: TO_BE_SET_BY_RUNNER
+  burst_bytes: 32
+  capacity_base: 0
+  compute_base: 1073741824
+  region_bytes: 1048576
+  buffer_bytes: 16384
+  queue_depth: 8
+  compressed_num: 3
+  compressed_den: 8
+  base_die_link_GBps: 896
+  max_cycles: 1000000
+MemorySystem:
+  impl: TokenStackMemory
+  clock_ratio: 1
+  capacity_base: 0
+  compute_base: 1073741824
+  region_bytes: 1048576
+  domain_switch_guard_cycles: 64
+  grant_log: TO_BE_SET_BY_RUNNER
+  Capacity:
+    impl: PIMDRAM
+    clock_ratio: 1
+    DRAM:
+      impl: HBM3-PIM
+      org:
+        preset: HBM3_8Gb_2R
+        channel: 1
+      timing:
+        preset: HBM3_5.2Gbps
+    Controller:
+      impl: HBM3-PIM
+      tokenstack_closed_loop: true
+      Scheduler:
+        impl: PIM
+      RefreshManager:
+        impl: AllBankHBM3
+      plugins:
+      - ControllerPlugin:
+          impl: HBM3TraceRecorder
+          path: TO_BE_SET_BY_RUNNER
+    AddrMapper:
+      impl: HBM3-PIM
+  Compute:
+    impl: PIMDRAM
+    clock_ratio: 1
+    DRAM:
+      impl: HBM3-PIM
+      org:
+        preset: HBM3_8Gb_2R
+        channel: 1
+      timing:
+        preset: HBM3_5.2Gbps
+    Controller:
+      impl: HBM3-PIM
+      tokenstack_closed_loop: true
+      Scheduler:
+        impl: PIM
+      RefreshManager:
+        impl: AllBankHBM3
+      plugins:
+      - ControllerPlugin:
+          impl: HBM3TraceRecorder
+          path: TO_BE_SET_BY_RUNNER
+    AddrMapper:
+      impl: HBM3-PIM

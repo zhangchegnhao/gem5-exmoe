@@ -1,0 +1,27 @@
+{
+  "title": "TokenStack: A Heterogeneous HBM-PIM Architecture and Runtime for Efficient LLM Inference",
+  "arxiv_id": "2605.05639v2",
+  "revision_date": "2026-08-12",
+  "doi": "https://doi.org/10.48550/arXiv.2605.05639",
+  "version_url": "https://arxiv.org/abs/2605.05639v2",
+  "local_pdf": "tokenstack_arxiv_2605.05639v2.pdf",
+  "sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834",
+  "pdf_pages": 15,
+  "review_date": "2026-11-05",
+  "reviewed_sections": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "5.1",
+    "5.2",
+    "6.4",
+    "7",
+    "8 sensitivity study"
+  ],
+  "reviewed_visuals": [
+    "Figure 3 (PDF p5)",
+    "Figure 4 (PDF p6, text reviewed)",
+    "Table 2 (PDF p8)"
+  ],
+  "note": "Local PDF preserved from earlier session; not a claim to have checked for a newer arXiv revision. Fig3 and Table2 have different capacity unit labels; unresolved items tracked in roadmap."
+}

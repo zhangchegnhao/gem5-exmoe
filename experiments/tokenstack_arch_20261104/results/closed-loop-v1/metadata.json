@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/run_closed_loop.py",
+    "closed-loop-v1"
+  ],
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "binary_sha256": "c7528ec4488709bed28ed0fce5eeafaec0c349cc0cf33c9a2c90851b937e6add",
+  "ramulator_commit": "b7c70275f04126c647edb989270cc429776955d1",
+  "attacc_commit": "c60005143a6b492d7ef83231723386478b59a506",
+  "build_command": "cmake --build attacc_simulator/ramulator2/build -j2",
+  "seed": null,
+  "note": "deterministic; behavioral nonpreemptive Base Die plus real AttAcc DRAM commands"
+}

@@ -1,0 +1,66 @@
+Recorded (Asia/Shanghai):
+2026-11-04T20:17:48.208890+08:00
+
+Platform:
+Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+
+OS:
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+Python:
+3.10.12
+
+Compiler:
+g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+SCons:
+SCons by Steven Knight et al.:
+	SCons: v4.0.1.c289977f8b34786ab6c334311e232886da7e8df1, 2020-07-17 01:50:03, by bdbaddog on ProDog2020
+	SCons path: ['/usr/lib/python3/dist-packages/SCons']
+Copyright (c) 2001 - 2020 The SCons Foundation
+
+gem5 tag:
+v24.1.0.3-0-gb9da2bf
+
+gem5 commit:
+b9da2bfe1e21f6efa2730edd4e80e58c5d965458
+
+Build command:
+scons build/X86/gem5.opt -j2 --linker=gold
+
+Workload flags:
+gcc -O2 -std=c11 -Wall -Wextra -static -march=x86-64 -mtune=generic
+
+Build resumed with: scons build/X86/gem5.opt -j4 --linker=gold
+
+Installed build packages:
+binutils 2.38-4ubuntu2.12
+build-essential 12.9ubuntu3
+g++ 4:11.2.0-1ubuntu1
+gcc 4:11.2.0-1ubuntu1
+libboost-all-dev 1.74.0.3ubuntu7
+libgoogle-perftools-dev 2.9.1-0ubuntu3
+libprotobuf-dev 3.12.4-1ubuntu7.22.04.6
+protobuf-compiler 3.12.4-1ubuntu7.22.04.6
+python3-dev 3.10.6-1~22.04.1
+scons 4.0.1+dfsg-2
+zlib1g-dev 1:1.2.11.dfsg-2ubuntu9.2
+
+Build result: PASS
+Smoke verification: PASS (hello + matmul; timing, atomic, o3)
+Detailed verification: verification.json
+Binary build info: gem5-build-info.txt

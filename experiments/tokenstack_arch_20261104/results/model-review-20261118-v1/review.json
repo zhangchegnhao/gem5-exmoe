@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_review_diagnostic_not_paper_calibration",
+  "probe_scope": "direct DRAM injection over 16 Channels x 2 PCs; excludes host UCIe path",
+  "probe_sha256": "981c5e1c9d4142339a9a5f8b162f285a89fdd85cf9fe6833e1a9fe2d1a98f1ad",
+  "workload": {
+    "read_requests": 1024,
+    "burst_bytes": 32,
+    "total_read_bytes": 32768
+  },
+  "clock_ps": 769,
+  "source_derived_rdwr_ceiling_GBps": 20.806241872561767,
+  "source_derived_ceiling_basis": "single exclusive stack TSV calendar; every RD/WR reserves max(nBL=2, ceil(32B / configured_bandwidth)) cycles",
+  "cases": {
+    "896": {
+      "requests": 1024,
+      "read_bytes": 32768,
+      "write_bytes": 0,
+      "complete_cycle": 4206,
+      "refresh_commands": 0,
+      "measured_model_GBps": 10.13104692225547,
+      "burst_interval_cycles": [
+        2
+      ]
+    },
+    "448": {
+      "requests": 1024,
+      "read_bytes": 32768,
+      "write_bytes": 0,
+      "complete_cycle": 4206,
+      "refresh_commands": 0,
+      "measured_model_GBps": 10.13104692225547,
+      "burst_interval_cycles": [
+        2
+      ]
+    },
+    "16": {
+      "requests": 1024,
+      "read_bytes": 32768,
+      "write_bytes": 0,
+      "complete_cycle": 4259,
+      "refresh_commands": 0,
+      "measured_model_GBps": 10.00497378610155,
+      "burst_interval_cycles": [
+        3
+      ]
+    }
+  },
+  "same_completion_896_448": true,
+  "conclusion": "Whole-stack exclusive burst reservations impose a throughput ceiling far below the configured 896 GB/s; H6 conservation checks do not validate aggregate bandwidth realism."
+}

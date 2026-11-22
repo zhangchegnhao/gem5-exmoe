@@ -1,0 +1,31 @@
+schema_version: 1
+# Cycles are actual HBM3-PIM controller cycles (769 ps for current preset).
+# Job priority among admitted ready jobs: attention > promotion > demotion.
+# Jobs cannot preempt an active transaction. YAML order is the final tie break.
+jobs:
+- id: demotion-0
+  kind: demotion
+  issue_cycle: 0
+  offset: 16384
+  logical_bytes: 8192 # FP16 equivalent: source8192 B -> target3072 B
+- id: promotion-0
+  kind: promotion
+  issue_cycle: 0
+  offset: 4096
+  logical_bytes: 8192 # source3072 B -> target8192 B
+- id: attention-0
+  kind: attention
+  issue_cycle: 4
+  depends_on: [promotion-0]
+  requests: &attention_requests
+  - {op: PIM_WR_GB, offset: 4096}
+  - {op: PIM_MAC_AB, offset: 4096}
+  - {op: PIM_MV_SB, offset: 4096}
+  - {op: PIM_BARRIER, offset: 4096}
+  - {op: PIM_SFM, offset: 4096}
+  - {op: PIM_MAC_AB, offset: 4096}
+- id: attention-1
+  kind: attention
+  issue_cycle: 12
+  depends_on: [attention-0]
+  requests: *attention_requests

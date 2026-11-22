@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "paper_revision": "2605.05639v2",
+  "paper_sha256": "c151452285425237f09f5854ee682f81088f0ff446ad64e4fc5b29e3ca573834",
+  "extraction": "pdftotext -layout",
+  "source_text_sha256": "680b8aae9c8a3884844eba438cfd4b8cbabd5ff17210d631ed9b3ff7c6953839",
+  "review_date": "2026-11-05",
+  "findings": {
+    "Q1": {
+      "status": "open",
+      "paper_support": [
+        "Fig.3 shows 16 vs 8 banks per pseudo-channel",
+        "§4.1 states compute PIM logic halves per-bank storage",
+        "§4.1 gives C×B_full + P×B_half capacity accounting"
+      ],
+      "remaining_gap": "The paper does not reconcile the 16→8 bank count with the per-bank halving into a unique physical geometry; do not apply both halvings without an author/configuration source.",
+      "locators": [
+        "§4.1 PDF p4",
+        "Fig.3 PDF p5"
+      ]
+    },
+    "Q2": {
+      "status": "open",
+      "paper_support": [
+        "Fig.3 labels 2 GiB/Layer and 1 GiB/Layer",
+        "Table 2 reports 20/40 GB per card and 5 stacks"
+      ],
+      "remaining_gap": "The paper gives both binary-looking layer labels and decimal GB evaluation labels without byte convention or reservation clarification.",
+      "locators": [
+        "Fig.3 PDF p5",
+        "Table 2 PDF p8"
+      ]
+    },
+    "Q3": {
+      "status": "open",
+      "paper_support": [
+        "three zones and layer order are explicit",
+        "UCIe D2D and HBM4 base-die role are described"
+      ],
+      "remaining_gap": "No physical die Channel/PC/rank/row organization or refresh timing is specified.",
+      "locators": [
+        "§4.1-4.2 PDF p4-5"
+      ]
+    },
+    "Q4": {
+      "status": "open",
+      "paper_support": [
+        "promotion/demotion uses source→base die→target two-hop TSV path",
+        "Table 2 gives 896 GB/s per Stack TSV DMA and 512 GB/s per stack UCIe"
+      ],
+      "remaining_gap": "No TSV segment count, full-duplex rule, read/write turnaround, or nBL overlap rule is provided.",
+      "locators": [
+        "§4.3 PDF p5",
+        "Table 2 PDF p8"
+      ]
+    },
+    "Q5": {
+      "status": "open",
+      "paper_support": [
+        "FP16 MAC/register/control logic in each Bank Group",
+        "Fig.3 labels HBM-PIM Unit 0/1, even/odd interfaces and FP16 ADD/MULT registers",
+        "methodology says cycle-accurate bank-level PIM"
+      ],
+      "remaining_gap": "No unique units-per-BG sharing rule, SIMD/throughput, operand/result protocol, softmax timing, or result-ready tail is specified.",
+      "locators": [
+        "§4.1 PDF p4",
+        "Fig.3 PDF p5",
+        "§7 PDF p8"
+      ],
+      "attacc_support": [
+        "PIM scheduler maps BARRIER callback to current controller clock",
+        "HBM3-PIM declares MACAB/MACSB/MACPB command spacing and bank/channel prerequisites",
+        "controller legacy callbacks occur at issue unless TokenStack result wrapper is attached"
+      ],
+      "attacc_gap": "AttAcc source supplies command/resource semantics, not silicon units-per-BG or numerical result-ready latency."
+    }
+  },
+  "gate": "paper_spec_frozen remains false; Q1-Q5 remain blockers",
+  "attacc_source_sha256": {
+    "pim_scheduler.cpp": "771811ab34b6aa9d4aff4c24e85aa3b2246d6f45bd2e95b763f2030fbc46a0ff",
+    "HBM3-PIM.cpp": "2bd686b3c47a5bc9a4c4da909aad45e212473b046bc532cc212e3ba22cf2abff",
+    "hbm3_pim_controller.cpp": "de32666b385f33f7e396fe0c2d36be4658a3ce637b22aa0504a331f90c1e2cd7"
+  }
+}

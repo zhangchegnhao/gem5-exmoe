@@ -1,0 +1,39 @@
+{
+  "sha256": {
+    "experiments/tokenstack_arch_20261104/hardware_topology.py": "8c2ad4db4a67b5451ef53a333cfd92c0be1f99d6f16e50032331db24ef867dd5",
+    "experiments/tokenstack_arch_20261104/config/tokenstack_hardware.yaml": "7be0cb0863e7cda6ca7fd07302a4f036fca74e61eb43a993916b47b8f69a1e0a",
+    "experiments/tokenstack_arch_20261104/scripts/run_hardware.py": "b3d33f9d89d76583c9a03fbf0da32622ad39d0133972e3a524893b465489d727",
+    "attacc_simulator/ramulator2/build/ramulator2": "d1d71c07d9d6259cd3b9f66689ff725576f6a3a654165c29567f69d329c1d2a8",
+    "attacc_simulator/ramulator2/libramulator.so": "00b319cec8c4ed8794349d01937973a968a17047b1f8e6f93227db3e24ecc3d9",
+    "attacc_simulator/ramulator2/build/CMakeCache.txt": "3d91943808f015780c7a67c425abcddfc4d5707b0caf8c5f27105dddc482fd1e",
+    "attacc_simulator/ramulator2/src/memory_system/tokenstack_memory.h": "a37ab6ebc4743b3fb44ff3bf0dba03b48462eab82ed55fdde5ac6547efbc9341",
+    "attacc_simulator/ramulator2/src/memory_system/tokenstack_fabric.h": "f392c94291947d83880c84c4acbbf904024f23916df6b89aee9ef029090862e8",
+    "attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp": "05145c172d6a943fc1792af72061be761df0932a91590b93a086182c25997f90",
+    "attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_fabric.cpp": "cff29d56cefcd3d35096adeea62fa8bb1bd9fa5f497a0563c599ab2f5e2d0792",
+    "attacc_simulator/ramulator2/src/dram_controller/tokenstack_controller.h": "e1686b1bb500a7d52236aed83dcb67c850cda10ced287894373533bf41f67062",
+    "attacc_simulator/ramulator2/src/frontend/impl/memory_trace/tokenstack_graph.cpp": "d5257493a190ba0029deaa07cd13bb18b89bca1daffc9bda06415cdb15cfd9d4",
+    "attacc_simulator/ramulator2/src/frontend/impl/memory_trace/tokenstack_trace.cpp": "cd913b49f053b0da729a291276476a6b76f11ef8f0dd3dc5a646c9cd8e6f3a05",
+    "attacc_simulator/ramulator2/src/dram/impl/HBM3-PIM.cpp": "4d631c3717089d37bb7ab3975be8f8377c0dd4e46ef7d3fe1f75dbf828753607",
+    "attacc_simulator/ramulator2/src/dram_controller/impl/hbm3_pim_controller.cpp": "de32666b385f33f7e396fe0c2d36be4658a3ce637b22aa0504a331f90c1e2cd7"
+  },
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "seed": 260505639,
+  "argv": [
+    "-"
+  ],
+  "model_precision": "DRAM command timing + Base Die resource behavior; engineering profile",
+  "repos": {
+    "attacc": {
+      "head": "c60005143a6b492d7ef83231723386478b59a506\n",
+      "status": " M ramulator2\n"
+    },
+    "ramulator": {
+      "head": "b7c70275f04126c647edb989270cc429776955d1\n",
+      "status": " M src/CMakeLists.txt\n M src/addr_mapper/CMakeLists.txt\n M src/addr_mapper/impl/linear_mappers.cpp\n M src/base/base.h\n M src/base/request.h\n M src/dram/CMakeLists.txt\n M src/dram/impl/HBM3.cpp\n M src/dram/lambdas/action.h\n M src/dram/lambdas/preq.h\n M src/dram_controller/CMakeLists.txt\n M src/dram_controller/controller.h\n M src/dram_controller/impl/dummy_controller.cpp\n M src/dram_controller/impl/generic_dram_controller.cpp\n M src/dram_controller/impl/scheduler/generic_scheduler.cpp\n M src/frontend/CMakeLists.txt\n M src/frontend/impl/memory_trace/loadstore_trace.cpp\n M src/main.cpp\n M src/memory_system/CMakeLists.txt\n M src/memory_system/impl/dummy_memory_system.cpp\n M src/memory_system/impl/generic_DRAM_system.cpp\n M src/memory_system/memory_system.h\n?? HBM3_base.yaml\n?? attacc_bank.yaml\n?? attacc_bg.yaml\n?? attacc_buffer.yaml\n?? patches/\n?? src/addr_mapper/impl/hbm3_linear_mappers.cpp\n?? src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp\n?? src/dram/impl/HBM3-PIM.cpp\n?? src/dram_controller/impl/hbm3_controller.cpp\n?? src/dram_controller/impl/hbm3_pim_controller.cpp\n?? src/dram_controller/impl/plugin/hbm3_trace_recorder.cpp\n?? src/dram_controller/impl/refresh/all_bank_refresh_hbm3.cpp\n?? src/dram_controller/impl/refresh/no_refresh.cpp\n?? src/dram_controller/impl/scheduler/pim_scheduler.cpp\n?? src/dram_controller/tokenstack_controller.h\n?? src/frontend/impl/memory_trace/pim_loadstore_trace.cpp\n?? src/frontend/impl/memory_trace/tokenstack_graph.cpp\n?? src/frontend/impl/memory_trace/tokenstack_trace.cpp\n?? src/memory_system/impl/PIM_DRAM_system.cpp\n?? src/memory_system/impl/tokenstack_fabric.cpp\n?? src/memory_system/impl/tokenstack_memory.cpp\n?? src/memory_system/tokenstack_fabric.h\n?? src/memory_system/tokenstack_memory.h\n?? trace_gen/\n"
+    },
+    "gem5": {
+      "head": "b9da2bfe1e21f6efa2730edd4e80e58c5d965458\n",
+      "status": ""
+    }
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "mode": "bank",
+    "command": [
+      "/home/ubuntu22/gem5/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-engineering-v5-attacc/bank.yaml"
+    ],
+    "request_count": 153,
+    "barrier_count": 80,
+    "cycles": 273,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  },
+  {
+    "mode": "bg",
+    "command": [
+      "/home/ubuntu22/gem5/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-engineering-v5-attacc/bg.yaml"
+    ],
+    "request_count": 345,
+    "barrier_count": 176,
+    "cycles": 822,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  },
+  {
+    "mode": "buffer",
+    "command": [
+      "/home/ubuntu22/gem5/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/h6-engineering-v5-attacc/buffer.yaml"
+    ],
+    "request_count": 1273,
+    "barrier_count": 224,
+    "cycles": 2094,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  }
+]

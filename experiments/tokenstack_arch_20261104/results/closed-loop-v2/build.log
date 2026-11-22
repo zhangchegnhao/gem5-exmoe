@@ -1,0 +1,16 @@
+Consolidate compiler generated dependencies of target ramulator-controller
+[ 41%] Built target yaml-cpp
+[ 57%] Built target ramulator-controller
+[ 68%] Built target spdlog
+Consolidate compiler generated dependencies of target ramulator-frontend
+[ 76%] Built target ramulator-base
+[ 78%] Building CXX object src/frontend/CMakeFiles/ramulator-frontend.dir/impl/memory_trace/tokenstack_trace.cpp.o
+[ 80%] Built target ramulator-translation
+[ 84%] Built target ramulator-memorysystem
+[ 90%] Built target ramulator-addrmapper
+[ 93%] Built target ramulator-dram
+[ 95%] Built target ramulator-frontend
+[ 97%] Linking CXX shared library ../libramulator.so
+[ 97%] Built target ramulator
+[ 98%] Linking CXX executable ramulator2
+[100%] Built target ramulator-exe

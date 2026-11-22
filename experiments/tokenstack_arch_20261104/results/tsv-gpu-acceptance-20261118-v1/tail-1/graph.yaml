@@ -1,0 +1,655 @@
+schema_version: 1
+tasks:
+- id: attention_query_broadcast
+  source: pim
+  issue_cycle: 0
+  depends_on: []
+  resource: coordinator
+  stack: 0
+  bytes: 152
+  cycles: 0
+- id: attention_qk_0
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 8589934592
+- id: attention_qk_1
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_0
+  requests:
+  - type: 6
+    address: 8589934624
+- id: attention_qk_2
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 8594128896
+- id: attention_qk_3
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_2
+  requests:
+  - type: 6
+    address: 8594128928
+- id: attention_qk_4
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 8598323200
+- id: attention_qk_5
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_4
+  requests:
+  - type: 6
+    address: 8598323232
+- id: attention_qk_6
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 8602517504
+- id: attention_qk_7
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_6
+  requests:
+  - type: 6
+    address: 8602517536
+- id: attention_qk_8
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 8606711808
+- id: attention_qk_9
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_8
+  requests:
+  - type: 6
+    address: 8606711840
+- id: attention_qk_10
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 9663676416
+- id: attention_qk_11
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_10
+  requests:
+  - type: 6
+    address: 9663676448
+- id: attention_qk_12
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 9667870720
+- id: attention_qk_13
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_12
+  requests:
+  - type: 6
+    address: 9667870752
+- id: attention_qk_14
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 9672065024
+- id: attention_qk_15
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_14
+  requests:
+  - type: 6
+    address: 9672065056
+- id: attention_qk_16
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 9676259328
+- id: attention_qk_17
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_16
+  requests:
+  - type: 6
+    address: 9676259360
+- id: attention_qk_18
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 10737418240
+- id: attention_qk_19
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_18
+  requests:
+  - type: 6
+    address: 10737418272
+- id: attention_qk_20
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 10741612544
+- id: attention_qk_21
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_20
+  requests:
+  - type: 6
+    address: 10741612576
+- id: attention_qk_22
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 10745806848
+- id: attention_qk_23
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_22
+  requests:
+  - type: 6
+    address: 10745806880
+- id: attention_qk_24
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 10750001152
+- id: attention_qk_25
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_24
+  requests:
+  - type: 6
+    address: 10750001184
+- id: attention_qk_26
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 11811160064
+- id: attention_qk_27
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_26
+  requests:
+  - type: 6
+    address: 11811160096
+- id: attention_qk_28
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 11815354368
+- id: attention_qk_29
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_28
+  requests:
+  - type: 6
+    address: 11815354400
+- id: attention_qk_30
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 11819548672
+- id: attention_qk_31
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_30
+  requests:
+  - type: 6
+    address: 11819548704
+- id: attention_qk_32
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  requests:
+  - type: 6
+    address: 11823742976
+- id: attention_qk_33
+  source: pim
+  depends_on:
+  - attention_query_broadcast
+  - attention_qk_32
+  requests:
+  - type: 6
+    address: 11823743008
+- id: attention_qk_gather
+  source: pim
+  depends_on:
+  - attention_qk_0
+  - attention_qk_1
+  - attention_qk_2
+  - attention_qk_3
+  - attention_qk_4
+  - attention_qk_5
+  - attention_qk_6
+  - attention_qk_7
+  - attention_qk_8
+  - attention_qk_9
+  - attention_qk_10
+  - attention_qk_11
+  - attention_qk_12
+  - attention_qk_13
+  - attention_qk_14
+  - attention_qk_15
+  - attention_qk_16
+  - attention_qk_17
+  - attention_qk_18
+  - attention_qk_19
+  - attention_qk_20
+  - attention_qk_21
+  - attention_qk_22
+  - attention_qk_23
+  - attention_qk_24
+  - attention_qk_25
+  - attention_qk_26
+  - attention_qk_27
+  - attention_qk_28
+  - attention_qk_29
+  - attention_qk_30
+  - attention_qk_31
+  - attention_qk_32
+  - attention_qk_33
+  resource: coordinator
+  stack: 0
+  bytes: 34
+  cycles: 0
+- id: attention_softmax
+  source: pim
+  depends_on:
+  - attention_qk_gather
+  requests:
+  - type: 10
+    address: 8589934592
+- id: attention_weights_broadcast
+  source: pim
+  depends_on:
+  - attention_softmax
+  resource: coordinator
+  stack: 0
+  bytes: 136
+  cycles: 0
+- id: attention_av_0
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 8589934656
+- id: attention_av_1
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_0
+  requests:
+  - type: 6
+    address: 8589934688
+- id: attention_av_2
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 8594128960
+- id: attention_av_3
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_2
+  requests:
+  - type: 6
+    address: 8594128992
+- id: attention_av_4
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 8598323264
+- id: attention_av_5
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_4
+  requests:
+  - type: 6
+    address: 8598323296
+- id: attention_av_6
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 8602517568
+- id: attention_av_7
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_6
+  requests:
+  - type: 6
+    address: 8602517600
+- id: attention_av_8
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 8606711872
+- id: attention_av_9
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_8
+  requests:
+  - type: 6
+    address: 8606711904
+- id: attention_av_10
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 9663676480
+- id: attention_av_11
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_10
+  requests:
+  - type: 6
+    address: 9663676512
+- id: attention_av_12
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 9667870784
+- id: attention_av_13
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_12
+  requests:
+  - type: 6
+    address: 9667870816
+- id: attention_av_14
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 9672065088
+- id: attention_av_15
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_14
+  requests:
+  - type: 6
+    address: 9672065120
+- id: attention_av_16
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 9676259392
+- id: attention_av_17
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_16
+  requests:
+  - type: 6
+    address: 9676259424
+- id: attention_av_18
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 9680453696
+- id: attention_av_19
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_18
+  requests:
+  - type: 6
+    address: 9680453728
+- id: attention_av_20
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 10737418304
+- id: attention_av_21
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_20
+  requests:
+  - type: 6
+    address: 10737418336
+- id: attention_av_22
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 10741612608
+- id: attention_av_23
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_22
+  requests:
+  - type: 6
+    address: 10741612640
+- id: attention_av_24
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 10745806912
+- id: attention_av_25
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_24
+  requests:
+  - type: 6
+    address: 10745806944
+- id: attention_av_26
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 10750001216
+- id: attention_av_27
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_26
+  requests:
+  - type: 6
+    address: 10750001248
+- id: attention_av_28
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 10754195520
+- id: attention_av_29
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_28
+  requests:
+  - type: 6
+    address: 10754195552
+- id: attention_av_30
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 11811160128
+- id: attention_av_31
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_30
+  requests:
+  - type: 6
+    address: 11811160160
+- id: attention_av_32
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 11815354432
+- id: attention_av_33
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_32
+  requests:
+  - type: 6
+    address: 11815354464
+- id: attention_av_34
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 11819548736
+- id: attention_av_35
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_34
+  requests:
+  - type: 6
+    address: 11819548768
+- id: attention_av_36
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  requests:
+  - type: 6
+    address: 11823743040
+- id: attention_av_37
+  source: pim
+  depends_on:
+  - attention_weights_broadcast
+  - attention_av_36
+  requests:
+  - type: 6
+    address: 11823743072
+- id: attention_av_gather
+  source: pim
+  depends_on:
+  - attention_av_0
+  - attention_av_1
+  - attention_av_2
+  - attention_av_3
+  - attention_av_4
+  - attention_av_5
+  - attention_av_6
+  - attention_av_7
+  - attention_av_8
+  - attention_av_9
+  - attention_av_10
+  - attention_av_11
+  - attention_av_12
+  - attention_av_13
+  - attention_av_14
+  - attention_av_15
+  - attention_av_16
+  - attention_av_17
+  - attention_av_18
+  - attention_av_19
+  - attention_av_20
+  - attention_av_21
+  - attention_av_22
+  - attention_av_23
+  - attention_av_24
+  - attention_av_25
+  - attention_av_26
+  - attention_av_27
+  - attention_av_28
+  - attention_av_29
+  - attention_av_30
+  - attention_av_31
+  - attention_av_32
+  - attention_av_33
+  - attention_av_34
+  - attention_av_35
+  - attention_av_36
+  - attention_av_37
+  resource: coordinator
+  stack: 0
+  bytes: 38
+  cycles: 0
+- id: attention_done
+  source: pim
+  depends_on:
+  - attention_av_gather

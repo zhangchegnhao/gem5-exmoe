@@ -1,0 +1,95 @@
+schema_version: 1
+tasks:
+- id: remote_p0_buffer_s0
+  source: promotion
+  depends_on: []
+  acquire: remote_p0_buffer_s0
+  buffer_group: 0
+  buffer_bytes: 256
+- id: remote_p0_buffer_s1
+  source: promotion
+  depends_on:
+  - remote_p0_buffer_s0
+  acquire: remote_p0_buffer_s1
+  buffer_group: 1
+  buffer_bytes: 256
+- id: remote_p0_read
+  source: promotion
+  depends_on:
+  - remote_p0_buffer_s1
+  requests:
+  - type: 0
+    address: 0
+  - type: 0
+    address: 32
+  - type: 0
+    address: 64
+  - type: 0
+    address: 96
+  - type: 0
+    address: 128
+  - type: 0
+    address: 160
+  - type: 0
+    address: 192
+  - type: 0
+    address: 224
+- id: remote_p0_source_egress
+  source: promotion
+  depends_on:
+  - remote_p0_read
+  resource: ucie
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: remote_p0_host_forward
+  source: promotion
+  depends_on:
+  - remote_p0_source_egress
+  resource: host
+  stack: 0
+  bytes: 256
+  cycles: 1
+- id: remote_p0_target_ingress
+  source: promotion
+  depends_on:
+  - remote_p0_host_forward
+  resource: ucie
+  stack: 1
+  bytes: 256
+  cycles: 0
+- id: remote_p0_write
+  source: promotion
+  depends_on:
+  - remote_p0_target_ingress
+  requests:
+  - type: 1
+    address: 12884901888
+  - type: 1
+    address: 12884901920
+  - type: 1
+    address: 12884901952
+  - type: 1
+    address: 12884901984
+  - type: 1
+    address: 12884902016
+  - type: 1
+    address: 12884902048
+  - type: 1
+    address: 12884902080
+  - type: 1
+    address: 12884902112
+- id: remote_p0_buffer_s0_release
+  source: promotion
+  depends_on: &id001
+  - remote_p0_write
+  release: remote_p0_buffer_s0
+- id: remote_p0_buffer_s1_release
+  source: promotion
+  depends_on: *id001
+  release: remote_p0_buffer_s1
+- id: remote_done
+  source: promotion
+  depends_on:
+  - remote_p0_buffer_s0_release
+  - remote_p0_buffer_s1_release

@@ -1,0 +1,34 @@
+{
+  "tasks": 36,
+  "requests": 36,
+  "read_bytes": 512,
+  "write_bytes": 512,
+  "complete_cycle": 121,
+  "tsv_bytes": 1024,
+  "command_count": 56,
+  "hardware_events": 36,
+  "resource_occupancy": {
+    "channel/s0/ch0": {
+      "busy_cycles": 32,
+      "bytes": 0
+    },
+    "channel/s0/ch15": {
+      "busy_cycles": 24,
+      "bytes": 0
+    },
+    "tsv/s0": {
+      "busy_cycles": 64,
+      "bytes": 1024
+    },
+    "channel/s0/ch0/pc0/data": {
+      "busy_cycles": 32,
+      "bytes": 512
+    },
+    "channel/s0/ch15/pc1/data": {
+      "busy_cycles": 32,
+      "bytes": 512
+    }
+  },
+  "refresh_commands": 0,
+  "cycles_per_second": 1300390117.0351105
+}

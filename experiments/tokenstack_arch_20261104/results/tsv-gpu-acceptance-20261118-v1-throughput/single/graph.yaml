@@ -1,0 +1,1050 @@
+schema_version: 1
+tasks:
+- id: s0d0c0p0b0
+  source: gpu
+  requests:
+  - type: 0
+    address: 0
+  - type: 0
+    address: 32
+  - type: 0
+    address: 64
+  - type: 0
+    address: 96
+  - type: 0
+    address: 128
+  - type: 0
+    address: 160
+  - type: 0
+    address: 192
+  - type: 0
+    address: 224
+  - type: 0
+    address: 256
+  - type: 0
+    address: 288
+  - type: 0
+    address: 320
+  - type: 0
+    address: 352
+  - type: 0
+    address: 384
+  - type: 0
+    address: 416
+  - type: 0
+    address: 448
+  - type: 0
+    address: 480
+  - type: 0
+    address: 512
+  - type: 0
+    address: 544
+  - type: 0
+    address: 576
+  - type: 0
+    address: 608
+  - type: 0
+    address: 640
+  - type: 0
+    address: 672
+  - type: 0
+    address: 704
+  - type: 0
+    address: 736
+  - type: 0
+    address: 768
+  - type: 0
+    address: 800
+  - type: 0
+    address: 832
+  - type: 0
+    address: 864
+  - type: 0
+    address: 896
+  - type: 0
+    address: 928
+  - type: 0
+    address: 960
+  - type: 0
+    address: 992
+  - type: 0
+    address: 0
+  - type: 0
+    address: 32
+  - type: 0
+    address: 64
+  - type: 0
+    address: 96
+  - type: 0
+    address: 128
+  - type: 0
+    address: 160
+  - type: 0
+    address: 192
+  - type: 0
+    address: 224
+  - type: 0
+    address: 256
+  - type: 0
+    address: 288
+  - type: 0
+    address: 320
+  - type: 0
+    address: 352
+  - type: 0
+    address: 384
+  - type: 0
+    address: 416
+  - type: 0
+    address: 448
+  - type: 0
+    address: 480
+  - type: 0
+    address: 512
+  - type: 0
+    address: 544
+  - type: 0
+    address: 576
+  - type: 0
+    address: 608
+  - type: 0
+    address: 640
+  - type: 0
+    address: 672
+  - type: 0
+    address: 704
+  - type: 0
+    address: 736
+  - type: 0
+    address: 768
+  - type: 0
+    address: 800
+  - type: 0
+    address: 832
+  - type: 0
+    address: 864
+  - type: 0
+    address: 896
+  - type: 0
+    address: 928
+  - type: 0
+    address: 960
+  - type: 0
+    address: 992
+- id: s0d0c0p0b1
+  source: gpu
+  requests:
+  - type: 0
+    address: 16777216
+  - type: 0
+    address: 16777248
+  - type: 0
+    address: 16777280
+  - type: 0
+    address: 16777312
+  - type: 0
+    address: 16777344
+  - type: 0
+    address: 16777376
+  - type: 0
+    address: 16777408
+  - type: 0
+    address: 16777440
+  - type: 0
+    address: 16777472
+  - type: 0
+    address: 16777504
+  - type: 0
+    address: 16777536
+  - type: 0
+    address: 16777568
+  - type: 0
+    address: 16777600
+  - type: 0
+    address: 16777632
+  - type: 0
+    address: 16777664
+  - type: 0
+    address: 16777696
+  - type: 0
+    address: 16777728
+  - type: 0
+    address: 16777760
+  - type: 0
+    address: 16777792
+  - type: 0
+    address: 16777824
+  - type: 0
+    address: 16777856
+  - type: 0
+    address: 16777888
+  - type: 0
+    address: 16777920
+  - type: 0
+    address: 16777952
+  - type: 0
+    address: 16777984
+  - type: 0
+    address: 16778016
+  - type: 0
+    address: 16778048
+  - type: 0
+    address: 16778080
+  - type: 0
+    address: 16778112
+  - type: 0
+    address: 16778144
+  - type: 0
+    address: 16778176
+  - type: 0
+    address: 16778208
+  - type: 0
+    address: 16777216
+  - type: 0
+    address: 16777248
+  - type: 0
+    address: 16777280
+  - type: 0
+    address: 16777312
+  - type: 0
+    address: 16777344
+  - type: 0
+    address: 16777376
+  - type: 0
+    address: 16777408
+  - type: 0
+    address: 16777440
+  - type: 0
+    address: 16777472
+  - type: 0
+    address: 16777504
+  - type: 0
+    address: 16777536
+  - type: 0
+    address: 16777568
+  - type: 0
+    address: 16777600
+  - type: 0
+    address: 16777632
+  - type: 0
+    address: 16777664
+  - type: 0
+    address: 16777696
+  - type: 0
+    address: 16777728
+  - type: 0
+    address: 16777760
+  - type: 0
+    address: 16777792
+  - type: 0
+    address: 16777824
+  - type: 0
+    address: 16777856
+  - type: 0
+    address: 16777888
+  - type: 0
+    address: 16777920
+  - type: 0
+    address: 16777952
+  - type: 0
+    address: 16777984
+  - type: 0
+    address: 16778016
+  - type: 0
+    address: 16778048
+  - type: 0
+    address: 16778080
+  - type: 0
+    address: 16778112
+  - type: 0
+    address: 16778144
+  - type: 0
+    address: 16778176
+  - type: 0
+    address: 16778208
+- id: s0d0c0p0b2
+  source: gpu
+  requests:
+  - type: 0
+    address: 33554432
+  - type: 0
+    address: 33554464
+  - type: 0
+    address: 33554496
+  - type: 0
+    address: 33554528
+  - type: 0
+    address: 33554560
+  - type: 0
+    address: 33554592
+  - type: 0
+    address: 33554624
+  - type: 0
+    address: 33554656
+  - type: 0
+    address: 33554688
+  - type: 0
+    address: 33554720
+  - type: 0
+    address: 33554752
+  - type: 0
+    address: 33554784
+  - type: 0
+    address: 33554816
+  - type: 0
+    address: 33554848
+  - type: 0
+    address: 33554880
+  - type: 0
+    address: 33554912
+  - type: 0
+    address: 33554944
+  - type: 0
+    address: 33554976
+  - type: 0
+    address: 33555008
+  - type: 0
+    address: 33555040
+  - type: 0
+    address: 33555072
+  - type: 0
+    address: 33555104
+  - type: 0
+    address: 33555136
+  - type: 0
+    address: 33555168
+  - type: 0
+    address: 33555200
+  - type: 0
+    address: 33555232
+  - type: 0
+    address: 33555264
+  - type: 0
+    address: 33555296
+  - type: 0
+    address: 33555328
+  - type: 0
+    address: 33555360
+  - type: 0
+    address: 33555392
+  - type: 0
+    address: 33555424
+  - type: 0
+    address: 33554432
+  - type: 0
+    address: 33554464
+  - type: 0
+    address: 33554496
+  - type: 0
+    address: 33554528
+  - type: 0
+    address: 33554560
+  - type: 0
+    address: 33554592
+  - type: 0
+    address: 33554624
+  - type: 0
+    address: 33554656
+  - type: 0
+    address: 33554688
+  - type: 0
+    address: 33554720
+  - type: 0
+    address: 33554752
+  - type: 0
+    address: 33554784
+  - type: 0
+    address: 33554816
+  - type: 0
+    address: 33554848
+  - type: 0
+    address: 33554880
+  - type: 0
+    address: 33554912
+  - type: 0
+    address: 33554944
+  - type: 0
+    address: 33554976
+  - type: 0
+    address: 33555008
+  - type: 0
+    address: 33555040
+  - type: 0
+    address: 33555072
+  - type: 0
+    address: 33555104
+  - type: 0
+    address: 33555136
+  - type: 0
+    address: 33555168
+  - type: 0
+    address: 33555200
+  - type: 0
+    address: 33555232
+  - type: 0
+    address: 33555264
+  - type: 0
+    address: 33555296
+  - type: 0
+    address: 33555328
+  - type: 0
+    address: 33555360
+  - type: 0
+    address: 33555392
+  - type: 0
+    address: 33555424
+- id: s0d0c0p0b3
+  source: gpu
+  requests:
+  - type: 0
+    address: 50331648
+  - type: 0
+    address: 50331680
+  - type: 0
+    address: 50331712
+  - type: 0
+    address: 50331744
+  - type: 0
+    address: 50331776
+  - type: 0
+    address: 50331808
+  - type: 0
+    address: 50331840
+  - type: 0
+    address: 50331872
+  - type: 0
+    address: 50331904
+  - type: 0
+    address: 50331936
+  - type: 0
+    address: 50331968
+  - type: 0
+    address: 50332000
+  - type: 0
+    address: 50332032
+  - type: 0
+    address: 50332064
+  - type: 0
+    address: 50332096
+  - type: 0
+    address: 50332128
+  - type: 0
+    address: 50332160
+  - type: 0
+    address: 50332192
+  - type: 0
+    address: 50332224
+  - type: 0
+    address: 50332256
+  - type: 0
+    address: 50332288
+  - type: 0
+    address: 50332320
+  - type: 0
+    address: 50332352
+  - type: 0
+    address: 50332384
+  - type: 0
+    address: 50332416
+  - type: 0
+    address: 50332448
+  - type: 0
+    address: 50332480
+  - type: 0
+    address: 50332512
+  - type: 0
+    address: 50332544
+  - type: 0
+    address: 50332576
+  - type: 0
+    address: 50332608
+  - type: 0
+    address: 50332640
+  - type: 0
+    address: 50331648
+  - type: 0
+    address: 50331680
+  - type: 0
+    address: 50331712
+  - type: 0
+    address: 50331744
+  - type: 0
+    address: 50331776
+  - type: 0
+    address: 50331808
+  - type: 0
+    address: 50331840
+  - type: 0
+    address: 50331872
+  - type: 0
+    address: 50331904
+  - type: 0
+    address: 50331936
+  - type: 0
+    address: 50331968
+  - type: 0
+    address: 50332000
+  - type: 0
+    address: 50332032
+  - type: 0
+    address: 50332064
+  - type: 0
+    address: 50332096
+  - type: 0
+    address: 50332128
+  - type: 0
+    address: 50332160
+  - type: 0
+    address: 50332192
+  - type: 0
+    address: 50332224
+  - type: 0
+    address: 50332256
+  - type: 0
+    address: 50332288
+  - type: 0
+    address: 50332320
+  - type: 0
+    address: 50332352
+  - type: 0
+    address: 50332384
+  - type: 0
+    address: 50332416
+  - type: 0
+    address: 50332448
+  - type: 0
+    address: 50332480
+  - type: 0
+    address: 50332512
+  - type: 0
+    address: 50332544
+  - type: 0
+    address: 50332576
+  - type: 0
+    address: 50332608
+  - type: 0
+    address: 50332640
+- id: s0d0c0p1b0
+  source: gpu
+  requests:
+  - type: 0
+    address: 67108864
+  - type: 0
+    address: 67108896
+  - type: 0
+    address: 67108928
+  - type: 0
+    address: 67108960
+  - type: 0
+    address: 67108992
+  - type: 0
+    address: 67109024
+  - type: 0
+    address: 67109056
+  - type: 0
+    address: 67109088
+  - type: 0
+    address: 67109120
+  - type: 0
+    address: 67109152
+  - type: 0
+    address: 67109184
+  - type: 0
+    address: 67109216
+  - type: 0
+    address: 67109248
+  - type: 0
+    address: 67109280
+  - type: 0
+    address: 67109312
+  - type: 0
+    address: 67109344
+  - type: 0
+    address: 67109376
+  - type: 0
+    address: 67109408
+  - type: 0
+    address: 67109440
+  - type: 0
+    address: 67109472
+  - type: 0
+    address: 67109504
+  - type: 0
+    address: 67109536
+  - type: 0
+    address: 67109568
+  - type: 0
+    address: 67109600
+  - type: 0
+    address: 67109632
+  - type: 0
+    address: 67109664
+  - type: 0
+    address: 67109696
+  - type: 0
+    address: 67109728
+  - type: 0
+    address: 67109760
+  - type: 0
+    address: 67109792
+  - type: 0
+    address: 67109824
+  - type: 0
+    address: 67109856
+  - type: 0
+    address: 67108864
+  - type: 0
+    address: 67108896
+  - type: 0
+    address: 67108928
+  - type: 0
+    address: 67108960
+  - type: 0
+    address: 67108992
+  - type: 0
+    address: 67109024
+  - type: 0
+    address: 67109056
+  - type: 0
+    address: 67109088
+  - type: 0
+    address: 67109120
+  - type: 0
+    address: 67109152
+  - type: 0
+    address: 67109184
+  - type: 0
+    address: 67109216
+  - type: 0
+    address: 67109248
+  - type: 0
+    address: 67109280
+  - type: 0
+    address: 67109312
+  - type: 0
+    address: 67109344
+  - type: 0
+    address: 67109376
+  - type: 0
+    address: 67109408
+  - type: 0
+    address: 67109440
+  - type: 0
+    address: 67109472
+  - type: 0
+    address: 67109504
+  - type: 0
+    address: 67109536
+  - type: 0
+    address: 67109568
+  - type: 0
+    address: 67109600
+  - type: 0
+    address: 67109632
+  - type: 0
+    address: 67109664
+  - type: 0
+    address: 67109696
+  - type: 0
+    address: 67109728
+  - type: 0
+    address: 67109760
+  - type: 0
+    address: 67109792
+  - type: 0
+    address: 67109824
+  - type: 0
+    address: 67109856
+- id: s0d0c0p1b1
+  source: gpu
+  requests:
+  - type: 0
+    address: 83886080
+  - type: 0
+    address: 83886112
+  - type: 0
+    address: 83886144
+  - type: 0
+    address: 83886176
+  - type: 0
+    address: 83886208
+  - type: 0
+    address: 83886240
+  - type: 0
+    address: 83886272
+  - type: 0
+    address: 83886304
+  - type: 0
+    address: 83886336
+  - type: 0
+    address: 83886368
+  - type: 0
+    address: 83886400
+  - type: 0
+    address: 83886432
+  - type: 0
+    address: 83886464
+  - type: 0
+    address: 83886496
+  - type: 0
+    address: 83886528
+  - type: 0
+    address: 83886560
+  - type: 0
+    address: 83886592
+  - type: 0
+    address: 83886624
+  - type: 0
+    address: 83886656
+  - type: 0
+    address: 83886688
+  - type: 0
+    address: 83886720
+  - type: 0
+    address: 83886752
+  - type: 0
+    address: 83886784
+  - type: 0
+    address: 83886816
+  - type: 0
+    address: 83886848
+  - type: 0
+    address: 83886880
+  - type: 0
+    address: 83886912
+  - type: 0
+    address: 83886944
+  - type: 0
+    address: 83886976
+  - type: 0
+    address: 83887008
+  - type: 0
+    address: 83887040
+  - type: 0
+    address: 83887072
+  - type: 0
+    address: 83886080
+  - type: 0
+    address: 83886112
+  - type: 0
+    address: 83886144
+  - type: 0
+    address: 83886176
+  - type: 0
+    address: 83886208
+  - type: 0
+    address: 83886240
+  - type: 0
+    address: 83886272
+  - type: 0
+    address: 83886304
+  - type: 0
+    address: 83886336
+  - type: 0
+    address: 83886368
+  - type: 0
+    address: 83886400
+  - type: 0
+    address: 83886432
+  - type: 0
+    address: 83886464
+  - type: 0
+    address: 83886496
+  - type: 0
+    address: 83886528
+  - type: 0
+    address: 83886560
+  - type: 0
+    address: 83886592
+  - type: 0
+    address: 83886624
+  - type: 0
+    address: 83886656
+  - type: 0
+    address: 83886688
+  - type: 0
+    address: 83886720
+  - type: 0
+    address: 83886752
+  - type: 0
+    address: 83886784
+  - type: 0
+    address: 83886816
+  - type: 0
+    address: 83886848
+  - type: 0
+    address: 83886880
+  - type: 0
+    address: 83886912
+  - type: 0
+    address: 83886944
+  - type: 0
+    address: 83886976
+  - type: 0
+    address: 83887008
+  - type: 0
+    address: 83887040
+  - type: 0
+    address: 83887072
+- id: s0d0c0p1b2
+  source: gpu
+  requests:
+  - type: 0
+    address: 100663296
+  - type: 0
+    address: 100663328
+  - type: 0
+    address: 100663360
+  - type: 0
+    address: 100663392
+  - type: 0
+    address: 100663424
+  - type: 0
+    address: 100663456
+  - type: 0
+    address: 100663488
+  - type: 0
+    address: 100663520
+  - type: 0
+    address: 100663552
+  - type: 0
+    address: 100663584
+  - type: 0
+    address: 100663616
+  - type: 0
+    address: 100663648
+  - type: 0
+    address: 100663680
+  - type: 0
+    address: 100663712
+  - type: 0
+    address: 100663744
+  - type: 0
+    address: 100663776
+  - type: 0
+    address: 100663808
+  - type: 0
+    address: 100663840
+  - type: 0
+    address: 100663872
+  - type: 0
+    address: 100663904
+  - type: 0
+    address: 100663936
+  - type: 0
+    address: 100663968
+  - type: 0
+    address: 100664000
+  - type: 0
+    address: 100664032
+  - type: 0
+    address: 100664064
+  - type: 0
+    address: 100664096
+  - type: 0
+    address: 100664128
+  - type: 0
+    address: 100664160
+  - type: 0
+    address: 100664192
+  - type: 0
+    address: 100664224
+  - type: 0
+    address: 100664256
+  - type: 0
+    address: 100664288
+  - type: 0
+    address: 100663296
+  - type: 0
+    address: 100663328
+  - type: 0
+    address: 100663360
+  - type: 0
+    address: 100663392
+  - type: 0
+    address: 100663424
+  - type: 0
+    address: 100663456
+  - type: 0
+    address: 100663488
+  - type: 0
+    address: 100663520
+  - type: 0
+    address: 100663552
+  - type: 0
+    address: 100663584
+  - type: 0
+    address: 100663616
+  - type: 0
+    address: 100663648
+  - type: 0
+    address: 100663680
+  - type: 0
+    address: 100663712
+  - type: 0
+    address: 100663744
+  - type: 0
+    address: 100663776
+  - type: 0
+    address: 100663808
+  - type: 0
+    address: 100663840
+  - type: 0
+    address: 100663872
+  - type: 0
+    address: 100663904
+  - type: 0
+    address: 100663936
+  - type: 0
+    address: 100663968
+  - type: 0
+    address: 100664000
+  - type: 0
+    address: 100664032
+  - type: 0
+    address: 100664064
+  - type: 0
+    address: 100664096
+  - type: 0
+    address: 100664128
+  - type: 0
+    address: 100664160
+  - type: 0
+    address: 100664192
+  - type: 0
+    address: 100664224
+  - type: 0
+    address: 100664256
+  - type: 0
+    address: 100664288
+- id: s0d0c0p1b3
+  source: gpu
+  requests:
+  - type: 0
+    address: 117440512
+  - type: 0
+    address: 117440544
+  - type: 0
+    address: 117440576
+  - type: 0
+    address: 117440608
+  - type: 0
+    address: 117440640
+  - type: 0
+    address: 117440672
+  - type: 0
+    address: 117440704
+  - type: 0
+    address: 117440736
+  - type: 0
+    address: 117440768
+  - type: 0
+    address: 117440800
+  - type: 0
+    address: 117440832
+  - type: 0
+    address: 117440864
+  - type: 0
+    address: 117440896
+  - type: 0
+    address: 117440928
+  - type: 0
+    address: 117440960
+  - type: 0
+    address: 117440992
+  - type: 0
+    address: 117441024
+  - type: 0
+    address: 117441056
+  - type: 0
+    address: 117441088
+  - type: 0
+    address: 117441120
+  - type: 0
+    address: 117441152
+  - type: 0
+    address: 117441184
+  - type: 0
+    address: 117441216
+  - type: 0
+    address: 117441248
+  - type: 0
+    address: 117441280
+  - type: 0
+    address: 117441312
+  - type: 0
+    address: 117441344
+  - type: 0
+    address: 117441376
+  - type: 0
+    address: 117441408
+  - type: 0
+    address: 117441440
+  - type: 0
+    address: 117441472
+  - type: 0
+    address: 117441504
+  - type: 0
+    address: 117440512
+  - type: 0
+    address: 117440544
+  - type: 0
+    address: 117440576
+  - type: 0
+    address: 117440608
+  - type: 0
+    address: 117440640
+  - type: 0
+    address: 117440672
+  - type: 0
+    address: 117440704
+  - type: 0
+    address: 117440736
+  - type: 0
+    address: 117440768
+  - type: 0
+    address: 117440800
+  - type: 0
+    address: 117440832
+  - type: 0
+    address: 117440864
+  - type: 0
+    address: 117440896
+  - type: 0
+    address: 117440928
+  - type: 0
+    address: 117440960
+  - type: 0
+    address: 117440992
+  - type: 0
+    address: 117441024
+  - type: 0
+    address: 117441056
+  - type: 0
+    address: 117441088
+  - type: 0
+    address: 117441120
+  - type: 0
+    address: 117441152
+  - type: 0
+    address: 117441184
+  - type: 0
+    address: 117441216
+  - type: 0
+    address: 117441248
+  - type: 0
+    address: 117441280
+  - type: 0
+    address: 117441312
+  - type: 0
+    address: 117441344
+  - type: 0
+    address: 117441376
+  - type: 0
+    address: 117441408
+  - type: 0
+    address: 117441440
+  - type: 0
+    address: 117441472
+  - type: 0
+    address: 117441504

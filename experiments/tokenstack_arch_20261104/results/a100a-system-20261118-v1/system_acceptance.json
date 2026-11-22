@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "acceptance": "passed",
+  "contract": {
+    "schema_version": 1,
+    "profile": "a100a_compute_five_stack_tokenstack_v1",
+    "gpu": {
+      "model": "A100a",
+      "devices": 1,
+      "precision": "W16A16",
+      "peak_flops_per_second": 312000000000000,
+      "compute_utilization": 0.8,
+      "launch_overhead_cycles": 0
+    },
+    "SMs": 108,
+    "attacc_default_compute_utilization": 0.8,
+    "effective_flops_per_second": 249600000000000.0,
+    "capacity_bytes": {
+      "total": 64424509440,
+      "capacity_layers": 42949672960,
+      "compute_layers": 21474836480,
+      "gpu_arena": 21474836480,
+      "cold_kv_arena": 21474836480
+    },
+    "bandwidth_GBps": {
+      "dram_interface_per_stack": 665.7997399219767,
+      "tsv_per_stack": 896,
+      "ucie_per_stack": 512,
+      "host_crossbar_total": 2560,
+      "host_memory_path_upper_bound": 2560
+    },
+    "attacc_overrides": {
+      "NUM_DEVICE": 1,
+      "MEM_CAPACITY_PER_DEVICE": 64424509440,
+      "OFF_MEM_BW_PER_DEVICE": 2560000000000
+    },
+    "unmodeled_cache_provenance": {
+      "L1_bytes_per_SM": 196608,
+      "L2_bytes": 41943040
+    },
+    "clock_ps": 769,
+    "bandwidth_units": "decimal GB/s = 10^9 B/s; capacities reported in bytes/GiB",
+    "compute_policy": "ceil(FLOPs/(peak*utilization)/tCK) + explicit launch overhead; one shared GPU lane",
+    "memory_policy": "load -> compute -> store; live DRAM/TSV/UCIe/crossbar callbacks; no analytical memory term",
+    "attacc_source_sha256": {
+      "src/config.py": "9c568d6a66edc26f5d9f891d07a718e1fcd223579ddbdeb7e1a11f819e9aa9e3",
+      "src/model.py": "afc2a9354010dc95be273bcb0e390f36d018c1d56d8cb58a50298a9d20215d08",
+      "src/type.py": "5045fe5d777321b531185e0f0bee489193a3aca330c3704c6ce10f62d2ba8b22"
+    }
+  },
+  "cases": {
+    "baseline": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 791,
+      "foreground_latency_cycles": 791,
+      "foreground_latency_ps": 608279,
+      "foreground_latency_us": 0.608279,
+      "background_complete_cycle": 336,
+      "background_drain_after_foreground_cycles": 0,
+      "all_tasks_complete_cycle": 791,
+      "simulation_end_cycle": 792,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 2,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        },
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    },
+    "compute_slow": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 857,
+      "foreground_latency_cycles": 857,
+      "foreground_latency_ps": 659033,
+      "foreground_latency_us": 0.659033,
+      "background_complete_cycle": 336,
+      "background_drain_after_foreground_cycles": 0,
+      "all_tasks_complete_cycle": 857,
+      "simulation_end_cycle": 858,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 134,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        },
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    },
+    "tsv_slow": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 13340,
+      "foreground_latency_cycles": 13340,
+      "foreground_latency_ps": 10258460,
+      "foreground_latency_us": 10.25846,
+      "background_complete_cycle": 7263,
+      "background_drain_after_foreground_cycles": 0,
+      "all_tasks_complete_cycle": 13340,
+      "simulation_end_cycle": 13341,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 2,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    },
+    "ucie_slow": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 7520,
+      "foreground_latency_cycles": 7520,
+      "foreground_latency_ps": 5782880,
+      "foreground_latency_us": 5.78288,
+      "background_complete_cycle": 336,
+      "background_drain_after_foreground_cycles": 0,
+      "all_tasks_complete_cycle": 7520,
+      "simulation_end_cycle": 7521,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 2,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        },
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    },
+    "crossbar_slow": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 34350,
+      "foreground_latency_cycles": 34350,
+      "foreground_latency_ps": 26415150,
+      "foreground_latency_us": 26.41515,
+      "background_complete_cycle": 336,
+      "background_drain_after_foreground_cycles": 0,
+      "all_tasks_complete_cycle": 34350,
+      "simulation_end_cycle": 34351,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 2,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        },
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    },
+    "background_late": {
+      "schema_version": 1,
+      "acceptance": "passed",
+      "foreground_issue_cycle": 0,
+      "foreground_complete_cycle": 551,
+      "foreground_latency_cycles": 551,
+      "foreground_latency_ps": 423719,
+      "foreground_latency_us": 0.423719,
+      "background_complete_cycle": 10800,
+      "background_drain_after_foreground_cycles": 10249,
+      "all_tasks_complete_cycle": 10800,
+      "simulation_end_cycle": 10801,
+      "maintenance_drain_cycles": 1,
+      "GPU_compute_busy_cycles": 2,
+      "GPU_port_payload_bytes": 26240,
+      "by_source": {
+        "gpu": {
+          "requests": 810,
+          "read_bytes": 25760,
+          "write_bytes": 160,
+          "logical_read_bytes": 25760,
+          "logical_write_bytes": 160,
+          "pim_requests": 0
+        },
+        "promotion": {
+          "requests": 240,
+          "read_bytes": 1280,
+          "write_bytes": 6400,
+          "logical_read_bytes": 1280,
+          "logical_write_bytes": 2560,
+          "pim_requests": 0
+        },
+        "pim": {
+          "requests": 125,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "logical_read_bytes": 0,
+          "logical_write_bytes": 0,
+          "pim_requests": 125
+        },
+        "demotion": {
+          "requests": 360,
+          "read_bytes": 9600,
+          "write_bytes": 1920,
+          "logical_read_bytes": 9600,
+          "logical_write_bytes": 1920,
+          "pim_requests": 0
+        }
+      },
+      "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+    }
+  },
+  "limits": "engineering hybrid; no full LLM TPOT or silicon calibration"
+}

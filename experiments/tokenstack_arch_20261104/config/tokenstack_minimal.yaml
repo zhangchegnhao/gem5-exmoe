@@ -1,0 +1,28 @@
+# TokenStack Phase 2/3 minimal behavior-level configuration.
+# Values marked TODO: verify are experiment defaults, not measured HBM4 parameters.
+topology:
+  num_stacks: 1
+  channels_per_stack: 16
+  pseudo_channels_per_channel: 2
+  bank_groups_per_pseudo_channel: 4
+  banks_per_bank_group: 4
+  capacity_layers: 3
+  compute_layers: 1
+  capacity_layer_bytes: 2147483648       # 2 GiB; TODO: verify for target stack
+  compute_layer_bytes: 1073741824        # 1 GiB; half-density PIM layer assumption
+  cache_line_bytes: 64
+  row_bytes: 1024
+
+base_die:
+  clock_hz: 1000000000                    # 1 GHz modeling clock; TODO: verify
+  tsv_dma_bandwidth_GBps: 896             # paper experimental assumption, decimal GB/s
+  buffer_bytes: 16384                     # small page buffer; TODO: verify
+  dma_queue_depth: 8                      # TODO: verify
+  quantization_mode: K8V4
+  quantization_ratio: 2.6666666666666665  # FP16 -> K8V4 effective byte reduction
+
+migration:
+  page_tokens: 16                          # paper uses T_page; workload choice here
+  token_kv_bytes_fp16: 4096                # synthetic one-page test value; TODO: verify
+  foreground_priority: 0
+  background_priority: 1

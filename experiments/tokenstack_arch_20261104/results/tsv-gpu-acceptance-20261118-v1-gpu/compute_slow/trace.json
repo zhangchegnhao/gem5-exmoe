@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "workload": "query_projection_pim_attention_output_projection",
+  "issue_cycle": 0,
+  "hidden_dim": 80,
+  "tokens_per_head": 8,
+  "background_tokens_per_head": 12,
+  "background_issue_cycle": 0
+}

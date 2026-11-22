@@ -1,0 +1,13 @@
+schema_version,page_id,head_group,cycle,event,bytes,occupied_bytes
+1,background_p0,0,0,allocate,256,256
+1,background_p1,0,0,allocate,256,512
+1,background_p0,0,1490,release,256,256
+1,background_p2,0,1491,allocate,256,512
+1,background_p1,0,1653,release,256,256
+1,promote_p0,0,1654,allocate,256,512
+1,background_p2,0,2628,release,256,256
+1,promote_p1,0,2629,allocate,256,512
+1,promote_p0,0,2791,release,256,256
+1,promote_p2,0,2792,allocate,256,512
+1,promote_p1,0,3793,release,256,256
+1,promote_p2,0,4591,release,256,0

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "coupling": "offline single-channel conservative interval replay, no feedback to Ramulator2",
+  "retire_semantics": "PIM final command issued or barrier removed; not arithmetic completion",
+  "tck_ps": 769,
+  "ramulator_stop_cycle": 26,
+  "retired_requests": 6,
+  "baseline_replay_matches_all_retirement_cycles": true,
+  "baseline_replay_horizon_cycle": 26,
+  "replay_with_migration_horizon_cycle": 60,
+  "migration_bandwidth_GBps": 896,
+  "arbiter_stats": {
+    "pim_requests": 6,
+    "migration_requests": 2,
+    "pim_command_bytes": 0,
+    "migration_logical_read_bytes": 16384,
+    "migration_logical_write_bytes": 16384,
+    "migration_physical_read_bytes": 11264,
+    "migration_physical_write_bytes": 11264,
+    "queue_cycles": 181,
+    "base_die_busy_cycles": 60,
+    "tsv_busy_cycles": 34,
+    "last_complete_cycle": 60
+  },
+  "conservation": {
+    "pim_request_count": 6,
+    "migration_request_count": 2,
+    "pim_command_bytes": 0,
+    "migration_logical_read_bytes": 16384,
+    "migration_logical_write_bytes": 16384,
+    "migration_physical_read_bytes": 11264,
+    "migration_physical_write_bytes": 11264,
+    "logical_migration_bytes_conserved": true,
+    "completion_cycle_matches_max_event": true,
+    "request_ids_conserved": true,
+    "physical_bytes_match_inputs": true,
+    "replay_horizon_conserved": true
+  }
+}

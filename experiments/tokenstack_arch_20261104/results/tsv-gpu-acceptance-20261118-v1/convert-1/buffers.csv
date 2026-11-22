@@ -1,0 +1,7 @@
+schema_version,page_id,head_group,cycle,event,bytes,occupied_bytes
+1,move_p0,0,0,allocate,256,256
+1,move_p1,0,0,allocate,256,512
+1,move_p0,0,1594,release,256,256
+1,move_p2,0,1595,allocate,256,512
+1,move_p1,0,1786,release,256,256
+1,move_p2,0,2623,release,256,0

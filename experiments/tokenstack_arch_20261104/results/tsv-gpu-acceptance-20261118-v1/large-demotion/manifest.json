@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "kind": "demotion",
+  "tokens": 37,
+  "dim": 16,
+  "logical_bytes": 2368,
+  "read_bytes": 6304,
+  "write_bytes": 1184,
+  "pages": [
+    {
+      "page_id": "move_p0",
+      "start_token": 0,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 0,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p0_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p1",
+      "start_token": 4,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 2147483648,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p1_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p2",
+      "start_token": 8,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 4294967296,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p2_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p3",
+      "start_token": 12,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 6442450944,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p3_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p4",
+      "start_token": 16,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 4194304,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p4_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p5",
+      "start_token": 20,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 2151677952,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p5_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p6",
+      "start_token": 24,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 4299161600,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p6_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p7",
+      "start_token": 28,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 6446645248,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p7_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p8",
+      "start_token": 32,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 8388608,
+      "source_bursts": 20,
+      "target_bursts": 4,
+      "commit_task": "move_p8_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p9",
+      "start_token": 36,
+      "tokens": 1,
+      "sizes": {
+        "elements": 16,
+        "fp16_payload": 64,
+        "k_payload": 16,
+        "v_payload": 8,
+        "metadata": 4,
+        "cold_payload": 24,
+        "cold_physical": 32
+      },
+      "cold_address": 2155872256,
+      "source_bursts": 17,
+      "target_bursts": 1,
+      "commit_task": "move_p9_commit",
+      "hot_valid_bytes": 64,
+      "hot_burst_padding_bytes": 480
+    }
+  ],
+  "done_task": "move_done",
+  "page_buffer_bytes": 256,
+  "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+}

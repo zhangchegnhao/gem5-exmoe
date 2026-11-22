@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/audit_hardware_contract.py",
+    "h6-paper-freeze-gate-v1",
+    "--require-paper-freeze"
+  ],
+  "cwd": "/home/ubuntu22/gem5",
+  "time_utc": "2026-11-04T19:16:00.291193+00:00",
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
+}

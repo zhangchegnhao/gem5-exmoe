@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "source": "results/h6-engineering-v6/acceptance.json",
+  "purpose": "bound declared engineering assumptions; not silicon or paper calibration",
+  "groups": {
+    "conversion_bandwidth_GBps": {
+      "parameter": "conversion/layout throughput",
+      "cases": {
+        "896": 325,
+        "1": 2624
+      },
+      "unit": "cycles",
+      "interpretation": "configured conversion bottleneck is visible; 896 GB/s hides conversion relative to 1 GB/s"
+    },
+    "pim_result_tail_cycles": {
+      "parameter": "PIM result-ready tail",
+      "cases": {
+        "1": 141,
+        "8": 230,
+        "32": 710
+      },
+      "unit": "cycles",
+      "interpretation": "completion increases with explicit tail; values are uncalibrated engineering assumptions"
+    },
+    "refresh_stack_count": {
+      "parameter": "synthetic refresh stress with 1/2/5 stacks",
+      "cases": {
+        "1": {
+          "cycles": 5316,
+          "refresh_commands": 4352
+        },
+        "2": {
+          "cycles": 5514,
+          "refresh_commands": 9216
+        },
+        "5": {
+          "cycles": 5241,
+          "refresh_commands": 21760
+        }
+      },
+      "unit": "cycles and commands",
+      "interpretation": "refresh work is observable and drains; nREFI/nRFC values are synthetic stress settings, not paper timings"
+    },
+    "cross_stack_host_bandwidth_GBps": {
+      "parameter": "GPU crossbar/host forwarding bandwidth",
+      "cases": {
+        "2560": 152,
+        "1": 484
+      },
+      "unit": "cycles",
+      "interpretation": "host path bottleneck is visible; no direct Stack link is assumed"
+    }
+  },
+  "preserved_invariants": {
+    "large_promotion": {
+      "requests": 234,
+      "read_bytes": 1184,
+      "write_bytes": 6304,
+      "complete_cycle": 881
+    },
+    "large_demotion": {
+      "requests": 234,
+      "read_bytes": 6304,
+      "write_bytes": 1184,
+      "complete_cycle": 788
+    },
+    "attacc_cycles": {
+      "bank": 273,
+      "bg": 822,
+      "buffer": 2094
+    }
+  },
+  "status": "engineering_sensitivity_recorded; Q1-Q5 remain open"
+}

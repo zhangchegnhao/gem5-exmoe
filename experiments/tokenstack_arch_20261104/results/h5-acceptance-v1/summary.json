@@ -1,0 +1,332 @@
+{
+  "stacks-2": {
+    "tasks": 72,
+    "requests": 72,
+    "read_bytes": 1024,
+    "write_bytes": 1024,
+    "complete_cycle": 129,
+    "tsv_bytes": 2048,
+    "command_count": 112,
+    "hardware_events": 72,
+    "resource_occupancy": {
+      "channel/s1/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s0/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s1/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "channel/s0/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "tsv/s1": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s1/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "tsv/s0": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s0/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s1/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s0/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "pim/s1/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  },
+  "stacks-5": {
+    "tasks": 180,
+    "requests": 180,
+    "read_bytes": 2560,
+    "write_bytes": 2560,
+    "complete_cycle": 129,
+    "tsv_bytes": 5120,
+    "command_count": 280,
+    "hardware_events": 180,
+    "resource_occupancy": {
+      "channel/s1/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s2/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s3/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s4/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s0/ch0": {
+        "busy_cycles": 32,
+        "bytes": 0
+      },
+      "channel/s1/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "channel/s2/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "channel/s3/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "channel/s4/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "channel/s0/ch15": {
+        "busy_cycles": 24,
+        "bytes": 0
+      },
+      "tsv/s3": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s3/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "tsv/s4": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s4/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "tsv/s0": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s0/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "tsv/s1": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s1/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "tsv/s2": {
+        "busy_cycles": 64,
+        "bytes": 1024
+      },
+      "channel/s2/ch0/pc0/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s3/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s4/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s0/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s1/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "channel/s2/ch15/pc1/data": {
+        "busy_cycles": 32,
+        "bytes": 512
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s2/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s3/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s4/d4/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s2/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s3/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s4/d5/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s4/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s2/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s3/d6/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s1/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s2/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s3/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      },
+      "pim/s4/d7/ch0": {
+        "busy_cycles": 8,
+        "bytes": 0
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  },
+  "remote-path": {
+    "tasks": 5,
+    "requests": 16,
+    "read_bytes": 256,
+    "write_bytes": 256,
+    "complete_cycle": 149,
+    "tsv_bytes": 512,
+    "command_count": 18,
+    "hardware_events": 16,
+    "resource_occupancy": {
+      "channel/s0/ch0": {
+        "busy_cycles": 9,
+        "bytes": 0
+      },
+      "tsv/s0": {
+        "busy_cycles": 16,
+        "bytes": 256
+      },
+      "channel/s0/ch0/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256
+      },
+      "ucie/s0": {
+        "busy_cycles": 1,
+        "bytes": 256
+      },
+      "gpu_crossbar": {
+        "busy_cycles": 1,
+        "bytes": 256
+      },
+      "ucie/s1": {
+        "busy_cycles": 1,
+        "bytes": 256
+      },
+      "channel/s1/ch0": {
+        "busy_cycles": 9,
+        "bytes": 0
+      },
+      "tsv/s1": {
+        "busy_cycles": 16,
+        "bytes": 256
+      },
+      "channel/s1/ch0/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  }
+}

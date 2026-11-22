@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "acceptance": "passed",
+  "cases": {
+    "single": {
+      "channels": 1,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 896,
+      "dram_ceiling_GBps_per_stack": 41.61248374512354,
+      "complete_cycle": 559,
+      "requests": 512,
+      "read_bytes": 16384,
+      "stack_bandwidth_GBps": {
+        "0": 38.11375970930814
+      }
+    },
+    "four": {
+      "channels": 4,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 896,
+      "dram_ceiling_GBps_per_stack": 166.44993498049416,
+      "complete_cycle": 560,
+      "requests": 2048,
+      "read_bytes": 65536,
+      "stack_bandwidth_GBps": {
+        "0": 152.1827976964518
+      }
+    },
+    "sixteen": {
+      "channels": 16,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 896,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 566,
+      "requests": 8192,
+      "read_bytes": 262144,
+      "stack_bandwidth_GBps": {
+        "0": 602.2782099647562
+      }
+    },
+    "limit448": {
+      "channels": 16,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 448,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 1017,
+      "requests": 8192,
+      "read_bytes": 262144,
+      "stack_bandwidth_GBps": {
+        "0": 335.1912161652429
+      }
+    },
+    "limit112": {
+      "channels": 16,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 112,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 3503,
+      "requests": 8192,
+      "read_bytes": 262144,
+      "stack_bandwidth_GBps": {
+        "0": 97.31357888668342
+      }
+    },
+    "limit16": {
+      "channels": 16,
+      "dies": 1,
+      "stacks": 1,
+      "tsv_budget_GBps": 16,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 26985,
+      "requests": 8192,
+      "read_bytes": 262144,
+      "stack_bandwidth_GBps": {
+        "0": 12.632553894387698
+      }
+    },
+    "four_dies": {
+      "channels": 16,
+      "dies": 4,
+      "stacks": 1,
+      "tsv_budget_GBps": 112,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 3401,
+      "requests": 8192,
+      "read_bytes": 262144,
+      "stack_bandwidth_GBps": {
+        "0": 100.2321278565281
+      }
+    },
+    "two_stacks": {
+      "channels": 16,
+      "dies": 1,
+      "stacks": 2,
+      "tsv_budget_GBps": 112,
+      "dram_ceiling_GBps_per_stack": 665.7997399219767,
+      "complete_cycle": 3503,
+      "requests": 16384,
+      "read_bytes": 524288,
+      "stack_bandwidth_GBps": {
+        "0": 97.31357888668342,
+        "1": 97.31357888668342
+      }
+    }
+  },
+  "model": "cycle-level fluid TSV byte rate with exclusive per-PC bursts",
+  "limits": "synthetic row-hit loads, large queues; not measured hardware bandwidth or paper calibration"
+}

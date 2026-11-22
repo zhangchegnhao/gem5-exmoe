@@ -1,0 +1,4 @@
+mode,trace_commands,read_requests,write_requests,pim_mac_all_bank,pim_mac_same_bank,pim_mac_per_bank,memory_system_cycles
+bank,153,0,0,32,0,0,273
+bg,345,0,0,0,128,0,822
+buffer,1273,0,0,0,0,1024,2094

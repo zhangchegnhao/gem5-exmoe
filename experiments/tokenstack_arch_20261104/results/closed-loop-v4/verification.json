@@ -1,0 +1,29 @@
+{
+  "build": {
+    "command": "cmake --build attacc_simulator/ramulator2/build -j2",
+    "passed": true,
+    "log": "build.log"
+  },
+  "closed_loop_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v experiments/tokenstack_arch_20261104/tests/test_closed_loop.py",
+    "passed": true,
+    "tests": 3,
+    "invalid_input_subcases": 11,
+    "log": "closed-loop-tests.log"
+  },
+  "existing_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=experiments/tokenstack_arch_20261104 python3 -m unittest -v experiments/tokenstack_arch_20261104/tests/test_tokenstack_model.py",
+    "passed": true,
+    "tests": 8,
+    "log": "existing-tests.log"
+  },
+  "attacc_regression": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 experiments/tokenstack_arch_20261104/scripts/verify_ramulator_regression.py closed-loop-baseline-regression-v1",
+    "passed": true,
+    "result": "../closed-loop-baseline-regression-v1/regression.json"
+  },
+  "patch_chain": {
+    "all_source_bytes_match": true,
+    "log": "patch-chain-verification.log"
+  }
+}

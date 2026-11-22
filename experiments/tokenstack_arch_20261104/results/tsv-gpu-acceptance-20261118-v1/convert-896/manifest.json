@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "kind": "promotion",
+  "tokens": 12,
+  "dim": 16,
+  "logical_bytes": 768,
+  "read_bytes": 384,
+  "write_bytes": 1920,
+  "pages": [
+    {
+      "page_id": "move_p0",
+      "start_token": 0,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 0,
+      "source_bursts": 4,
+      "target_bursts": 20,
+      "commit_task": "move_p0_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p1",
+      "start_token": 4,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 2147483648,
+      "source_bursts": 4,
+      "target_bursts": 20,
+      "commit_task": "move_p1_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    },
+    {
+      "page_id": "move_p2",
+      "start_token": 8,
+      "tokens": 4,
+      "sizes": {
+        "elements": 64,
+        "fp16_payload": 256,
+        "k_payload": 64,
+        "v_payload": 32,
+        "metadata": 16,
+        "cold_payload": 96,
+        "cold_physical": 128
+      },
+      "cold_address": 4294967296,
+      "source_bursts": 4,
+      "target_bursts": 20,
+      "commit_task": "move_p2_commit",
+      "hot_valid_bytes": 256,
+      "hot_burst_padding_bytes": 384
+    }
+  ],
+  "done_task": "move_done",
+  "page_buffer_bytes": 256,
+  "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+}

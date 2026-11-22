@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "engineering_acceptance": "passed",
+  "paper_fidelity_acceptance": "blocked_Q1_to_Q5",
+  "paper_spec_frozen": false,
+  "milestones": {
+    "H1": "engineering_implemented_and_verified",
+    "H2": "engineering_implemented_and_verified",
+    "H3": "engineering_implemented_and_verified",
+    "H4": "engineering_implemented_and_verified",
+    "H5": "engineering_implemented_and_verified",
+    "H0": "paper_evidence_open",
+    "H6": "engineering_release_verified; strict_paper_criteria_not_met"
+  },
+  "cases": 15,
+  "unit_tests": 55,
+  "clean_build_passed": true,
+  "clean_source_files_matched": 150,
+  "attacc_cycles": {
+    "bank": 273,
+    "bg": 822,
+    "buffer": 2094
+  },
+  "evidence": {
+    "results/h6-engineering-v6/acceptance.json": "95b6525824d3347512805945f26be83d4d3ff324978249ee65e748f83f27cfdd",
+    "results/h6-release-v3/manifest.json": "81f70c07806662341e315c4a553eddd3733f0b973d4774fcca5d1075a2216367",
+    "results/h6-release-v3/clean-tests.log": "26497635d94ddaace29f7ca4b675966fe9252370cf8c6ecd64b709a587aee5f3",
+    "results/h6-release-v3/ACCEPTANCE.md": "97ebf8dc825eea581c080ab2e8fac4d7854152f12a207794379695cf8e532246"
+  },
+  "next_task": "resolve Q1-Q5 evidence and calibrate declared engineering parameters"
+}

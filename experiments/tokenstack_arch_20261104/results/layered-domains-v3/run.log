@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "model": "two independent HBM3-PIM timing domains; Capacity RD/WR subset, Compute PIM; one conservative shared Stack issue path",
+  "limitations": "one Channel and DMA, serial jobs/link stages, synthetic domain switch guard; PIM issue != arithmetic completion",
+  "scenarios": {
+    "no-migration": {
+      "stop_cycle": 42,
+      "workload_event_horizon": 42,
+      "tck_ps": 769,
+      "requests": 12,
+      "logical_migration_bytes": 0,
+      "physical_migration_read_bytes": 0,
+      "physical_migration_write_bytes": 0,
+      "per_layer": {
+        "capacity": {
+          "reads": 0,
+          "writes": 0,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 0,
+          "writes": 0,
+          "pim": 12
+        }
+      },
+      "shared_link_block_cycles": 0,
+      "domain_switch_stall_cycles": 0,
+      "refresh_commands": 0,
+      "job_order": [
+        "attention-0",
+        "attention-1"
+      ],
+      "conservation_passed": true
+    },
+    "with-migration": {
+      "stop_cycle": 4148,
+      "workload_event_horizon": 4148,
+      "tck_ps": 769,
+      "requests": 716,
+      "logical_migration_bytes": 16384,
+      "physical_migration_read_bytes": 11264,
+      "physical_migration_write_bytes": 11264,
+      "per_layer": {
+        "capacity": {
+          "reads": 96,
+          "writes": 96,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 256,
+          "writes": 256,
+          "pim": 12
+        }
+      },
+      "shared_link_block_cycles": 34,
+      "domain_switch_stall_cycles": 94,
+      "refresh_commands": 0,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "conservation_passed": true
+    },
+    "slow-link": {
+      "stop_cycle": 5068,
+      "workload_event_horizon": 5068,
+      "tck_ps": 769,
+      "requests": 716,
+      "logical_migration_bytes": 16384,
+      "physical_migration_read_bytes": 11264,
+      "physical_migration_write_bytes": 11264,
+      "per_layer": {
+        "capacity": {
+          "reads": 96,
+          "writes": 96,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 256,
+          "writes": 256,
+          "pim": 12
+        }
+      },
+      "shared_link_block_cycles": 1048,
+      "domain_switch_stall_cycles": 0,
+      "refresh_commands": 0,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "conservation_passed": true
+    },
+    "capacity-slower": {
+      "stop_cycle": 4155,
+      "workload_event_horizon": 4155,
+      "tck_ps": 769,
+      "requests": 716,
+      "logical_migration_bytes": 16384,
+      "physical_migration_read_bytes": 11264,
+      "physical_migration_write_bytes": 11264,
+      "per_layer": {
+        "capacity": {
+          "reads": 96,
+          "writes": 96,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 256,
+          "writes": 256,
+          "pim": 12
+        }
+      },
+      "shared_link_block_cycles": 34,
+      "domain_switch_stall_cycles": 94,
+      "refresh_commands": 0,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "conservation_passed": true
+    },
+    "refresh-stress": {
+      "stop_cycle": 13351,
+      "workload_event_horizon": 13351,
+      "tck_ps": 769,
+      "requests": 716,
+      "logical_migration_bytes": 16384,
+      "physical_migration_read_bytes": 11264,
+      "physical_migration_write_bytes": 11264,
+      "per_layer": {
+        "capacity": {
+          "reads": 96,
+          "writes": 96,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 256,
+          "writes": 256,
+          "pim": 12
+        }
+      },
+      "shared_link_block_cycles": 8372,
+      "domain_switch_stall_cycles": 64,
+      "refresh_commands": 8,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "conservation_passed": true
+    },
+    "layer-isolation": {
+      "stop_cycle": 509,
+      "workload_event_horizon": 509,
+      "tck_ps": 769,
+      "requests": 12,
+      "logical_migration_bytes": 0,
+      "physical_migration_read_bytes": 0,
+      "physical_migration_write_bytes": 0,
+      "per_layer": {
+        "capacity": {
+          "reads": 4,
+          "writes": 0,
+          "pim": 0
+        },
+        "compute": {
+          "reads": 2,
+          "writes": 0,
+          "pim": 6
+        }
+      },
+      "shared_link_block_cycles": 0,
+      "domain_switch_stall_cycles": 256,
+      "refresh_commands": 0,
+      "job_order": [
+        "capacity-cold",
+        "compute-cold",
+        "capacity-hit",
+        "capacity-conflict",
+        "compute-hit",
+        "compute-pim",
+        "capacity-after-pim"
+      ],
+      "conservation_passed": true,
+      "isolation": {
+        "capacity_cold_activations": 2,
+        "capacity_row_conflicts": 1,
+        "compute_normal_activations": 1,
+        "compute_pim_broadcast_isolated": true
+      }
+    }
+  }
+}
+/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/layered-domains-v3

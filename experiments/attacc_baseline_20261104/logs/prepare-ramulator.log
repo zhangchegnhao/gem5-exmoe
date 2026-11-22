@@ -1,0 +1,36 @@
+警告：您正丢下 21 个提交，未和任何分支关联：
+
+  0eafaa4 Added payload to Request class
+  b526286 Merge pull request #35 from kirbyydoge/main
+  a50fd5d Added uint definition
+  e6b66f0 Fix LPDDR5 state update (#32)
+ ... 及其它 17 个。
+
+如果您想要通过创建新分支保存它，这可能是一个好时候。
+如下操作：
+
+ git branch <新分支名> 0eafaa4
+
+HEAD 目前位于 b7c7027 Fix typo in README
+patching file src/CMakeLists.txt
+patching file src/addr_mapper/CMakeLists.txt
+patching file src/addr_mapper/impl/linear_mappers.cpp
+patching file src/base/base.h
+patching file src/base/request.h
+patching file src/dram/CMakeLists.txt
+patching file src/dram_controller/CMakeLists.txt
+patching file src/dram_controller/controller.h
+patching file src/dram_controller/impl/dummy_controller.cpp
+patching file src/dram_controller/impl/generic_dram_controller.cpp
+patching file src/dram_controller/impl/scheduler/generic_scheduler.cpp
+patching file src/dram/impl/HBM3.cpp
+patching file src/dram/lambdas/action.h
+patching file src/dram/lambdas/preq.h
+patching file src/frontend/CMakeLists.txt
+patching file src/frontend/impl/memory_trace/loadstore_trace.cpp
+patching file src/main.cpp
+patching file src/memory_system/CMakeLists.txt
+patching file src/memory_system/impl/dummy_memory_system.cpp
+patching file src/memory_system/impl/generic_DRAM_system.cpp
+patching file src/memory_system/memory_system.h
+Prepared AttAcc c60005143a6b492d7ef83231723386478b59a506 on Ramulator b7c70275f04126c647edb989270cc429776955d1

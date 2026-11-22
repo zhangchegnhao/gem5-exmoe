@@ -1,0 +1,72 @@
+{
+  "tasks": 78,
+  "requests": 73,
+  "read_bytes": 0,
+  "write_bytes": 0,
+  "complete_cycle": 702,
+  "buffer_peak_bytes_by_stack_head_group": {},
+  "tsv_bytes": 360,
+  "command_count": 92,
+  "hardware_events": 73,
+  "resource_occupancy": {
+    "coordinator/s0": {
+      "busy_cycles": 36,
+      "bytes": 360,
+      "peak_bytes_per_cycle": 152.0,
+      "utilization": 0.051209103840682786,
+      "effective_GBps": 0.6659181253664862
+    },
+    "tsv/s0": {
+      "busy_cycles": 4,
+      "bytes": 360,
+      "peak_bytes_per_cycle": 152.0,
+      "utilization": 0.005689900426742532,
+      "effective_GBps": 0.6659181253664862,
+      "bandwidth_utilization": 0.0007432121934893819
+    },
+    "channel/s0/ch0": {
+      "busy_cycles": 92,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.13086770981507823,
+      "effective_GBps": 0.0
+    },
+    "pim/s0/d4/ch0": {
+      "busy_cycles": 672,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.9559032716927454,
+      "effective_GBps": 0.0
+    },
+    "pim/s0/d5/ch0": {
+      "busy_cycles": 576,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.8193456614509246,
+      "effective_GBps": 0.0
+    },
+    "pim/s0/d6/ch0": {
+      "busy_cycles": 576,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.8193456614509246,
+      "effective_GBps": 0.0
+    },
+    "pim/s0/d7/ch0": {
+      "busy_cycles": 512,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.7283072546230441,
+      "effective_GBps": 0.0
+    }
+  },
+  "refresh_commands": 0,
+  "cycles_per_second": 1300390117.0351105,
+  "simulation_end_cycle": 703,
+  "maintenance_drain_cycles": 1,
+  "request_latency_cycles": {
+    "mean": 121.12328767123287,
+    "p50": 128,
+    "p95": 162
+  }
+}

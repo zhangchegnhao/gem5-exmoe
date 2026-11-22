@@ -1,0 +1,157 @@
+--- a/src/frontend/impl/memory_trace/pim_loadstore_trace.cpp
++++ b/src/frontend/impl/memory_trace/pim_loadstore_trace.cpp
+@@ -1,6 +1,7 @@
+ #include <filesystem>
+ #include <iostream>
+ #include <fstream>
++#include <cmath>
+ 
+ #include "frontend/frontend.h"
+ #include "base/exception.h"
+@@ -25,11 +26,28 @@
+     size_t m_trace_count = 0;
+ 
+     Logger_t m_logger;
++    std::ofstream m_completion_trace;
++    int m_tck_ps = 0;
+ 
+   public:
+     void init() override {
+       std::string trace_path_str = param<std::string>("path").desc("Path to the load store trace file.").required();
+       m_clock_ratio = param<uint>("clock_ratio").required();
++
++      std::string completion_path = param<std::string>("completion_path")
++        .desc("Optional PIM request completion trace path.")
++        .default_val("");
++      if (!completion_path.empty()) {
++        fs::path path(completion_path);
++        if (!path.parent_path().empty()) {
++          fs::create_directories(path.parent_path());
++        }
++        m_completion_trace.open(path, std::ios::out | std::ios::trunc);
++        if (!m_completion_trace.is_open()) {
++          throw ConfigurationError("Completion trace {} cannot be opened!", completion_path);
++        }
++        m_completion_trace << "schema_version,source_id,type_id,address,channel,arrive_cycle,retire_cycle,tck_ps,event\n";
++      }
+ 
+       m_logger = Logging::create_logger("LoadStoreTrace");
+       m_logger->info("Loading trace file {} ...", trace_path_str);
+@@ -37,6 +55,16 @@
+       m_logger->info("Loaded {} lines.", m_trace.size());
+     };
+ 
++    void setup(IFrontEnd* frontend, IMemorySystem* memory_system) override {
++      m_tck_ps = static_cast<int>(std::lround(memory_system->get_tCK() * 1000.0f));
++    }
++
++    void finalize() override {
++      if (m_completion_trace.is_open()) {
++        m_completion_trace.flush();
++      }
++      IFrontEnd::finalize();
++    }
+ 
+     void tick() override {
+       if (is_finished()) {
+@@ -46,21 +74,21 @@
+       while(!req_full && !is_finished()) {
+         const Trace& t = m_trace[m_curr_trace_idx];
+         bool request_sent = false;
+-        switch (t.req_type) {
+-          case  0: request_sent = m_memory_system->send({t.addr, Request::Type::Read}); break;
+-          case  1: request_sent = m_memory_system->send({t.addr, Request::Type::Write}); break;
+-          case  4: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_MAC_AB}); break;
+-          case  5: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_MAC_SB}); break;
+-          case  6: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_MAC_PB}); break;
+-          case  7: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_WR_GB}); break;
+-          case  8: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_MV_SB}); break;
+-          case  9: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_MV_GB}); break;
+-          case 10: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_SFM}); break;
+-          case 11: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_SET_MODEL}); break;
+-          case 12: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_SET_HEAD}); break;
+-          case 13: request_sent = m_memory_system->send({t.addr, Request::Type::PIM_BARRIER}); break;
+-          default:;
++        Request request{t.addr, t.req_type};
++        request.source_id = static_cast<int>(m_trace_count);
++        if (m_completion_trace.is_open()) {
++          request.callback = [this](Request& completed) {
++            m_completion_trace << "1," << completed.source_id << ","
++                               << completed.type_id << ","
++                               << completed.addr << ","
++                               << completed.addr_vec[0] << ","
++                               << completed.arrive << ","
++                               << completed.depart << "," << m_tck_ps << ","
++                               << (completed.type_id == Request::Type::PIM_BARRIER
++                                   ? "barrier_removed" : "final_command_issued") << "\n";
++          };
+         }
++        request_sent = m_memory_system->send(request);
+         if (request_sent) {
+           m_curr_trace_idx = (m_curr_trace_idx + 1) % m_trace_length;
+           m_trace_count++;
+--- a/src/dram_controller/impl/hbm3_pim_controller.cpp
++++ b/src/dram_controller/impl/hbm3_pim_controller.cpp
+@@ -114,6 +114,8 @@
+       ReqBuffer::iterator req_it;
+       ReqBuffer* buffer = nullptr;
+       bool request_found = schedule_request(req_it, buffer);
++      // Save the command before remove() invalidates the request iterator.
++      const int first_command = request_found ? req_it->command : -1;
+ 
+       // 3. Update all plugins
+       for (auto plugin : m_plugins) {
+@@ -132,6 +134,9 @@
+             pending.push_back(*req_it);
+           } else if (req_it->type_id == Request::Type::Write) {
+             // TODO: Add code to update statistics
++          } else if (req_it->callback) {
++            req_it->depart = m_clk;
++            req_it->callback(*req_it);
+           }
+           buffer->remove(req_it);
+         } else {
+@@ -148,7 +153,9 @@
+       ReqBuffer::iterator sec_req_it;
+       ReqBuffer* sec_buffer = nullptr;
+       bool sec_request_found = false;
+-      sec_request_found = schedule_sec_request(sec_req_it, buffer, req_it->command);
++      if (request_found) {
++        sec_request_found = schedule_sec_request(sec_req_it, sec_buffer, first_command);
++      }
+       for (auto plugin : m_plugins) {
+         plugin->update(sec_request_found, sec_req_it);
+       }
+@@ -160,13 +167,16 @@
+             sec_req_it->depart = m_clk + m_dram->m_read_latency;
+             pending.push_back(*sec_req_it);
+           } else if (sec_req_it->type_id == Request::Type::Write) {
+-          }
+-          buffer->remove(sec_req_it);
++          } else if (sec_req_it->callback) {
++            sec_req_it->depart = m_clk;
++            sec_req_it->callback(*sec_req_it);
++          }
++          sec_buffer->remove(sec_req_it);
+         } else {
+           if (!is_pim) {
+             if (m_dram->m_command_meta(sec_req_it->command).is_opening) {
+               m_active_buffer.enqueue(*sec_req_it);
+-              buffer->remove(sec_req_it);
++              sec_buffer->remove(sec_req_it);
+             }
+           }
+         }
+--- a/src/dram_controller/impl/scheduler/pim_scheduler.cpp
++++ b/src/dram_controller/impl/scheduler/pim_scheduler.cpp
+@@ -75,6 +75,10 @@
+       auto candidate = buffer.begin();
+ 
+       if (candidate->type_id == Request::Type::PIM_BARRIER) {
++        if (candidate->callback) {
++          candidate->depart = cast_parent<IDRAMController>()->get_clk();
++          candidate->callback(*candidate);
++        }
+         buffer.remove(candidate);
+         if (buffer.size() == 0) {
+           return buffer.end();

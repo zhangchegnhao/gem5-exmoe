@@ -1,0 +1,18 @@
+{
+  "sources/ramulator-retirement-v1.patch": "971a91cfdd3e81f39e1a3dd852209754d23cdf39458ecd469ab6c1df254a7b58",
+  "sources/tokenstack-closed-loop-v1.patch": "2acd5e081b25cd52184b4cddff24083f0d6239f6c2dd2ae4b701c281ef82fade",
+  "sources/scripts/run_layered.py": "c1ee6381c3b3b3ffd744b6b328cb435166b1f9c7b1b2abc99de5545e8789bf1e",
+  "sources/scripts/run_closed_loop.py": "30bb2ea1ffb9a5453470163012154b7ae9b9449662074ec119c261060efa570b",
+  "sources/config/tokenstack_layered.yaml": "1c1e9821318e1b36163fb91b634cf06c2bde9790e79c3e53032391d446934a82",
+  "sources/tests/test_layered.py": "1a8e9f1663b078b56c6a2d5f61e4a6e36656d222b31769f2de7d1e6fc17ffdf6",
+  "sources/src/memory_system/tokenstack_memory.h": "a37ab6ebc4743b3fb44ff3bf0dba03b48462eab82ed55fdde5ac6547efbc9341",
+  "sources/src/memory_system/CMakeLists.txt": "83e2de2816cb041dda4a06237fe03b8575ea5f41a8adb7cc555bcd683187166b",
+  "sources/src/memory_system/impl/PIM_DRAM_system.cpp": "a952b3bdba9f32dfe2b8e22f5923355bb9fefeba42811c2a291a65d9b7814276",
+  "sources/src/memory_system/impl/tokenstack_memory.cpp": "d447a0523d25b9fa6bb58a21bf6e20bbad21a52bdaa94d04ca0857b9c25251e4",
+  "sources/src/dram_controller/tokenstack_controller.h": "44cd2951a537739d06c8b577c5f369da7a7634782ce4711b70cdd336bb64a5b5",
+  "sources/src/dram_controller/impl/hbm3_pim_controller.cpp": "8aa1ccf0b6962c7d203eb88f9a998718f416f45dc3e030c1be5189530820b02d",
+  "sources/src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp": "05a3403d4d1c11102361ec3a6a67502a1559234e1218ddd4ed148bdb873bccd1",
+  "sources/src/frontend/impl/memory_trace/tokenstack_trace.cpp": "cd913b49f053b0da729a291276476a6b76f11ef8f0dd3dc5a646c9cd8e6f3a05",
+  "sources/traces/closed_loop_kv_v1.yaml": "00ab315a6d18529a38f3361d24c38d59a187f24f9abbb16a2bec44e1ee46c42d",
+  "sources/traces/layer_isolation_v1.yaml": "52fac66a22ca38f12f76e5b28893dfbca4ff63900d9bc9550644b9f0074d0c96"
+}

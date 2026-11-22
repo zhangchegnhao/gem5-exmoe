@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/audit_hardware_contract.py",
+    "h0-contract-v1"
+  ],
+  "cwd": "/home/ubuntu22/gem5",
+  "time_utc": "2026-11-04T16:39:17.967512+00:00",
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
+}

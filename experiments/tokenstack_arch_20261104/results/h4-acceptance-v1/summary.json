@@ -1,0 +1,128 @@
+{
+  "tail-1": {
+    "tasks": 78,
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 141,
+    "tsv_bytes": 360,
+    "command_count": 92,
+    "hardware_events": 73,
+    "resource_occupancy": {
+      "coordinator/s0": {
+        "busy_cycles": 36,
+        "bytes": 360
+      },
+      "tsv/s0": {
+        "busy_cycles": 4,
+        "bytes": 360
+      },
+      "channel/s0/ch0": {
+        "busy_cycles": 92,
+        "bytes": 0
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 52,
+        "bytes": 0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 18,
+        "bytes": 0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 18,
+        "bytes": 0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 16,
+        "bytes": 0
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  },
+  "tail-8": {
+    "tasks": 78,
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 230,
+    "tsv_bytes": 360,
+    "command_count": 92,
+    "hardware_events": 73,
+    "resource_occupancy": {
+      "coordinator/s0": {
+        "busy_cycles": 36,
+        "bytes": 360
+      },
+      "tsv/s0": {
+        "busy_cycles": 4,
+        "bytes": 360
+      },
+      "channel/s0/ch0": {
+        "busy_cycles": 92,
+        "bytes": 0
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 192,
+        "bytes": 0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 144,
+        "bytes": 0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 144,
+        "bytes": 0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 128,
+        "bytes": 0
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  },
+  "tail-32": {
+    "tasks": 78,
+    "requests": 73,
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "complete_cycle": 710,
+    "tsv_bytes": 360,
+    "command_count": 92,
+    "hardware_events": 73,
+    "resource_occupancy": {
+      "coordinator/s0": {
+        "busy_cycles": 36,
+        "bytes": 360
+      },
+      "tsv/s0": {
+        "busy_cycles": 4,
+        "bytes": 360
+      },
+      "channel/s0/ch0": {
+        "busy_cycles": 92,
+        "bytes": 0
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 672,
+        "bytes": 0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 576,
+        "bytes": 0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 576,
+        "bytes": 0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 512,
+        "bytes": 0
+      }
+    },
+    "refresh_commands": 0,
+    "cycles_per_second": 1300390117.0351105
+  }
+}

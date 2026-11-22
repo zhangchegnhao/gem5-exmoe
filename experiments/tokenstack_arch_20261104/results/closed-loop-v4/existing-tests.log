@@ -1,0 +1,13 @@
+test_address_mapping_keeps_domains_separate (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_dma_serializes_and_demotes_with_compression (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_invalid_cross_stack_migration_is_rejected (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_k8v4_accounts_for_compressed_source_on_promotion (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_retirement_parser_checks_ids_and_schema (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_retirement_replay_does_not_resum_queue_latency (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_shared_arbiter_conserves_bytes_and_exposes_contention (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+test_topology_has_capacity_and_compute_layers (experiments.tokenstack_arch_20261104.tests.test_tokenstack_model.TokenStackModelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK

@@ -1,0 +1,1102 @@
+schema_version: 1
+tasks:
+- id: s0_d0_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 0
+- id: s0_d0_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d0_b0_wr
+  requests:
+  - type: 0
+    address: 0
+- id: s0_d0_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 2147483616
+- id: s0_d0_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d0_b1_wr
+  requests:
+  - type: 0
+    address: 2147483616
+- id: s0_d1_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 2147483648
+- id: s0_d1_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d1_b0_wr
+  requests:
+  - type: 0
+    address: 2147483648
+- id: s0_d1_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 4294967264
+- id: s0_d1_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d1_b1_wr
+  requests:
+  - type: 0
+    address: 4294967264
+- id: s0_d2_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 4294967296
+- id: s0_d2_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d2_b0_wr
+  requests:
+  - type: 0
+    address: 4294967296
+- id: s0_d2_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 6442450912
+- id: s0_d2_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d2_b1_wr
+  requests:
+  - type: 0
+    address: 6442450912
+- id: s0_d3_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 6442450944
+- id: s0_d3_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d3_b0_wr
+  requests:
+  - type: 0
+    address: 6442450944
+- id: s0_d3_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 8589934560
+- id: s0_d3_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d3_b1_wr
+  requests:
+  - type: 0
+    address: 8589934560
+- id: s0_d4_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 8589934592
+- id: s0_d4_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d4_b0_wr
+  requests:
+  - type: 0
+    address: 8589934592
+- id: s0_d4_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 9663676384
+- id: s0_d4_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d4_b1_wr
+  requests:
+  - type: 0
+    address: 9663676384
+- id: pim_4
+  source: pim
+  depends_on:
+  - s0_d4_b1_rd
+  requests:
+  - type: 4
+    address: 8589934592
+- id: s0_d5_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 9663676416
+- id: s0_d5_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d5_b0_wr
+  requests:
+  - type: 0
+    address: 9663676416
+- id: s0_d5_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 10737418208
+- id: s0_d5_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d5_b1_wr
+  requests:
+  - type: 0
+    address: 10737418208
+- id: pim_5
+  source: pim
+  depends_on:
+  - s0_d5_b1_rd
+  requests:
+  - type: 4
+    address: 9663676416
+- id: s0_d6_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 10737418240
+- id: s0_d6_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d6_b0_wr
+  requests:
+  - type: 0
+    address: 10737418240
+- id: s0_d6_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 11811160032
+- id: s0_d6_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d6_b1_wr
+  requests:
+  - type: 0
+    address: 11811160032
+- id: pim_6
+  source: pim
+  depends_on:
+  - s0_d6_b1_rd
+  requests:
+  - type: 4
+    address: 10737418240
+- id: s0_d7_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 11811160064
+- id: s0_d7_b0_rd
+  source: gpu
+  depends_on:
+  - s0_d7_b0_wr
+  requests:
+  - type: 0
+    address: 11811160064
+- id: s0_d7_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 12884901856
+- id: s0_d7_b1_rd
+  source: gpu
+  depends_on:
+  - s0_d7_b1_wr
+  requests:
+  - type: 0
+    address: 12884901856
+- id: pim_7
+  source: pim
+  depends_on:
+  - s0_d7_b1_rd
+  requests:
+  - type: 4
+    address: 11811160064
+- id: s1_d0_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 12884901888
+- id: s1_d0_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d0_b0_wr
+  requests:
+  - type: 0
+    address: 12884901888
+- id: s1_d0_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 15032385504
+- id: s1_d0_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d0_b1_wr
+  requests:
+  - type: 0
+    address: 15032385504
+- id: s1_d1_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 15032385536
+- id: s1_d1_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d1_b0_wr
+  requests:
+  - type: 0
+    address: 15032385536
+- id: s1_d1_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 17179869152
+- id: s1_d1_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d1_b1_wr
+  requests:
+  - type: 0
+    address: 17179869152
+- id: s1_d2_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 17179869184
+- id: s1_d2_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d2_b0_wr
+  requests:
+  - type: 0
+    address: 17179869184
+- id: s1_d2_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 19327352800
+- id: s1_d2_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d2_b1_wr
+  requests:
+  - type: 0
+    address: 19327352800
+- id: s1_d3_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 19327352832
+- id: s1_d3_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d3_b0_wr
+  requests:
+  - type: 0
+    address: 19327352832
+- id: s1_d3_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 21474836448
+- id: s1_d3_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d3_b1_wr
+  requests:
+  - type: 0
+    address: 21474836448
+- id: s1_d4_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 21474836480
+- id: s1_d4_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d4_b0_wr
+  requests:
+  - type: 0
+    address: 21474836480
+- id: s1_d4_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 22548578272
+- id: s1_d4_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d4_b1_wr
+  requests:
+  - type: 0
+    address: 22548578272
+- id: pim_12
+  source: pim
+  depends_on:
+  - s1_d4_b1_rd
+  requests:
+  - type: 4
+    address: 21474836480
+- id: s1_d5_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 22548578304
+- id: s1_d5_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d5_b0_wr
+  requests:
+  - type: 0
+    address: 22548578304
+- id: s1_d5_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 23622320096
+- id: s1_d5_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d5_b1_wr
+  requests:
+  - type: 0
+    address: 23622320096
+- id: pim_13
+  source: pim
+  depends_on:
+  - s1_d5_b1_rd
+  requests:
+  - type: 4
+    address: 22548578304
+- id: s1_d6_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 23622320128
+- id: s1_d6_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d6_b0_wr
+  requests:
+  - type: 0
+    address: 23622320128
+- id: s1_d6_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 24696061920
+- id: s1_d6_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d6_b1_wr
+  requests:
+  - type: 0
+    address: 24696061920
+- id: pim_14
+  source: pim
+  depends_on:
+  - s1_d6_b1_rd
+  requests:
+  - type: 4
+    address: 23622320128
+- id: s1_d7_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 24696061952
+- id: s1_d7_b0_rd
+  source: gpu
+  depends_on:
+  - s1_d7_b0_wr
+  requests:
+  - type: 0
+    address: 24696061952
+- id: s1_d7_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 25769803744
+- id: s1_d7_b1_rd
+  source: gpu
+  depends_on:
+  - s1_d7_b1_wr
+  requests:
+  - type: 0
+    address: 25769803744
+- id: pim_15
+  source: pim
+  depends_on:
+  - s1_d7_b1_rd
+  requests:
+  - type: 4
+    address: 24696061952
+- id: s2_d0_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 25769803776
+- id: s2_d0_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d0_b0_wr
+  requests:
+  - type: 0
+    address: 25769803776
+- id: s2_d0_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 27917287392
+- id: s2_d0_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d0_b1_wr
+  requests:
+  - type: 0
+    address: 27917287392
+- id: s2_d1_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 27917287424
+- id: s2_d1_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d1_b0_wr
+  requests:
+  - type: 0
+    address: 27917287424
+- id: s2_d1_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 30064771040
+- id: s2_d1_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d1_b1_wr
+  requests:
+  - type: 0
+    address: 30064771040
+- id: s2_d2_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 30064771072
+- id: s2_d2_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d2_b0_wr
+  requests:
+  - type: 0
+    address: 30064771072
+- id: s2_d2_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 32212254688
+- id: s2_d2_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d2_b1_wr
+  requests:
+  - type: 0
+    address: 32212254688
+- id: s2_d3_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 32212254720
+- id: s2_d3_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d3_b0_wr
+  requests:
+  - type: 0
+    address: 32212254720
+- id: s2_d3_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 34359738336
+- id: s2_d3_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d3_b1_wr
+  requests:
+  - type: 0
+    address: 34359738336
+- id: s2_d4_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 34359738368
+- id: s2_d4_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d4_b0_wr
+  requests:
+  - type: 0
+    address: 34359738368
+- id: s2_d4_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 35433480160
+- id: s2_d4_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d4_b1_wr
+  requests:
+  - type: 0
+    address: 35433480160
+- id: pim_20
+  source: pim
+  depends_on:
+  - s2_d4_b1_rd
+  requests:
+  - type: 4
+    address: 34359738368
+- id: s2_d5_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 35433480192
+- id: s2_d5_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d5_b0_wr
+  requests:
+  - type: 0
+    address: 35433480192
+- id: s2_d5_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 36507221984
+- id: s2_d5_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d5_b1_wr
+  requests:
+  - type: 0
+    address: 36507221984
+- id: pim_21
+  source: pim
+  depends_on:
+  - s2_d5_b1_rd
+  requests:
+  - type: 4
+    address: 35433480192
+- id: s2_d6_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 36507222016
+- id: s2_d6_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d6_b0_wr
+  requests:
+  - type: 0
+    address: 36507222016
+- id: s2_d6_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 37580963808
+- id: s2_d6_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d6_b1_wr
+  requests:
+  - type: 0
+    address: 37580963808
+- id: pim_22
+  source: pim
+  depends_on:
+  - s2_d6_b1_rd
+  requests:
+  - type: 4
+    address: 36507222016
+- id: s2_d7_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 37580963840
+- id: s2_d7_b0_rd
+  source: gpu
+  depends_on:
+  - s2_d7_b0_wr
+  requests:
+  - type: 0
+    address: 37580963840
+- id: s2_d7_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 38654705632
+- id: s2_d7_b1_rd
+  source: gpu
+  depends_on:
+  - s2_d7_b1_wr
+  requests:
+  - type: 0
+    address: 38654705632
+- id: pim_23
+  source: pim
+  depends_on:
+  - s2_d7_b1_rd
+  requests:
+  - type: 4
+    address: 37580963840
+- id: s3_d0_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 38654705664
+- id: s3_d0_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d0_b0_wr
+  requests:
+  - type: 0
+    address: 38654705664
+- id: s3_d0_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 40802189280
+- id: s3_d0_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d0_b1_wr
+  requests:
+  - type: 0
+    address: 40802189280
+- id: s3_d1_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 40802189312
+- id: s3_d1_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d1_b0_wr
+  requests:
+  - type: 0
+    address: 40802189312
+- id: s3_d1_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 42949672928
+- id: s3_d1_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d1_b1_wr
+  requests:
+  - type: 0
+    address: 42949672928
+- id: s3_d2_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 42949672960
+- id: s3_d2_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d2_b0_wr
+  requests:
+  - type: 0
+    address: 42949672960
+- id: s3_d2_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 45097156576
+- id: s3_d2_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d2_b1_wr
+  requests:
+  - type: 0
+    address: 45097156576
+- id: s3_d3_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 45097156608
+- id: s3_d3_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d3_b0_wr
+  requests:
+  - type: 0
+    address: 45097156608
+- id: s3_d3_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 47244640224
+- id: s3_d3_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d3_b1_wr
+  requests:
+  - type: 0
+    address: 47244640224
+- id: s3_d4_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 47244640256
+- id: s3_d4_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d4_b0_wr
+  requests:
+  - type: 0
+    address: 47244640256
+- id: s3_d4_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 48318382048
+- id: s3_d4_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d4_b1_wr
+  requests:
+  - type: 0
+    address: 48318382048
+- id: pim_28
+  source: pim
+  depends_on:
+  - s3_d4_b1_rd
+  requests:
+  - type: 4
+    address: 47244640256
+- id: s3_d5_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 48318382080
+- id: s3_d5_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d5_b0_wr
+  requests:
+  - type: 0
+    address: 48318382080
+- id: s3_d5_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 49392123872
+- id: s3_d5_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d5_b1_wr
+  requests:
+  - type: 0
+    address: 49392123872
+- id: pim_29
+  source: pim
+  depends_on:
+  - s3_d5_b1_rd
+  requests:
+  - type: 4
+    address: 48318382080
+- id: s3_d6_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 49392123904
+- id: s3_d6_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d6_b0_wr
+  requests:
+  - type: 0
+    address: 49392123904
+- id: s3_d6_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 50465865696
+- id: s3_d6_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d6_b1_wr
+  requests:
+  - type: 0
+    address: 50465865696
+- id: pim_30
+  source: pim
+  depends_on:
+  - s3_d6_b1_rd
+  requests:
+  - type: 4
+    address: 49392123904
+- id: s3_d7_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 50465865728
+- id: s3_d7_b0_rd
+  source: gpu
+  depends_on:
+  - s3_d7_b0_wr
+  requests:
+  - type: 0
+    address: 50465865728
+- id: s3_d7_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 51539607520
+- id: s3_d7_b1_rd
+  source: gpu
+  depends_on:
+  - s3_d7_b1_wr
+  requests:
+  - type: 0
+    address: 51539607520
+- id: pim_31
+  source: pim
+  depends_on:
+  - s3_d7_b1_rd
+  requests:
+  - type: 4
+    address: 50465865728
+- id: s4_d0_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 51539607552
+- id: s4_d0_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d0_b0_wr
+  requests:
+  - type: 0
+    address: 51539607552
+- id: s4_d0_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 53687091168
+- id: s4_d0_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d0_b1_wr
+  requests:
+  - type: 0
+    address: 53687091168
+- id: s4_d1_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 53687091200
+- id: s4_d1_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d1_b0_wr
+  requests:
+  - type: 0
+    address: 53687091200
+- id: s4_d1_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 55834574816
+- id: s4_d1_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d1_b1_wr
+  requests:
+  - type: 0
+    address: 55834574816
+- id: s4_d2_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 55834574848
+- id: s4_d2_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d2_b0_wr
+  requests:
+  - type: 0
+    address: 55834574848
+- id: s4_d2_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 57982058464
+- id: s4_d2_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d2_b1_wr
+  requests:
+  - type: 0
+    address: 57982058464
+- id: s4_d3_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 57982058496
+- id: s4_d3_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d3_b0_wr
+  requests:
+  - type: 0
+    address: 57982058496
+- id: s4_d3_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 60129542112
+- id: s4_d3_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d3_b1_wr
+  requests:
+  - type: 0
+    address: 60129542112
+- id: s4_d4_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 60129542144
+- id: s4_d4_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d4_b0_wr
+  requests:
+  - type: 0
+    address: 60129542144
+- id: s4_d4_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 61203283936
+- id: s4_d4_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d4_b1_wr
+  requests:
+  - type: 0
+    address: 61203283936
+- id: pim_36
+  source: pim
+  depends_on:
+  - s4_d4_b1_rd
+  requests:
+  - type: 4
+    address: 60129542144
+- id: s4_d5_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 61203283968
+- id: s4_d5_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d5_b0_wr
+  requests:
+  - type: 0
+    address: 61203283968
+- id: s4_d5_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 62277025760
+- id: s4_d5_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d5_b1_wr
+  requests:
+  - type: 0
+    address: 62277025760
+- id: pim_37
+  source: pim
+  depends_on:
+  - s4_d5_b1_rd
+  requests:
+  - type: 4
+    address: 61203283968
+- id: s4_d6_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 62277025792
+- id: s4_d6_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d6_b0_wr
+  requests:
+  - type: 0
+    address: 62277025792
+- id: s4_d6_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 63350767584
+- id: s4_d6_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d6_b1_wr
+  requests:
+  - type: 0
+    address: 63350767584
+- id: pim_38
+  source: pim
+  depends_on:
+  - s4_d6_b1_rd
+  requests:
+  - type: 4
+    address: 62277025792
+- id: s4_d7_b0_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 63350767616
+- id: s4_d7_b0_rd
+  source: gpu
+  depends_on:
+  - s4_d7_b0_wr
+  requests:
+  - type: 0
+    address: 63350767616
+- id: s4_d7_b1_wr
+  source: gpu
+  requests:
+  - type: 1
+    address: 64424509408
+- id: s4_d7_b1_rd
+  source: gpu
+  depends_on:
+  - s4_d7_b1_wr
+  requests:
+  - type: 0
+    address: 64424509408
+- id: pim_39
+  source: pim
+  depends_on:
+  - s4_d7_b1_rd
+  requests:
+  - type: 4
+    address: 63350767616

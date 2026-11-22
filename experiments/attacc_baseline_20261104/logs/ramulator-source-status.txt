@@ -1,0 +1,38 @@
+ M src/CMakeLists.txt
+ M src/addr_mapper/CMakeLists.txt
+ M src/addr_mapper/impl/linear_mappers.cpp
+ M src/base/base.h
+ M src/base/request.h
+ M src/dram/CMakeLists.txt
+ M src/dram/impl/HBM3.cpp
+ M src/dram/lambdas/action.h
+ M src/dram/lambdas/preq.h
+ M src/dram_controller/CMakeLists.txt
+ M src/dram_controller/controller.h
+ M src/dram_controller/impl/dummy_controller.cpp
+ M src/dram_controller/impl/generic_dram_controller.cpp
+ M src/dram_controller/impl/scheduler/generic_scheduler.cpp
+ M src/frontend/CMakeLists.txt
+ M src/frontend/impl/memory_trace/loadstore_trace.cpp
+ M src/main.cpp
+ M src/memory_system/CMakeLists.txt
+ M src/memory_system/impl/dummy_memory_system.cpp
+ M src/memory_system/impl/generic_DRAM_system.cpp
+ M src/memory_system/memory_system.h
+?? HBM3_base.yaml
+?? attacc_bank.yaml
+?? attacc_bg.yaml
+?? attacc_buffer.yaml
+?? patches/
+?? src/addr_mapper/impl/hbm3_linear_mappers.cpp
+?? src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp
+?? src/dram/impl/HBM3-PIM.cpp
+?? src/dram_controller/impl/hbm3_controller.cpp
+?? src/dram_controller/impl/hbm3_pim_controller.cpp
+?? src/dram_controller/impl/plugin/hbm3_trace_recorder.cpp
+?? src/dram_controller/impl/refresh/all_bank_refresh_hbm3.cpp
+?? src/dram_controller/impl/refresh/no_refresh.cpp
+?? src/dram_controller/impl/scheduler/pim_scheduler.cpp
+?? src/frontend/impl/memory_trace/pim_loadstore_trace.cpp
+?? src/memory_system/impl/PIM_DRAM_system.cpp
+?? trace_gen/

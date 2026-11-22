@@ -1,0 +1,49 @@
+# Local tool configuration, credentials, environments and generated binaries.
+/.agents/
+/.aws/
+/.codex/
+/.venvs/
+/.vscode/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.o
+*.a
+*.so
+/m5out/
+/experiments/bin/
+/attacc_simulator/output.csv
+/attacc_simulator/ramulator2/build/
+/attacc_simulator/ramulator2/ext/
+/attacc_simulator/ramulator2/ramulator2
+
+# Historical results: retain top-level reports/configuration; raw output stays local.
+**/results/*/**
+!**/results/*/
+!**/results/*/*.md
+!**/results/*/*.json
+!**/results/*/*.yaml
+!**/results/*/*.log
+!**/results/*/summary.csv
+
+# Regression fixture and the latest complete, validated experiment evidence.
+!/experiments/attacc_baseline_20261104/results/20261104-repro-check/**
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1/**
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1-attacc/**
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1-throughput/**
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1-gpu/**
+
+# Exact offline release: sources, dependencies, licenses, patch and reproduction script.
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-release-20261118-v1/*.tar
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-release-20261118-v1/*.tar.gz
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-release-20261118-v1/*.patch
+!/experiments/tokenstack_arch_20261104/results/tsv-gpu-release-20261118-v1/reproduce_release.py
+
+# Repeated copies of sources and clean-run output are already covered by the release.
+**/results/**/sources/
+**/results/**/clean-results/
+**/results/**/clean-smoke-results/
+**/results/**/clean-baseline-results/
+**/__pycache__/

@@ -1,0 +1,5 @@
+# Runtime for the current TokenStack hardware and GPU-system acceptance scripts.
+# Original AttAcc frontend dependencies: experiments/attacc_baseline_20261104/config/requirements.txt
+# Initial acceptance used system PyYAML 5.4.1; compatible 6.x wheels avoid
+# rebuilding the historical release on newer Python versions.
+PyYAML>=5.4.1,<7

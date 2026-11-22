@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/run_layered.py",
+    "layered-domains-v2"
+  ],
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "seed": null,
+  "configured_compiler": "/usr/bin/g++-12",
+  "compiler_version": "g++-12 (Ubuntu 12.3.0-1ubuntu1~22.04.3) 12.3.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "ramulator_commit": "b7c70275f04126c647edb989270cc429776955d1",
+  "attacc_commit": "c60005143a6b492d7ef83231723386478b59a506",
+  "executable_sha256": "9d030f114093f195e8ed1ab5cb72ece4b2b29e1ec7831b5dcb591e49ad7247aa",
+  "library_sha256": "4102ee239b6982be24cdc4594f9853f7936d7b94c3227b5f6f15bba4a3af72f5",
+  "build_command": "cmake --build attacc_simulator/ramulator2/build -j2"
+}

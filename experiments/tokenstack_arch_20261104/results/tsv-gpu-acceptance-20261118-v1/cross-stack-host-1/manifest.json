@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "bytes": 256,
+  "source_stack": 0,
+  "target_stack": 1,
+  "path": [
+    "source_dram_and_tsv",
+    "source_ucie",
+    "gpu_crossbar",
+    "target_ucie",
+    "target_dram_and_tsv"
+  ],
+  "expected_resource_bytes": {
+    "tsv/s0": 256,
+    "ucie/s0": 256,
+    "gpu_crossbar": 256,
+    "ucie/s1": 256,
+    "tsv/s1": 256
+  },
+  "direct_stack_link": false,
+  "nvlink_mode": "reject_unconfigured"
+}

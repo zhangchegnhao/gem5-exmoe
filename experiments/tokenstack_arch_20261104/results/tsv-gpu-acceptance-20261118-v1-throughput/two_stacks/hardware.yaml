@@ -1,0 +1,141 @@
+schema_version: 1
+profile: fig3_binary_geometry_assumption_v1
+paper_spec_frozen: false
+seed: 260505639
+clock_ps: 769
+stacks: 2
+dies:
+- die_id: 0
+  kind: capacity
+  vertical_order: 0
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 4
+  - 4096
+  - 32
+  bytes: 2147483648
+- die_id: 1
+  kind: capacity
+  vertical_order: 1
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 4
+  - 4096
+  - 32
+  bytes: 2147483648
+- die_id: 2
+  kind: capacity
+  vertical_order: 2
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 4
+  - 4096
+  - 32
+  bytes: 2147483648
+- die_id: 3
+  kind: capacity
+  vertical_order: 3
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 4
+  - 4096
+  - 32
+  bytes: 2147483648
+- die_id: 4
+  kind: compute
+  vertical_order: 4
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 2
+  - 4096
+  - 32
+  bytes: 1073741824
+- die_id: 5
+  kind: compute
+  vertical_order: 5
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 2
+  - 4096
+  - 32
+  bytes: 1073741824
+- die_id: 6
+  kind: compute
+  vertical_order: 6
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 2
+  - 4096
+  - 32
+  bytes: 1073741824
+- die_id: 7
+  kind: compute
+  vertical_order: 7
+  geometry:
+  - 16
+  - 2
+  - 1
+  - 4
+  - 2
+  - 4096
+  - 32
+  bytes: 1073741824
+dram:
+  dq_bits: 32
+  prefetch: 8
+  timing: HBM3_5.2Gbps
+  nRFC: 456
+  nREFISB: 159
+  nREFI: 5070
+resources:
+  tsv_GBps: 112
+  ucie_GBps: 512
+  host_crossbar_GBps: 2560
+  host_forward_cycles: 1
+  tsv_turnaround_cycles: 2
+  tsv_coverage: dram_data_burst
+  tsv_arbitration: shared_rate
+  command_slots_per_channel_cycle: 1
+  queue_depth_per_source: 256
+  dispatch_per_source_cycle: 16
+  aging_cycles: 128
+base_die:
+  page_tokens: 4
+  head_dim: 16
+  head_groups: 1
+  buffer_slots_per_group: 2
+  dma_engines: 1
+  kv_block_bank_stride_bytes: 65536
+  cold_pages_per_block: 1024
+  conversion_GBps: 896
+  transpose_GBps: 896
+  quant_group_elements: 16
+  metadata_bytes_per_group: 2
+pim:
+  mac_tail_cycles: 8
+  move_tail_cycles: 4
+  softmax_tail_cycles: 32
+  mode_tail_cycles: 1
+  result_scope: channel
+  coordinator_GBps: 896

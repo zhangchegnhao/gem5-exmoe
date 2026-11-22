@@ -1,0 +1,225 @@
+{
+  "precision": "behavior-level, non-preemptive shared Channel/Base Die/TSV arbitration",
+  "trace": "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/traces/attacc_pim_small.trace",
+  "pim_requests": 6,
+  "migrations": [
+    {
+      "request_id": "promotion-0",
+      "source": {
+        "stack_id": 0,
+        "layer_id": 0,
+        "layer_kind": "capacity",
+        "channel": 0,
+        "pseudo_channel": 0,
+        "bank_group": 2,
+        "bank": 0,
+        "row": 4,
+        "column": 0
+      },
+      "target": {
+        "stack_id": 0,
+        "layer_id": 3,
+        "layer_kind": "compute",
+        "channel": 0,
+        "pseudo_channel": 0,
+        "bank_group": 2,
+        "bank": 0,
+        "row": 4,
+        "column": 0
+      },
+      "bytes_fp16": 8192,
+      "issue_cycle": 0,
+      "priority": 0
+    },
+    {
+      "request_id": "demotion-0",
+      "source": {
+        "stack_id": 0,
+        "layer_id": 3,
+        "layer_kind": "compute",
+        "channel": 0,
+        "pseudo_channel": 0,
+        "bank_group": 2,
+        "bank": 0,
+        "row": 4,
+        "column": 0
+      },
+      "target": {
+        "stack_id": 0,
+        "layer_id": 0,
+        "layer_kind": "capacity",
+        "channel": 0,
+        "pseudo_channel": 0,
+        "bank_group": 2,
+        "bank": 0,
+        "row": 4,
+        "column": 0
+      },
+      "bytes_fp16": 8192,
+      "issue_cycle": 10,
+      "priority": 1
+    }
+  ],
+  "events": [
+    {
+      "request_id": "pim-0",
+      "request_type": "pim",
+      "start_cycle": 0,
+      "complete_cycle": 4,
+      "queue_cycles": 0,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 4,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_WR_GB"
+    },
+    {
+      "request_id": "promotion-0",
+      "request_type": "migration",
+      "start_cycle": 4,
+      "complete_cycle": 18,
+      "queue_cycles": 4,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 14,
+      "tsv_cycles": 14,
+      "logical_read_bytes": 8192,
+      "logical_write_bytes": 8192,
+      "physical_read_bytes": 3072,
+      "physical_write_bytes": 8192,
+      "command": ""
+    },
+    {
+      "request_id": "pim-1",
+      "request_type": "pim",
+      "start_cycle": 18,
+      "complete_cycle": 26,
+      "queue_cycles": 17,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 8,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_MAC_AB"
+    },
+    {
+      "request_id": "pim-2",
+      "request_type": "pim",
+      "start_cycle": 26,
+      "complete_cycle": 30,
+      "queue_cycles": 24,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 4,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_MV_SB"
+    },
+    {
+      "request_id": "pim-3",
+      "request_type": "pim",
+      "start_cycle": 30,
+      "complete_cycle": 31,
+      "queue_cycles": 27,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 1,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_BARRIER"
+    },
+    {
+      "request_id": "pim-4",
+      "request_type": "pim",
+      "start_cycle": 31,
+      "complete_cycle": 47,
+      "queue_cycles": 27,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 16,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_SFM"
+    },
+    {
+      "request_id": "pim-5",
+      "request_type": "pim",
+      "start_cycle": 47,
+      "complete_cycle": 55,
+      "queue_cycles": 42,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 8,
+      "tsv_cycles": 0,
+      "logical_read_bytes": 32,
+      "logical_write_bytes": 32,
+      "physical_read_bytes": 32,
+      "physical_write_bytes": 32,
+      "command": "PIM_MAC_AB"
+    },
+    {
+      "request_id": "demotion-0",
+      "request_type": "migration",
+      "start_cycle": 55,
+      "complete_cycle": 69,
+      "queue_cycles": 45,
+      "channel_ids": [
+        0
+      ],
+      "base_die_cycles": 14,
+      "tsv_cycles": 14,
+      "logical_read_bytes": 8192,
+      "logical_write_bytes": 8192,
+      "physical_read_bytes": 8192,
+      "physical_write_bytes": 3072,
+      "command": ""
+    }
+  ],
+  "arbiter_stats": {
+    "pim_requests": 6,
+    "migration_requests": 2,
+    "pim_command_bytes": 192,
+    "migration_logical_read_bytes": 16384,
+    "migration_logical_write_bytes": 16384,
+    "migration_physical_read_bytes": 11264,
+    "migration_physical_write_bytes": 11264,
+    "queue_cycles": 186,
+    "base_die_busy_cycles": 69,
+    "tsv_busy_cycles": 28,
+    "last_complete_cycle": 69
+  },
+  "conservation": {
+    "pim_request_count": 6,
+    "migration_request_count": 2,
+    "pim_command_bytes": 192,
+    "migration_logical_read_bytes": 16384,
+    "migration_logical_write_bytes": 16384,
+    "migration_physical_read_bytes": 11264,
+    "migration_physical_write_bytes": 11264,
+    "logical_migration_bytes_conserved": true,
+    "completion_cycle_matches_max_event": true
+  }
+}

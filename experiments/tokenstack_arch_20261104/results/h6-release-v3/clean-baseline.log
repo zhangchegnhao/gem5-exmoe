@@ -1,0 +1,41 @@
+[
+  {
+    "mode": "bank",
+    "command": [
+      "/tmp/tokenstack-clean-release-zyc6dwx6/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/tmp/tokenstack-clean-release-zyc6dwx6/experiments/tokenstack_arch_20261104/results/clean-attacc-baseline/bank.yaml"
+    ],
+    "request_count": 153,
+    "barrier_count": 80,
+    "cycles": 273,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  },
+  {
+    "mode": "bg",
+    "command": [
+      "/tmp/tokenstack-clean-release-zyc6dwx6/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/tmp/tokenstack-clean-release-zyc6dwx6/experiments/tokenstack_arch_20261104/results/clean-attacc-baseline/bg.yaml"
+    ],
+    "request_count": 345,
+    "barrier_count": 176,
+    "cycles": 822,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  },
+  {
+    "mode": "buffer",
+    "command": [
+      "/tmp/tokenstack-clean-release-zyc6dwx6/attacc_simulator/ramulator2/build/ramulator2",
+      "-f",
+      "/tmp/tokenstack-clean-release-zyc6dwx6/experiments/tokenstack_arch_20261104/results/clean-attacc-baseline/buffer.yaml"
+    ],
+    "request_count": 1273,
+    "barrier_count": 224,
+    "cycles": 2094,
+    "all_stats_match_baseline": true,
+    "all_request_ids_retired_once": true
+  }
+]

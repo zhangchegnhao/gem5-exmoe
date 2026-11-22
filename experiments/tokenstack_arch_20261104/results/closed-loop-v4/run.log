@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "model": "single-channel conservative closed-loop; disjoint logical regions, shared DRAM timing domain",
+  "completion_semantics": "PIM final command issue/barrier removal; RD data return; WR conservative recovery boundary",
+  "assumptions": "serial extra internal link, no overlap, throughput-matched quantization, no metadata",
+  "scenarios": {
+    "no-migration": {
+      "stop_cycle": 42,
+      "stop_ns": 32.298,
+      "tck_ps": 769,
+      "requests": 12,
+      "pim_requests": 12,
+      "migration_read_requests": 0,
+      "migration_write_requests": 0,
+      "logical_migration_bytes": 0,
+      "physical_read_bytes": 0,
+      "physical_write_bytes": 0,
+      "explicit_link_block_cycles": 0,
+      "buffer_peak_bytes": 0,
+      "refresh_commands": 0,
+      "queue_peak_jobs": 1,
+      "admission_block_cycles": 0,
+      "controller_send_retries": 0,
+      "job_order": [
+        "attention-0",
+        "attention-1"
+      ],
+      "job_completion_cycles": {
+        "attention-0": 30,
+        "attention-1": 42
+      },
+      "request_byte_command_time_conservation": true
+    },
+    "with-migration": {
+      "stop_cycle": 4073,
+      "stop_ns": 3132.137,
+      "tck_ps": 769,
+      "requests": 716,
+      "pim_requests": 12,
+      "migration_read_requests": 352,
+      "migration_write_requests": 352,
+      "logical_migration_bytes": 16384,
+      "physical_read_bytes": 11264,
+      "physical_write_bytes": 11264,
+      "explicit_link_block_cycles": 34,
+      "buffer_peak_bytes": 8192,
+      "refresh_commands": 0,
+      "queue_peak_jobs": 2,
+      "admission_block_cycles": 0,
+      "controller_send_retries": 3161,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "job_completion_cycles": {
+        "promotion-0": 2051,
+        "attention-0": 2096,
+        "attention-1": 2108,
+        "demotion-0": 4073
+      },
+      "request_byte_command_time_conservation": true
+    },
+    "slow-link": {
+      "stop_cycle": 5087,
+      "stop_ns": 3911.903,
+      "tck_ps": 769,
+      "requests": 716,
+      "pim_requests": 12,
+      "migration_read_requests": 352,
+      "migration_write_requests": 352,
+      "logical_migration_bytes": 16384,
+      "physical_read_bytes": 11264,
+      "physical_write_bytes": 11264,
+      "explicit_link_block_cycles": 1048,
+      "buffer_peak_bytes": 8192,
+      "refresh_commands": 2,
+      "queue_peak_jobs": 2,
+      "admission_block_cycles": 0,
+      "controller_send_retries": 3668,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "job_completion_cycles": {
+        "promotion-0": 2558,
+        "attention-0": 2603,
+        "attention-1": 2615,
+        "demotion-0": 5087
+      },
+      "request_byte_command_time_conservation": true
+    },
+    "small-queue": {
+      "stop_cycle": 4073,
+      "stop_ns": 3132.137,
+      "tck_ps": 769,
+      "requests": 716,
+      "pim_requests": 12,
+      "migration_read_requests": 352,
+      "migration_write_requests": 352,
+      "logical_migration_bytes": 16384,
+      "physical_read_bytes": 11264,
+      "physical_write_bytes": 11264,
+      "explicit_link_block_cycles": 34,
+      "buffer_peak_bytes": 8192,
+      "refresh_commands": 0,
+      "queue_peak_jobs": 1,
+      "admission_block_cycles": 2,
+      "controller_send_retries": 3161,
+      "job_order": [
+        "promotion-0",
+        "demotion-0",
+        "attention-0",
+        "attention-1"
+      ],
+      "job_completion_cycles": {
+        "promotion-0": 2051,
+        "demotion-0": 4016,
+        "attention-0": 4061,
+        "attention-1": 4073
+      },
+      "request_byte_command_time_conservation": true
+    },
+    "refresh-stress": {
+      "stop_cycle": 13283,
+      "stop_ns": 10214.627,
+      "tck_ps": 769,
+      "requests": 716,
+      "pim_requests": 12,
+      "migration_read_requests": 352,
+      "migration_write_requests": 352,
+      "logical_migration_bytes": 16384,
+      "physical_read_bytes": 11264,
+      "physical_write_bytes": 11264,
+      "explicit_link_block_cycles": 8372,
+      "buffer_peak_bytes": 8192,
+      "refresh_commands": 4,
+      "queue_peak_jobs": 2,
+      "admission_block_cycles": 0,
+      "controller_send_retries": 8202,
+      "job_order": [
+        "promotion-0",
+        "attention-0",
+        "attention-1",
+        "demotion-0"
+      ],
+      "job_completion_cycles": {
+        "promotion-0": 6654,
+        "attention-0": 6699,
+        "attention-1": 6711,
+        "demotion-0": 13283
+      },
+      "request_byte_command_time_conservation": true
+    }
+  }
+}
+Results: /home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/closed-loop-v4

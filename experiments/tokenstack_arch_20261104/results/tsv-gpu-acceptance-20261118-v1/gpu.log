@@ -1,0 +1,6 @@
+baseline 791 336
+compute_slow 857 336
+tsv_slow 13340 7263
+ucie_slow 7520 336
+crossbar_slow 34350 336
+background_late 551 10800

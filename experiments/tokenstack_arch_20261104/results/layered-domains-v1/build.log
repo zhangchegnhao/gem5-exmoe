@@ -1,0 +1,62 @@
+[ 16%] Built target ramulator-controller
+[ 56%] Built target yaml-cpp
+[ 67%] Built target spdlog
+[ 75%] Built target ramulator-base
+Consolidate compiler generated dependencies of target ramulator-frontend
+[ 79%] Built target ramulator-frontend
+[ 82%] Built target ramulator-translation
+Consolidate compiler generated dependencies of target ramulator-memorysystem
+[ 87%] Built target ramulator-addrmapper
+[ 89%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/tokenstack_memory.cpp.o
+[ 91%] Built target ramulator-dram
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp: In member function ‘virtual void Ramulator::TokenStackMemory::init()’:
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:68:34: error: no matching function for call to ‘max(Ramulator::Clk_t&, int)’
+   68 |         int safe_bound = std::max(dram->m_read_latency,
+      |                          ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   69 |           dram->m_timing_vals("nCWL") + dram->m_timing_vals("nBL") + dram->m_timing_vals("nWR"));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/12/array:43,
+                 from /home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:1:
+/usr/include/c++/12/bits/stl_algobase.h:254:5: note: candidate: ‘template<class _Tp> constexpr const _Tp& std::max(const _Tp&, const _Tp&)’
+  254 |     max(const _Tp& __a, const _Tp& __b)
+      |     ^~~
+/usr/include/c++/12/bits/stl_algobase.h:254:5: note:   template argument deduction/substitution failed:
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:68:34: note:   deduced conflicting types for parameter ‘const _Tp’ (‘long int’ and ‘int’)
+   68 |         int safe_bound = std::max(dram->m_read_latency,
+      |                          ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   69 |           dram->m_timing_vals("nCWL") + dram->m_timing_vals("nBL") + dram->m_timing_vals("nWR"));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/12/bits/stl_algobase.h:300:5: note: candidate: ‘template<class _Tp, class _Compare> constexpr const _Tp& std::max(const _Tp&, const _Tp&, _Compare)’
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+/usr/include/c++/12/bits/stl_algobase.h:300:5: note:   template argument deduction/substitution failed:
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:68:34: note:   deduced conflicting types for parameter ‘const _Tp’ (‘long int’ and ‘int’)
+   68 |         int safe_bound = std::max(dram->m_read_latency,
+      |                          ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   69 |           dram->m_timing_vals("nCWL") + dram->m_timing_vals("nBL") + dram->m_timing_vals("nWR"));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/12/functional:64,
+                 from /home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/memory_system.h:7,
+                 from /home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/tokenstack_memory.h:4,
+                 from /home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:7:
+/usr/include/c++/12/bits/stl_algo.h:5746:5: note: candidate: ‘template<class _Tp> constexpr _Tp std::max(initializer_list<_Tp>)’
+ 5746 |     max(initializer_list<_Tp> __l)
+      |     ^~~
+/usr/include/c++/12/bits/stl_algo.h:5746:5: note:   template argument deduction/substitution failed:
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:68:34: note:   mismatched types ‘std::initializer_list<_Tp>’ and ‘long int’
+   68 |         int safe_bound = std::max(dram->m_read_latency,
+      |                          ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   69 |           dram->m_timing_vals("nCWL") + dram->m_timing_vals("nBL") + dram->m_timing_vals("nWR"));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/12/bits/stl_algo.h:5756:5: note: candidate: ‘template<class _Tp, class _Compare> constexpr _Tp std::max(initializer_list<_Tp>, _Compare)’
+ 5756 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/usr/include/c++/12/bits/stl_algo.h:5756:5: note:   template argument deduction/substitution failed:
+/home/ubuntu22/gem5/attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp:68:34: note:   mismatched types ‘std::initializer_list<_Tp>’ and ‘long int’
+   68 |         int safe_bound = std::max(dram->m_read_latency,
+      |                          ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   69 |           dram->m_timing_vals("nCWL") + dram->m_timing_vals("nBL") + dram->m_timing_vals("nWR"));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmake[2]: *** [src/memory_system/CMakeFiles/ramulator-memorysystem.dir/build.make:118：src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/tokenstack_memory.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:1227：src/memory_system/CMakeFiles/ramulator-memorysystem.dir/all] 错误 2
+gmake: *** [Makefile:156：all] 错误 2

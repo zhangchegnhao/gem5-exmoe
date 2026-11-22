@@ -1,0 +1,104 @@
+[  1%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/dummy_controller.cpp.o
+[  2%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/binary.cpp.o
+[  3%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/convert.cpp.o
+[  5%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/depthguard.cpp.o
+[  6%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/directives.cpp.o
+[  7%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emit.cpp.o
+[  9%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitfromevents.cpp.o
+[ 10%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitter.cpp.o
+[ 11%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitterstate.cpp.o
+[ 13%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitterutils.cpp.o
+[ 14%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/exceptions.cpp.o
+[ 15%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/generic_dram_controller.cpp.o
+[ 17%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/exp.cpp.o
+[ 18%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/memory.cpp.o
+[ 19%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/node.cpp.o
+[ 21%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/node_data.cpp.o
+[ 22%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/nodebuilder.cpp.o
+[ 23%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/nodeevents.cpp.o
+[ 25%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/null.cpp.o
+[ 26%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/ostream_wrapper.cpp.o
+[ 27%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/parse.cpp.o
+[ 28%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/parser.cpp.o
+[ 30%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/regex_yaml.cpp.o
+[ 31%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scanner.cpp.o
+[ 32%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/hbm3_controller.cpp.o
+[ 34%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scanscalar.cpp.o
+[ 35%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scantag.cpp.o
+[ 36%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scantoken.cpp.o
+[ 38%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/simplekey.cpp.o
+[ 39%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/singledocparser.cpp.o
+In file included from /usr/include/c++/12/ios:40,
+                 from /usr/include/c++/12/istream:38,
+                 from /usr/include/c++/12/sstream:38,
+                 from /tmp/tokenstack-clean-release-enk40_iq/attacc_simulator/ramulator2/ext/yaml-cpp/src/singledocparser.cpp:3:
+In static member function ‘static constexpr std::char_traits<char>::char_type* std::char_traits<char>::copy(char_type*, const char_type*, std::size_t)’,
+    inlined from ‘static constexpr void std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::_S_copy(_CharT*, const _CharT*, size_type) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’ at /usr/include/c++/12/bits/basic_string.h:431:21,
+    inlined from ‘constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::_M_replace(size_type, size_type, const _CharT*, size_type) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’ at /usr/include/c++/12/bits/basic_string.tcc:532:22,
+    inlined from ‘constexpr std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::assign(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’ at /usr/include/c++/12/bits/basic_string.h:1655:19,
+    inlined from ‘constexpr std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’ at /usr/include/c++/12/bits/basic_string.h:823:28,
+    inlined from ‘void YAML::SingleDocParser::HandleNode(YAML::EventHandler&)’ at /tmp/tokenstack-clean-release-enk40_iq/attacc_simulator/ramulator2/ext/yaml-cpp/src/singledocparser.cpp:95:61:
+/usr/include/c++/12/bits/char_traits.h:435:56: warning: ‘void* __builtin_memcpy(void*, const void*, long unsigned int)’ accessing 9223372036854775810 or more bytes at offsets [2, 9223372036854775807] and 1 may overlap up to 9223372036854775813 bytes at offset -3 [-Wrestrict]
+  435 |         return static_cast<char_type*>(__builtin_memcpy(__s1, __s2, __n));
+      |                                        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+[ 40%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/stream.cpp.o
+[ 42%] Building CXX object _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/tag.cpp.o
+[ 43%] Linking CXX static library libyaml-cpp.a
+[ 43%] Built target yaml-cpp
+[ 44%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o
+[ 46%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/hbm3_pim_controller.cpp.o
+[ 47%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o
+[ 48%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o
+[ 50%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/scheduler/generic_scheduler.cpp.o
+[ 51%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o
+[ 52%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o
+[ 53%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o
+[ 55%] Building CXX object _deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o
+[ 56%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/scheduler/pim_scheduler.cpp.o
+[ 57%] Linking CXX static library libspdlog.a
+[ 57%] Built target spdlog
+[ 59%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/factory.cpp.o
+[ 60%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/refresh/all_bank_refresh.cpp.o
+[ 61%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/logging.cpp.o
+[ 63%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/refresh/all_bank_refresh_hbm3.cpp.o
+[ 64%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/utils.cpp.o
+[ 65%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/config.cpp.o
+[ 67%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/refresh/no_refresh.cpp.o
+[ 68%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/stats.cpp.o
+[ 69%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/plugin/hbm3_trace_recorder.cpp.o
+[ 71%] Building CXX object src/base/CMakeFiles/ramulator-base.dir/request.cpp.o
+[ 72%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/plugin/trace_recorder.cpp.o
+[ 72%] Built target ramulator-base
+[ 73%] Building CXX object src/frontend/CMakeFiles/ramulator-frontend.dir/impl/memory_trace/loadstore_trace.cpp.o
+[ 75%] Building CXX object src/dram_controller/CMakeFiles/ramulator-controller.dir/impl/plugin/cmd_counter.cpp.o
+[ 76%] Building CXX object src/frontend/CMakeFiles/ramulator-frontend.dir/impl/memory_trace/pim_loadstore_trace.cpp.o
+[ 76%] Built target ramulator-controller
+[ 77%] Building CXX object src/translation/CMakeFiles/ramulator-translation.dir/impl/no_translation.cpp.o
+[ 78%] Building CXX object src/frontend/CMakeFiles/ramulator-frontend.dir/impl/memory_trace/tokenstack_trace.cpp.o
+[ 80%] Building CXX object src/translation/CMakeFiles/ramulator-translation.dir/impl/random_translation.cpp.o
+[ 81%] Building CXX object src/frontend/CMakeFiles/ramulator-frontend.dir/impl/memory_trace/tokenstack_graph.cpp.o
+[ 81%] Built target ramulator-translation
+[ 82%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/dummy_memory_system.cpp.o
+/tmp/tokenstack-clean-release-enk40_iq/attacc_simulator/ramulator2/src/memory_system/impl/dummy_memory_system.cpp: In member function ‘virtual bool Ramulator::DummyMemorySystem::is_pending()’:
+/tmp/tokenstack-clean-release-enk40_iq/attacc_simulator/ramulator2/src/memory_system/impl/dummy_memory_system.cpp:22:33: warning: no return statement in function returning non-void [-Wreturn-type]
+   22 |     bool is_pending() override {};
+      |                                 ^
+[ 82%] Built target ramulator-frontend
+[ 84%] Building CXX object src/addr_mapper/CMakeFiles/ramulator-addrmapper.dir/impl/linear_mappers.cpp.o
+[ 85%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/generic_DRAM_system.cpp.o
+[ 86%] Building CXX object src/addr_mapper/CMakeFiles/ramulator-addrmapper.dir/impl/hbm3_linear_mappers.cpp.o
+[ 88%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/PIM_DRAM_system.cpp.o
+[ 89%] Building CXX object src/addr_mapper/CMakeFiles/ramulator-addrmapper.dir/impl/hbm3_pim_linear_mappers.cpp.o
+[ 90%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/tokenstack_memory.cpp.o
+[ 92%] Building CXX object src/addr_mapper/CMakeFiles/ramulator-addrmapper.dir/impl/rit.cpp.o
+[ 93%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/tokenstack_fabric.cpp.o
+[ 93%] Built target ramulator-addrmapper
+[ 94%] Building CXX object src/dram/CMakeFiles/ramulator-dram.dir/impl/HBM3.cpp.o
+[ 94%] Built target ramulator-memorysystem
+[ 96%] Building CXX object src/dram/CMakeFiles/ramulator-dram.dir/impl/HBM3-PIM.cpp.o
+[ 96%] Built target ramulator-dram
+[ 97%] Linking CXX shared library ../libramulator.so
+[ 97%] Built target ramulator
+[ 98%] Building CXX object CMakeFiles/ramulator-exe.dir/src/main.cpp.o
+[100%] Linking CXX executable ramulator2
+[100%] Built target ramulator-exe

@@ -1,0 +1,68 @@
+# Runtime engineering profile, schema v1. Paper capacity/Bank ambiguity remains open.
+# See spec/hardware_parameters.yaml and spec/open_questions.md; NOT a paper-frozen profile.
+schema_version: 1
+profile: fig3_binary_geometry_assumption_v1
+paper_spec_frozen: false
+seed: 260505639
+clock_ps: 769  # derived from inherited HBM3_5.2Gbps QDR model
+stacks: 1    # paper_eval: 5/card, tested through a separate override
+dies:
+  # die_id is unique within stack; vertical_order starts above Base Die.
+  - {die_id: 0, kind: capacity, vertical_order: 0, geometry: [16, 2, 1, 4, 4, 4096, 32], bytes: 2147483648}
+  - {die_id: 1, kind: capacity, vertical_order: 1, geometry: [16, 2, 1, 4, 4, 4096, 32], bytes: 2147483648}
+  - {die_id: 2, kind: capacity, vertical_order: 2, geometry: [16, 2, 1, 4, 4, 4096, 32], bytes: 2147483648}
+  - {die_id: 3, kind: capacity, vertical_order: 3, geometry: [16, 2, 1, 4, 4, 4096, 32], bytes: 2147483648}
+  - {die_id: 4, kind: compute, vertical_order: 4, geometry: [16, 2, 1, 4, 2, 4096, 32], bytes: 1073741824}
+  - {die_id: 5, kind: compute, vertical_order: 5, geometry: [16, 2, 1, 4, 2, 4096, 32], bytes: 1073741824}
+  - {die_id: 6, kind: compute, vertical_order: 6, geometry: [16, 2, 1, 4, 2, 4096, 32], bytes: 1073741824}
+  - {die_id: 7, kind: compute, vertical_order: 7, geometry: [16, 2, 1, 4, 2, 4096, 32], bytes: 1073741824}
+dram:
+  dq_bits: 32
+  prefetch: 8
+  timing: HBM3_5.2Gbps  # inherited timing approximates HBM3 from HBM2 sources; not calibrated die timing
+  # engineering_assumption: conservative reuse of 350 ns class RFC / 122 ns REFISB,
+  # rounded using inherited 769 ps clock; NOT a measured 512/1024 Mib die timing.
+  nRFC: 456
+  nREFISB: 159
+  nREFI: 5070
+resources:
+  tsv_GBps: 896     # paper_eval, decimal GB/s per Stack, shared all dies/Channels/directions
+  ucie_GBps: 512    # paper_eval, decimal GB/s per Stack host port
+  # engineering_assumption: GPU crossbar aggregate provisioned for 5 ports;
+  # configurable bottleneck, not a paper-specified crossbar measurement.
+  host_crossbar_GBps: 2560
+  host_forward_cycles: 1  # engineering assumption, sweepable
+  tsv_turnaround_cycles: 2  # engineering assumption, per shared path R/W direction change
+  # DRAM RD/WR nBL already carries TSV data: reserve that SAME interval and do
+  # not add a second artificial hop. Aggregate BW can extend service beyond nBL.
+  tsv_coverage: dram_data_burst
+  tsv_arbitration: shared_rate  # engineering fluid model: sum(bytes/duration) <= per-stack budget
+  command_slots_per_channel_cycle: 1  # shared across physical dies, conservative assumption
+  queue_depth_per_source: 8
+  dispatch_per_source_cycle: 16  # engineering ingress width; independent channels, per-channel order retained
+  aging_cycles: 128  # engineering fairness, not paper constant
+base_die:
+  page_tokens: 4  # engineering workload granule, NOT inferred from logical 16-token blocks
+  head_dim: 16
+  head_groups: 1
+  buffer_slots_per_group: 2  # ping-pong page streaming, engineering assumption
+  dma_engines: 1
+  # engineering sparse allocation pitches, independent of each block's shape.
+  # Prevent differently shaped blocks from aliasing; unused slots consume no host arrays.
+  kv_block_bank_stride_bytes: 65536
+  cold_pages_per_block: 1024
+  conversion_GBps: 896  # paper_eval throughput-matched, bytes = max(source,target)
+  transpose_GBps: 896   # engineering assumed provisioning; sensitivity-tested
+  quant_group_elements: 16  # engineering symmetric quantizer, not paper numerical reproduction
+  metadata_bytes_per_group: 2  # FP16 scale, explicit overhead beyond 3/8 payload
+pim:
+  # Engineering completion bounds: deliberately separate from nCCD spacing.
+  # No published result-tail calibration is available. Sweep 1/8/32 cycles.
+  mac_tail_cycles: 8
+  move_tail_cycles: 4
+  softmax_tail_cycles: 32
+  mode_tail_cycles: 1
+  # Conservative whole-channel PIM result dependency scope; unit placement
+  # remains Q5. MACPB/SB/AB address/broadcast is still inherited AttAcc timing.
+  result_scope: channel
+  coordinator_GBps: 896  # engineering provisioning, shares Base Die/TSV calendar

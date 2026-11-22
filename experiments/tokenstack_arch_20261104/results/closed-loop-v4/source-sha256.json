@@ -1,0 +1,14 @@
+{
+  "sources/README.md": "45ffd3aa8e87d59647acf139c02c52187b463f2b0e731fdd9c7b09eb16b43c8a",
+  "sources/closed_loop_kv_v1.yaml": "00ab315a6d18529a38f3361d24c38d59a187f24f9abbb16a2bec44e1ee46c42d",
+  "sources/ramulator-retirement-v1.patch": "971a91cfdd3e81f39e1a3dd852209754d23cdf39458ecd469ab6c1df254a7b58",
+  "sources/run_closed_loop.py": "30bb2ea1ffb9a5453470163012154b7ae9b9449662074ec119c261060efa570b",
+  "sources/src/dram_controller/impl/hbm3_pim_controller.cpp": "8aa1ccf0b6962c7d203eb88f9a998718f416f45dc3e030c1be5189530820b02d",
+  "sources/src/dram_controller/impl/scheduler/pim_scheduler.cpp": "771811ab34b6aa9d4aff4c24e85aa3b2246d6f45bd2e95b763f2030fbc46a0ff",
+  "sources/src/dram_controller/tokenstack_controller.h": "44cd2951a537739d06c8b577c5f369da7a7634782ce4711b70cdd336bb64a5b5",
+  "sources/src/frontend/CMakeLists.txt": "d6d367f237e5f72106a742c44e75c62dfb5eef15ffda3a581c270e93affae124",
+  "sources/src/frontend/impl/memory_trace/tokenstack_trace.cpp": "0d48a9df443dcb2e40a9cfc5b01ca780b13e3b3c76d49e12667c2ee12ef9f1cb",
+  "sources/test_closed_loop.py": "7bc9ca39db1ab8dd870c195914a660f8b2156799d0575a5e8e9b4a0f4e31e418",
+  "sources/tokenstack-closed-loop-v1.patch": "2acd5e081b25cd52184b4cddff24083f0d6239f6c2dd2ae4b701c281ef82fade",
+  "sources/tokenstack_closed_loop.yaml": "28382409276ae97470eef4ade817f836961fc83dd021a3e3a98b308e43bfd896"
+}

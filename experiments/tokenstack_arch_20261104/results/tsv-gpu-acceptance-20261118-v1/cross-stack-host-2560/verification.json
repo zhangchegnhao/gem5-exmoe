@@ -1,0 +1,90 @@
+{
+  "tasks": 10,
+  "requests": 16,
+  "read_bytes": 256,
+  "write_bytes": 256,
+  "complete_cycle": 152,
+  "buffer_peak_bytes_by_stack_head_group": {
+    "0": 256,
+    "1": 256
+  },
+  "tsv_bytes": 512,
+  "command_count": 18,
+  "hardware_events": 16,
+  "resource_occupancy": {
+    "channel/s0/ch0": {
+      "busy_cycles": 9,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.058823529411764705,
+      "effective_GBps": 0.0
+    },
+    "tsv/s0": {
+      "busy_cycles": 16,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 16.0,
+      "utilization": 0.10457516339869281,
+      "effective_GBps": 2.1758161435358714,
+      "bandwidth_utilization": 0.0024283662316248564
+    },
+    "channel/s0/ch0/pc0/data": {
+      "busy_cycles": 16,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 16.0,
+      "utilization": 0.10457516339869281,
+      "effective_GBps": 2.1758161435358714
+    },
+    "ucie/s0": {
+      "busy_cycles": 1,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 256.0,
+      "utilization": 0.006535947712418301,
+      "effective_GBps": 2.1758161435358714
+    },
+    "gpu_crossbar": {
+      "busy_cycles": 1,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 256.0,
+      "utilization": 0.006535947712418301,
+      "effective_GBps": 2.1758161435358714
+    },
+    "ucie/s1": {
+      "busy_cycles": 1,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 256.0,
+      "utilization": 0.006535947712418301,
+      "effective_GBps": 2.1758161435358714
+    },
+    "channel/s1/ch0": {
+      "busy_cycles": 9,
+      "bytes": 0,
+      "peak_bytes_per_cycle": 0.0,
+      "utilization": 0.058823529411764705,
+      "effective_GBps": 0.0
+    },
+    "tsv/s1": {
+      "busy_cycles": 16,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 16.0,
+      "utilization": 0.10457516339869281,
+      "effective_GBps": 2.1758161435358714,
+      "bandwidth_utilization": 0.0024283662316248564
+    },
+    "channel/s1/ch0/pc0/data": {
+      "busy_cycles": 16,
+      "bytes": 256,
+      "peak_bytes_per_cycle": 16.0,
+      "utilization": 0.10457516339869281,
+      "effective_GBps": 2.1758161435358714
+    }
+  },
+  "refresh_commands": 0,
+  "cycles_per_second": 1300390117.0351105,
+  "simulation_end_cycle": 153,
+  "maintenance_drain_cycles": 1,
+  "request_latency_cycles": {
+    "mean": 55.5,
+    "p50": 55,
+    "p95": 70
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "validation": "passed",
+  "input": "git checkout-index export of initial staged project",
+  "export_path": "/tmp/gem5-exmoe-index-x3nfcy_w",
+  "full_command": [
+    "python3",
+    "/tmp/gem5-exmoe-index-x3nfcy_w/experiments/tokenstack_arch_20261104/scripts/run_acceptance.py",
+    "git-export-20261122-v1"
+  ],
+  "fresh_offline_build": true,
+  "original_workspace_build_untouched": true,
+  "source_files_matched": 290,
+  "release_archives_matched": 4,
+  "engineering_acceptance": "passed",
+  "hardware_cases": 15,
+  "throughput_cases": 8,
+  "gpu_cases": 6,
+  "unit_test_count": 62,
+  "throughput_and_gpu_cases_match_prior_release": true,
+  "attacc_baselines": [
+    {
+      "mode": "bank",
+      "command": [
+        "/tmp/gem5-exmoe-index-x3nfcy_w/attacc_simulator/ramulator2/build/ramulator2",
+        "-f",
+        "/tmp/gem5-exmoe-index-x3nfcy_w/experiments/tokenstack_arch_20261104/results/git-export-20261122-v1-attacc/bank.yaml"
+      ],
+      "request_count": 153,
+      "barrier_count": 80,
+      "cycles": 273,
+      "all_stats_match_baseline": true,
+      "all_request_ids_retired_once": true
+    },
+    {
+      "mode": "bg",
+      "command": [
+        "/tmp/gem5-exmoe-index-x3nfcy_w/attacc_simulator/ramulator2/build/ramulator2",
+        "-f",
+        "/tmp/gem5-exmoe-index-x3nfcy_w/experiments/tokenstack_arch_20261104/results/git-export-20261122-v1-attacc/bg.yaml"
+      ],
+      "request_count": 345,
+      "barrier_count": 176,
+      "cycles": 822,
+      "all_stats_match_baseline": true,
+      "all_request_ids_retired_once": true
+    },
+    {
+      "mode": "buffer",
+      "command": [
+        "/tmp/gem5-exmoe-index-x3nfcy_w/attacc_simulator/ramulator2/build/ramulator2",
+        "-f",
+        "/tmp/gem5-exmoe-index-x3nfcy_w/experiments/tokenstack_arch_20261104/results/git-export-20261122-v1-attacc/buffer.yaml"
+      ],
+      "request_count": 1273,
+      "barrier_count": 224,
+      "cycles": 2094,
+      "all_stats_match_baseline": true,
+      "all_request_ids_retired_once": true
+    }
+  ],
+  "notes": "Pure vendored-file export without nested Git repositories; gem5 submodule was not built or required; historical compiler warnings retained in build.log."
+}

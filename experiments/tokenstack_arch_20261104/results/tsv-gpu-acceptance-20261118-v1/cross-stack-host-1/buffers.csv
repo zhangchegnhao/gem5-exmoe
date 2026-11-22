@@ -1,0 +1,5 @@
+schema_version,page_id,head_group,cycle,event,bytes,occupied_bytes
+1,remote_p0_buffer_s0,0,0,allocate,256,256
+1,remote_p0_buffer_s1,1,1,allocate,256,256
+1,remote_p0_buffer_s0,0,483,release,256,0
+1,remote_p0_buffer_s1,1,483,release,256,0

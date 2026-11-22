@@ -1,0 +1,144 @@
+# H0 evidence ledger, schema v1. Not a Ramulator runtime configuration.
+# paper_* = reported facts, not a claim that the simulator implements them.
+schema_version: 1
+review_date: '2026-11-05'
+paper_revision: 2605.05639v2
+paper_spec_frozen: false
+model_precision: dram_command_timing_and_base_die_behavior
+sources:
+  fig3: {kind: paper_arch, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'Fig.3, PDF p5; section 4.1, PDF p4'}
+  base_die: {kind: paper_arch, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'sections 4.2-4.3, PDF p4-5'}
+  layout: {kind: paper_arch, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'sections 5.1-5.2, Fig.4, PDF p5-6'}
+  quant: {kind: paper_arch, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'sections 6.2 and 7, PDF p7-8'}
+  table2: {kind: paper_eval, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'Table 2 and section 7, PDF p8'}
+  sweep: {kind: paper_eval, path: references/tokenstack_arxiv_2605.05639v2.pdf, locator: 'section 8 sensitivity text PDF p10; plots PDF p11'}
+  dram: {kind: attacc_inherited, path: ../../attacc_simulator/ramulator2/src/dram/impl/HBM3-PIM.cpp, locator: 'org_presets; timing_presets; set_organization; set_timing_vals; set_timing_constraints'}
+  mapper: {kind: attacc_inherited, path: ../../attacc_simulator/ramulator2/src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp, locator: 'HBM3PIMLinearMapperBase::setup and HBM3PIMMap::apply'}
+  attacc_config: {kind: attacc_inherited, path: ../../attacc_simulator/ramulator2/attacc_bank.yaml, locator: MemorySystem.DRAM.org}
+  controller: {kind: engineering_assumption, path: ../../attacc_simulator/ramulator2/src/dram_controller/impl/hbm3_pim_controller.cpp, locator: 'tick; schedule_write_callback; inherited issue semantics plus local opt-in write retirement'}
+  scheduler: {kind: engineering_assumption, path: ../../attacc_simulator/ramulator2/src/dram_controller/impl/scheduler/pim_scheduler.cpp, locator: 'PIM::get_best_request; local barrier callback extension'}
+  prototype: {kind: engineering_assumption, path: config/tokenstack_layered.yaml, locator: 'Frontend and MemorySystem; synthetic debug profile'}
+  contract: {kind: engineering_assumption, path: spec/paper_hardware_contract.md, locator: 'H0 bounded engineering profile and acceptance contracts'}
+
+# Every record: value/unit/scope/class/source/status/current/validation.
+# current is the implemented prototype value, or null if not represented.
+# verified_report means the paper says it; it does not resolve adjacent ambiguity.
+parameters:
+  capacity_per_die:
+    {value: 2, unit: GiB, scope: capacity_die, class: paper_arch, source: [fig3], status: verified_report, current: null, validation: H0-units}
+  compute_per_die:
+    {value: 1, unit: GiB, scope: compute_die, class: paper_arch, source: [fig3], status: verified_report, current: null, validation: H0-units}
+  capacity_banks_per_pc:
+    {value: 16, unit: bank, scope: capacity_die_pseudochannel, class: paper_arch, source: [fig3], status: verified_report, current: 32, validation: H0-geometry}
+  compute_banks_per_pc:
+    {value: 8, unit: bank, scope: compute_die_pseudochannel, class: paper_arch, source: [fig3], status: verified_report, current: 32, validation: H0-geometry}
+  bank_capacity_ratio_prose:
+    {value: 0.5, unit: ratio, scope: compute_bank_vs_capacity_bank, class: paper_arch, source: [fig3], status: unresolved, current: 1, validation: H0-no-double-halving, question: Q1}
+  capacity_dies:
+    {value: 4, unit: die, scope: stack, class: paper_eval, source: [sweep, table2], status: verified_report, current: null, validation: H0-capacity}
+  compute_dies:
+    {value: 4, unit: die, scope: stack, class: paper_eval, source: [sweep, table2], status: verified_report, current: null, validation: H0-capacity}
+  stacks_per_card:
+    {value: 5, unit: stack, scope: gpu_card, class: paper_eval, source: [table2], status: verified_report, current: 1, validation: H0-capacity}
+  card_compute_reported:
+    {value: 20, unit: GB, scope: gpu_card_before_weight_reservation, class: paper_eval, source: [table2], status: verified_report, current: null, validation: H0-units, question: Q2}
+  card_capacity_reported:
+    {value: 40, unit: GB, scope: gpu_card_before_weight_reservation, class: paper_eval, source: [table2], status: verified_report, current: null, validation: H0-units, question: Q2}
+  tsv_bandwidth:
+    {value: 896, unit: GB/s, scope: stack_aggregate_dma, class: paper_eval, source: [table2], status: verified_report, current: 896, validation: H0-link-budget}
+  ucie_bandwidth:
+    {value: 512, unit: GB/s, scope: stack_host_interface, class: paper_eval, source: [table2], status: verified_report, current: null, validation: H5-port-calendar}
+  tsv_full_duplex:
+    {value: null, unit: boolean, scope: stack, class: engineering_assumption, source: [base_die, contract], status: unresolved, current: false, validation: H2-resource-calendar, question: Q4}
+  physical_tsv_segments:
+    {value: null, unit: segment, scope: stack_vertical_path, class: engineering_assumption, source: [base_die, contract], status: unresolved, current: null, validation: H2-resource-calendar, question: Q4}
+  channels_per_die:
+    {value: null, unit: channel, scope: physical_die, class: engineering_assumption, source: [attacc_config, contract], status: unresolved, current: 1, validation: H1-address-roundtrip, question: Q3}
+  pseudochannels_per_channel:
+    {value: 2, unit: pseudochannel, scope: attacc_channel, class: attacc_inherited, source: [dram], status: verified_source, current: 2, validation: H0-geometry}
+  attacc_channels_per_stack:
+    {value: 16, unit: channel, scope: attacc_stack_preset, class: attacc_inherited, source: [attacc_config], status: verified_source, current: 1, validation: H0-geometry}
+  attacc_geometry:
+    {value: [1, 2, 2, 4, 4, 16384, 32], unit: count_vector, scope: prototype_domain_CH_PC_R_BG_B_ROW_COL, class: attacc_inherited, source: [dram, prototype], status: verified_source, current: [1, 2, 2, 4, 4, 16384, 32], validation: H0-geometry}
+  attacc_dq:
+    {value: 32, unit: bit, scope: pseudochannel_model, class: attacc_inherited, source: [dram], status: verified_source, current: 32, validation: H0-geometry}
+  internal_prefetch:
+    {value: 8, unit: element, scope: dram_model, class: attacc_inherited, source: [dram], status: verified_source, current: 8, validation: H0-geometry}
+  burst_bytes:
+    {value: 32, unit: B, scope: request, class: derived, source: [dram, mapper], status: derived, current: 32, validation: H0-geometry, formula: '8 * 32 / 8'}
+  dram_timing:
+    {value: HBM3_5.2Gbps, unit: preset, scope: each_prototype_domain, class: attacc_inherited, source: [dram], status: verified_source, current: HBM3_5.2Gbps, validation: H0-timing}
+  tck:
+    {value: 769, unit: ps, scope: dram_cycle, class: derived, source: [dram], status: derived, current: 769, validation: H0-timing, formula: 'floor(1000000 / (5200 / 4)); replaces preset trailing 1300'}
+  mac_spacing:
+    {value: {MACAB: 6, MACSB: 6, MACPB_same_BG: 4, MACPB_different_BG: 2}, unit: cycle, scope: command_spacing_not_compute_completion, class: attacc_inherited, source: [dram], status: verified_source, current: inherited, validation: H0-completion}
+  pim_precision:
+    {value: FP16, unit: format, scope: compute_datapath, class: paper_arch, source: [fig3], status: verified_report, current: timing_only_no_arithmetic, validation: H4-functional-reference}
+  pim_unit_mapping:
+    {value: null, unit: unit_per_bankgroup, scope: compute_die, class: engineering_assumption, source: [fig3, contract], status: unresolved, current: attacc_command_broadcast, validation: H4-unit-occupancy, question: Q5}
+  pim_tail_latency:
+    {value: null, unit: cycle, scope: command_to_result_ready, class: engineering_assumption, source: [dram, controller, contract], status: unresolved, current: no_result_ready_event, validation: H4-dependency-tail, question: Q5}
+  page_tokens:
+    {value: null, unit: token, scope: dma_page, class: engineering_assumption, source: [layout, contract], status: unresolved, current: logical_bytes_only, validation: H3-page-pipeline, question: Q6}
+  page_buffer_formula:
+    {value: 'T_page * d * 2 * 2', unit: B, scope: fp16_K_plus_V_per_head_group_page, class: paper_arch, source: [layout], status: verified_report, current: whole_job_reservation, validation: H3-buffer-lifecycle}
+  buffer_bytes:
+    {value: 16384, unit: B, scope: prototype_whole_job_buffer, class: engineering_assumption, source: [prototype], status: assumption, current: 16384, validation: H0-config}
+  queue_depth:
+    {value: 8, unit: job, scope: prototype_waiting_queue_excludes_active, class: engineering_assumption, source: [prototype], status: assumption, current: 8, validation: H0-config}
+  dma_engines:
+    {value: 1, unit: engine, scope: prototype_stack, class: engineering_assumption, source: [contract], status: assumption, current: 1, validation: H3-engine-backpressure}
+  switch_guard:
+    {value: 64, unit: cycle, scope: prototype_domain_switch, class: engineering_assumption, source: [prototype], status: assumption, current: 64, validation: H0-config}
+  mapped_window:
+    {value: 1048576, unit: B, scope: prototype_domain_address_window_not_die_capacity, class: engineering_assumption, source: [prototype], status: assumption, current: 1048576, validation: H0-config}
+  cold_k_precision:
+    {value: 8, unit: bit_per_element, scope: cold_key_payload, class: paper_arch, source: [quant], status: verified_report, current: aggregate_ratio_only, validation: H0-k8v4}
+  cold_v_precision:
+    {value: 4, unit: bit_per_element, scope: cold_value_payload, class: paper_arch, source: [quant], status: verified_report, current: aggregate_ratio_only, validation: H0-k8v4}
+  compressed_ratio:
+    {value: [3, 8], unit: rational, scope: equal_K_V_element_counts_excluding_metadata_and_padding, class: derived, source: [quant], status: derived, current: [3, 8], validation: H0-k8v4, formula: '(8+4)/(16+16)'}
+  conversion_throughput:
+    {value: match_tsv, unit: relationship, scope: paper_evaluation_pipeline, class: paper_eval, source: [table2, quant], status: verified_report, current: no_extra_conversion_delay, validation: H3-conversion-fast-slow}
+  quantization_metadata:
+    {value: null, unit: B_per_group, scope: cold_page, class: engineering_assumption, source: [quant, contract], status: unresolved, current: excluded, validation: H3-payload-padding, question: Q6}
+
+# Prospective H1 input only. Do not pass these records directly to Ramulator.
+profiles:
+  fig3_binary_geometry_assumption_v1:
+    class: engineering_assumption
+    status: capacity_consistent_runtime_supported_engineering
+    runtime_supported: true
+    source: [fig3, attacc_config, mapper, contract]
+    decisions: [Q1_figure_bank_counts_only, Q2_figure_binary_units, Q3_attacc_16ch_2pc_assumed]
+    stacks: 1
+    capacity_dies: 4
+    compute_dies: 4
+    dq_bits: 32
+    prefetch: 8
+    # No inherited 2-rank stack repeated inside each physical die.
+    # Rows derived from exact per-die byte targets and selected bank counts.
+    capacity_geometry: [16, 2, 1, 4, 4, 4096, 32]
+    compute_geometry: [16, 2, 1, 4, 2, 4096, 32]
+    capacity_die_bytes: 2147483648
+    compute_die_bytes: 1073741824
+    # H1 explicit conservative reuse, not a measured 512/1024 Mib die timing.
+    refresh_timing: {nRFC: 456, nREFISB: 159, nREFI: 5070, source: config/tokenstack_hardware.yaml, class: engineering_assumption}
+    tsv_policy: one_aggregate_budget_both_hops
+    ucie_policy: separate_stack_port_budget
+  table2_decimal_capacity_alternative_v1:
+    class: engineering_assumption
+    status: unit_alternative_no_geometry
+    runtime_supported: false
+    source: [table2, contract]
+    capacity_die_bytes: 2000000000
+    compute_die_bytes: 1000000000
+    geometry: null  # Do not force non-power-of-two capacity into the existing bit-slice mapper.
+
+open_questions:
+  Q1: {status: open, blocks_paper_freeze: true, subject: bank_count_vs_per_bank_capacity}
+  Q2: {status: open, blocks_paper_freeze: true, subject: GB_vs_GiB}
+  Q3: {status: open, blocks_paper_freeze: true, subject: physical_die_channels_PC_BG_rank_refresh}
+  Q4: {status: open, blocks_paper_freeze: true, subject: TSV_segments_duplex_and_DRAM_burst_overlap}
+  Q5: {status: open, blocks_paper_freeze: true, subject: PIM_units_result_tail_and_softmax}
+  Q6: {status: open, blocks_paper_freeze: false, subject: page_group_and_quantization_metadata}

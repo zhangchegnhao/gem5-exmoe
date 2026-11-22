@@ -1,0 +1,77 @@
+{
+  "sha256": {
+    "experiments/tokenstack_arch_20261104/tokenstack_model.py": "e320340bac92c403cf426d8b55e7ce20eed2aab84d11c56a4afe6a67925d6f74",
+    "experiments/tokenstack_arch_20261104/host_paths.py": "24cec004391aa544ac15e77276ea444cba8f2e1412d538a570aa08621139826c",
+    "experiments/tokenstack_arch_20261104/ramulator_bridge.py": "895ddeb6f65c48ac07a70170300759134cceeb55313bfe016486c26c1cd890fa",
+    "experiments/tokenstack_arch_20261104/attention_hardware.py": "4564bbb90f3010dd47d50d92cd41d650cc3d30aec297ac29cacddb8eb9b2f1a8",
+    "experiments/tokenstack_arch_20261104/kv_pipeline.py": "379c240b2ddec59f4cf8d31b06de656da23db112436f77cdb5ad020fb6746b8b",
+    "experiments/tokenstack_arch_20261104/hardware_topology.py": "6258b96f649691ae798d615e85dff52295a2de213c4a87100aa3d13bd0613b52",
+    "experiments/tokenstack_arch_20261104/scripts/run_hardware.py": "3303184569e12ee7855ee4cce3ad6be89a7f9d6737d628a76a4e8314702c99ce",
+    "attacc_simulator/ramulator2/build/ramulator2": "d1d71c07d9d6259cd3b9f66689ff725576f6a3a654165c29567f69d329c1d2a8",
+    "attacc_simulator/ramulator2/libramulator.so": "2f84518cea6dbd82f30f64218427360ae1ba54fe7381e330214f25bc7cd49281",
+    "attacc_simulator/ramulator2/build/CMakeCache.txt": "3d91943808f015780c7a67c425abcddfc4d5707b0caf8c5f27105dddc482fd1e",
+    "experiments/tokenstack_arch_20261104/scripts/run_layered.py": "34ddd1974c4adfc31811074bf5fb237c2442d3e029499e8b542b6d9a981afd06",
+    "experiments/tokenstack_arch_20261104/scripts/release_hardware.py": "1ab49151c71edc7b529bfb8ca915a34f8df7a769d93a6678a8fb786a77b9c6b3",
+    "experiments/tokenstack_arch_20261104/scripts/run_closed_loop.py": "30bb2ea1ffb9a5453470163012154b7ae9b9449662074ec119c261060efa570b",
+    "experiments/tokenstack_arch_20261104/scripts/run_ramulator_bridge.py": "9b8da47ae1dc25b1f65465d6428fe9cbdcc3fd8403761129a8b0850664664bfa",
+    "experiments/tokenstack_arch_20261104/scripts/audit_hardware_contract.py": "f4b8691ce105540726c6d661664c29d87c7ee38d8beec07d479682bc807eba3c",
+    "experiments/tokenstack_arch_20261104/scripts/verify_ramulator_regression.py": "f02a5a8decc1d5f65b2c596a88086aa9da56e799bae7aeda4fca2bef00a42de3",
+    "experiments/tokenstack_arch_20261104/scripts/reproduce_release.py": "25d9825fb47cb13eb91a61df8c2a6beb9a0dde60765d92cc55b3eb3e24873302",
+    "experiments/tokenstack_arch_20261104/scripts/run_smoke.py": "557c354ea532c8766a8f427c8a25a76b0086979b3355be749bc92418e91d7932",
+    "experiments/tokenstack_arch_20261104/scripts/run_acceptance.py": "855326700abc7e92cf4a08b44b038b8a2b05c58655b129966efa87e61da15406",
+    "experiments/tokenstack_arch_20261104/scripts/run_contention.py": "10fc0ebcc50c1f8760f3065159326e6672e014640d5ad7655b053a362ecdd671",
+    "experiments/tokenstack_arch_20261104/tests/test_hardware_integration.py": "f7e049f3970824b09243147b6a3a0ae711a869b0b2009217fe402e2d03f11372",
+    "experiments/tokenstack_arch_20261104/tests/test_hardware_contract.py": "93adeb1f2acb2928885b47701c7877bf58c495ea945d41d1e1835dcfd55d151b",
+    "experiments/tokenstack_arch_20261104/tests/test_attention_hardware.py": "5524175de3d26123e8e89aa91fc2446ae57382f8731110d951cbdf5db0c22523",
+    "experiments/tokenstack_arch_20261104/tests/test_closed_loop.py": "7bc9ca39db1ab8dd870c195914a660f8b2156799d0575a5e8e9b4a0f4e31e418",
+    "experiments/tokenstack_arch_20261104/tests/test_hardware_topology.py": "63463241c88f42f9961e9c930beb68861f43f5785a864720da39a2f89c8165e2",
+    "experiments/tokenstack_arch_20261104/tests/test_tokenstack_model.py": "af9f7002f93627c531883eb67ca89ce95849adba3229e0b9ca1c67c08cb1b9a4",
+    "experiments/tokenstack_arch_20261104/tests/test_kv_pipeline.py": "cfd3815fe8016d6bcf7dfc13a0950e71e825fbb5b32b692c812f312fc86a292c",
+    "experiments/tokenstack_arch_20261104/tests/test_host_paths.py": "fd26c166116b7e7e4d700a3d522c5838252a74075028d99caaf9c935cf89871b",
+    "experiments/tokenstack_arch_20261104/tests/test_hardware_fabric.py": "9ae5f840773475b93c8f023d8b2cb3146b9ec6dced80e40a0eace894a4d85da8",
+    "experiments/tokenstack_arch_20261104/tests/test_layered.py": "1a8e9f1663b078b56c6a2d5f61e4a6e36656d222b31769f2de7d1e6fc17ffdf6",
+    "experiments/tokenstack_arch_20261104/config/tokenstack_hardware.yaml": "dba9693d767e4eef9e1de9923d0fa91a414b6815d7c21bb4caf82596ebe275db",
+    "experiments/tokenstack_arch_20261104/config/tokenstack_minimal.yaml": "8824cf182e38d31939e7502893dd7d52cac0d6d90da859c6dc23507ca7fe24f7",
+    "experiments/tokenstack_arch_20261104/config/tokenstack_closed_loop.yaml": "28382409276ae97470eef4ade817f836961fc83dd021a3e3a98b308e43bfd896",
+    "experiments/tokenstack_arch_20261104/config/tokenstack_layered.yaml": "1c1e9821318e1b36163fb91b634cf06c2bde9790e79c3e53032391d446934a82",
+    "experiments/tokenstack_arch_20261104/spec/paper_hardware_contract.md": "b99b5171b3f72620fbec7cbb184072096458333ab53975ecf7dfe4b76e1dd622",
+    "experiments/tokenstack_arch_20261104/spec/open_questions.md": "3f301631e7d7a9c3a26bfa3927db9b2dc2719a1605fac98a4b67332a8ec0c444",
+    "experiments/tokenstack_arch_20261104/spec/hardware_parameters.yaml": "154622b82471402dd1ca0a27608762fb09c0240adf34ddc7535de4b4cd03c273",
+    "attacc_simulator/ramulator2/src/memory_system/tokenstack_memory.h": "a37ab6ebc4743b3fb44ff3bf0dba03b48462eab82ed55fdde5ac6547efbc9341",
+    "attacc_simulator/ramulator2/src/memory_system/tokenstack_fabric.h": "f392c94291947d83880c84c4acbbf904024f23916df6b89aee9ef029090862e8",
+    "attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_memory.cpp": "05145c172d6a943fc1792af72061be761df0932a91590b93a086182c25997f90",
+    "attacc_simulator/ramulator2/src/memory_system/impl/tokenstack_fabric.cpp": "31376d7009967bb2c1b24a0dec863f19946cddc28ea84f53872ec329ff5016dc",
+    "attacc_simulator/ramulator2/src/dram_controller/tokenstack_controller.h": "e1686b1bb500a7d52236aed83dcb67c850cda10ced287894373533bf41f67062",
+    "attacc_simulator/ramulator2/src/frontend/impl/memory_trace/tokenstack_graph.cpp": "db730fd75f9d419f7789062f4ed48303dd0444279043f5752fcc9144155e7aa6",
+    "attacc_simulator/ramulator2/src/frontend/impl/memory_trace/tokenstack_trace.cpp": "cd913b49f053b0da729a291276476a6b76f11ef8f0dd3dc5a646c9cd8e6f3a05",
+    "attacc_simulator/ramulator2/src/dram/impl/HBM3-PIM.cpp": "2bd686b3c47a5bc9a4c4da909aad45e212473b046bc532cc212e3ba22cf2abff",
+    "attacc_simulator/ramulator2/src/dram_controller/impl/hbm3_pim_controller.cpp": "de32666b385f33f7e396fe0c2d36be4658a3ce637b22aa0504a331f90c1e2cd7",
+    "attacc_simulator/ramulator2/src/dram/lambdas/preq.h": "8143ed39007d49e9b036ea984991202cae2f82010d075280eeac6caed624bfd8",
+    "attacc_simulator/ramulator2/src/dram/lambdas/action.h": "fd8a16a08ae8a0af0c502784228693aa9c02a3a1d83775ec3f32eaa4eb9b4921"
+  },
+  "python": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "pyyaml": "5.4.1",
+  "seed": 260505639,
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/run_acceptance.py",
+    "h6-engineering-v6",
+    "--profile",
+    "tokenstack_paper_profile",
+    "--allow-engineering-assumptions"
+  ],
+  "model_precision": "DRAM command timing + Base Die resource behavior; engineering profile",
+  "repos": {
+    "attacc": {
+      "head": "c60005143a6b492d7ef83231723386478b59a506\n",
+      "status": " M ramulator2\n"
+    },
+    "ramulator": {
+      "head": "b7c70275f04126c647edb989270cc429776955d1\n",
+      "status": " M src/CMakeLists.txt\n M src/addr_mapper/CMakeLists.txt\n M src/addr_mapper/impl/linear_mappers.cpp\n M src/base/base.h\n M src/base/request.h\n M src/dram/CMakeLists.txt\n M src/dram/impl/HBM3.cpp\n M src/dram/lambdas/action.h\n M src/dram/lambdas/preq.h\n M src/dram_controller/CMakeLists.txt\n M src/dram_controller/controller.h\n M src/dram_controller/impl/dummy_controller.cpp\n M src/dram_controller/impl/generic_dram_controller.cpp\n M src/dram_controller/impl/scheduler/generic_scheduler.cpp\n M src/frontend/CMakeLists.txt\n M src/frontend/impl/memory_trace/loadstore_trace.cpp\n M src/main.cpp\n M src/memory_system/CMakeLists.txt\n M src/memory_system/impl/dummy_memory_system.cpp\n M src/memory_system/impl/generic_DRAM_system.cpp\n M src/memory_system/memory_system.h\n?? HBM3_base.yaml\n?? attacc_bank.yaml\n?? attacc_bg.yaml\n?? attacc_buffer.yaml\n?? patches/\n?? src/addr_mapper/impl/hbm3_linear_mappers.cpp\n?? src/addr_mapper/impl/hbm3_pim_linear_mappers.cpp\n?? src/dram/impl/HBM3-PIM.cpp\n?? src/dram_controller/impl/hbm3_controller.cpp\n?? src/dram_controller/impl/hbm3_pim_controller.cpp\n?? src/dram_controller/impl/plugin/hbm3_trace_recorder.cpp\n?? src/dram_controller/impl/refresh/all_bank_refresh_hbm3.cpp\n?? src/dram_controller/impl/refresh/no_refresh.cpp\n?? src/dram_controller/impl/scheduler/pim_scheduler.cpp\n?? src/dram_controller/tokenstack_controller.h\n?? src/frontend/impl/memory_trace/pim_loadstore_trace.cpp\n?? src/frontend/impl/memory_trace/tokenstack_graph.cpp\n?? src/frontend/impl/memory_trace/tokenstack_trace.cpp\n?? src/memory_system/impl/PIM_DRAM_system.cpp\n?? src/memory_system/impl/tokenstack_fabric.cpp\n?? src/memory_system/impl/tokenstack_memory.cpp\n?? src/memory_system/tokenstack_fabric.h\n?? src/memory_system/tokenstack_memory.h\n?? trace_gen/\n"
+    },
+    "gem5": {
+      "head": "b9da2bfe1e21f6efa2730edd4e80e58c5d965458\n",
+      "status": ""
+    }
+  }
+}

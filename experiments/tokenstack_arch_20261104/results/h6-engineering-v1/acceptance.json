@@ -1,0 +1,1487 @@
+{
+  "schema_version": 1,
+  "engineering_acceptance": "passed",
+  "paper_fidelity_acceptance": "blocked_Q1_to_Q5",
+  "paper_spec_frozen": false,
+  "requested_profile": "tokenstack_paper_profile",
+  "cases": {
+    "topology-1": {
+      "tasks": 36,
+      "requests": 36,
+      "read_bytes": 512,
+      "write_bytes": 512,
+      "complete_cycle": 129,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 1024,
+      "command_count": 56,
+      "hardware_events": 36,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s0/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "topology-2": {
+      "tasks": 72,
+      "requests": 72,
+      "read_bytes": 1024,
+      "write_bytes": 1024,
+      "complete_cycle": 129,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 2048,
+      "command_count": 112,
+      "hardware_events": 72,
+      "resource_occupancy": {
+        "channel/s1/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s1/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "tsv/s1": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s1/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "tsv/s0": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s1/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s0/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "pim/s1/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "topology-5": {
+      "tasks": 180,
+      "requests": 180,
+      "read_bytes": 2560,
+      "write_bytes": 2560,
+      "complete_cycle": 129,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 5120,
+      "command_count": 280,
+      "hardware_events": 180,
+      "resource_occupancy": {
+        "channel/s1/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s2/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s3/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s4/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 32,
+          "bytes": 0
+        },
+        "channel/s1/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "channel/s2/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "channel/s3/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "channel/s4/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 24,
+          "bytes": 0
+        },
+        "tsv/s3": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s3/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "tsv/s4": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s4/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "tsv/s0": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "tsv/s1": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s1/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "tsv/s2": {
+          "busy_cycles": 64,
+          "bytes": 1024
+        },
+        "channel/s2/ch0/pc0/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s3/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s4/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s0/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s1/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "channel/s2/ch15/pc1/data": {
+          "busy_cycles": 32,
+          "bytes": 512
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s2/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s3/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s4/d4/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s2/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s3/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s4/d5/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s4/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s2/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s3/d6/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s1/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s2/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s3/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        },
+        "pim/s4/d7/ch0": {
+          "busy_cycles": 8,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "large-promotion": {
+      "tasks": 115,
+      "requests": 234,
+      "read_bytes": 1184,
+      "write_bytes": 6304,
+      "complete_cycle": 881,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 7488,
+      "command_count": 281,
+      "hardware_events": 234,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 281,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 468,
+          "bytes": 7488
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 458,
+          "bytes": 7328
+        },
+        "convert/s0": {
+          "busy_cycles": 37,
+          "bytes": 6304
+        },
+        "layout/s0": {
+          "busy_cycles": 10,
+          "bytes": 2368
+        },
+        "channel/s0/ch0/pc1/data": {
+          "busy_cycles": 10,
+          "bytes": 160
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "large-demotion": {
+      "tasks": 435,
+      "requests": 234,
+      "read_bytes": 6304,
+      "write_bytes": 1184,
+      "complete_cycle": 788,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 7488,
+      "command_count": 281,
+      "hardware_events": 234,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 281,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 468,
+          "bytes": 7488
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 458,
+          "bytes": 7328
+        },
+        "convert/s0": {
+          "busy_cycles": 197,
+          "bytes": 6304
+        },
+        "layout/s0": {
+          "busy_cycles": 10,
+          "bytes": 2368
+        },
+        "channel/s0/ch0/pc1/data": {
+          "busy_cycles": 10,
+          "bytes": 160
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "convert-896": {
+      "tasks": 37,
+      "requests": 72,
+      "read_bytes": 384,
+      "write_bytes": 1920,
+      "complete_cycle": 325,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 2304,
+      "command_count": 91,
+      "hardware_events": 72,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 91,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 144,
+          "bytes": 2304
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 144,
+          "bytes": 2304
+        },
+        "convert/s0": {
+          "busy_cycles": 12,
+          "bytes": 1920
+        },
+        "layout/s0": {
+          "busy_cycles": 3,
+          "bytes": 768
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "convert-1": {
+      "tasks": 37,
+      "requests": 72,
+      "read_bytes": 384,
+      "write_bytes": 1920,
+      "complete_cycle": 2624,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 2304,
+      "command_count": 91,
+      "hardware_events": 72,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 91,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 144,
+          "bytes": 2304
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 144,
+          "bytes": 2304
+        },
+        "convert/s0": {
+          "busy_cycles": 2508,
+          "bytes": 1920
+        },
+        "layout/s0": {
+          "busy_cycles": 3,
+          "bytes": 768
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "tail-1": {
+      "tasks": 78,
+      "requests": 73,
+      "read_bytes": 0,
+      "write_bytes": 0,
+      "complete_cycle": 141,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 360,
+      "command_count": 92,
+      "hardware_events": 73,
+      "resource_occupancy": {
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 360
+        },
+        "tsv/s0": {
+          "busy_cycles": 4,
+          "bytes": 360
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 92,
+          "bytes": 0
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 52,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 18,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 18,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 16,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "tail-8": {
+      "tasks": 78,
+      "requests": 73,
+      "read_bytes": 0,
+      "write_bytes": 0,
+      "complete_cycle": 230,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 360,
+      "command_count": 92,
+      "hardware_events": 73,
+      "resource_occupancy": {
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 360
+        },
+        "tsv/s0": {
+          "busy_cycles": 4,
+          "bytes": 360
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 92,
+          "bytes": 0
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 192,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 144,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 144,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 128,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "tail-32": {
+      "tasks": 78,
+      "requests": 73,
+      "read_bytes": 0,
+      "write_bytes": 0,
+      "complete_cycle": 710,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 360,
+      "command_count": 92,
+      "hardware_events": 73,
+      "resource_occupancy": {
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 360
+        },
+        "tsv/s0": {
+          "busy_cycles": 4,
+          "bytes": 360
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 92,
+          "bytes": 0
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 672,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 576,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 576,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 512,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "mixed-refresh-1": {
+      "tasks": 276,
+      "requests": 197,
+      "read_bytes": 2816,
+      "write_bytes": 2560,
+      "complete_cycle": 5316,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 5656,
+      "command_count": 4761,
+      "hardware_events": 197,
+      "resource_occupancy": {
+        "ucie/s0": {
+          "busy_cycles": 48,
+          "bytes": 768
+        },
+        "channel/s0/ch8": {
+          "busy_cycles": 332,
+          "bytes": 0
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 621,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 340,
+          "bytes": 5656
+        },
+        "channel/s0/ch8/pc0/data": {
+          "busy_cycles": 72,
+          "bytes": 1152
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 264,
+          "bytes": 4224
+        },
+        "convert/s0": {
+          "busy_cycles": 72,
+          "bytes": 3840
+        },
+        "channel/s0/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "layout/s0": {
+          "busy_cycles": 6,
+          "bytes": 1536
+        },
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 280
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 88,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 4352,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "mixed-refresh-2": {
+      "tasks": 276,
+      "requests": 197,
+      "read_bytes": 2816,
+      "write_bytes": 2560,
+      "complete_cycle": 5514,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 5656,
+      "command_count": 9635,
+      "hardware_events": 197,
+      "resource_occupancy": {
+        "ucie/s0": {
+          "busy_cycles": 28,
+          "bytes": 448
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 639,
+          "bytes": 0
+        },
+        "channel/s0/ch8": {
+          "busy_cycles": 332,
+          "bytes": 0
+        },
+        "ucie/s1": {
+          "busy_cycles": 20,
+          "bytes": 320
+        },
+        "channel/s1/ch8": {
+          "busy_cycles": 312,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 320,
+          "bytes": 5336
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 264,
+          "bytes": 4224
+        },
+        "channel/s0/ch8/pc0/data": {
+          "busy_cycles": 52,
+          "bytes": 832
+        },
+        "tsv/s1": {
+          "busy_cycles": 20,
+          "bytes": 320
+        },
+        "channel/s1/ch8/pc0/data": {
+          "busy_cycles": 20,
+          "bytes": 320
+        },
+        "convert/s0": {
+          "busy_cycles": 72,
+          "bytes": 3840
+        },
+        "channel/s1/ch0": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch1": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch2": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch3": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch4": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch5": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch6": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch7": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch9": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch10": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch11": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch12": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch13": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch14": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s1/ch15": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch1": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch2": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch3": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch4": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch5": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch6": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch7": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch9": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch10": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch11": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch12": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch13": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch14": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 288,
+          "bytes": 0
+        },
+        "layout/s0": {
+          "busy_cycles": 6,
+          "bytes": 1536
+        },
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 280
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 88,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 9216,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "mixed-refresh-5": {
+      "tasks": 276,
+      "requests": 197,
+      "read_bytes": 2816,
+      "write_bytes": 2560,
+      "complete_cycle": 5241,
+      "buffer_peak_bytes_by_stack_head_group": {
+        "0": 512
+      },
+      "tsv_bytes": 5656,
+      "command_count": 22180,
+      "hardware_events": 197,
+      "resource_occupancy": {
+        "ucie/s1": {
+          "busy_cycles": 12,
+          "bytes": 192
+        },
+        "channel/s0/ch0": {
+          "busy_cycles": 622,
+          "bytes": 0
+        },
+        "channel/s1/ch8": {
+          "busy_cycles": 286,
+          "bytes": 0
+        },
+        "ucie/s4": {
+          "busy_cycles": 10,
+          "bytes": 160
+        },
+        "channel/s4/ch8": {
+          "busy_cycles": 283,
+          "bytes": 0
+        },
+        "ucie/s3": {
+          "busy_cycles": 8,
+          "bytes": 128
+        },
+        "channel/s3/ch8": {
+          "busy_cycles": 280,
+          "bytes": 0
+        },
+        "ucie/s2": {
+          "busy_cycles": 14,
+          "bytes": 224
+        },
+        "channel/s2/ch8": {
+          "busy_cycles": 285,
+          "bytes": 0
+        },
+        "ucie/s0": {
+          "busy_cycles": 4,
+          "bytes": 64
+        },
+        "channel/s0/ch8": {
+          "busy_cycles": 296,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 296,
+          "bytes": 4952
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 264,
+          "bytes": 4224
+        },
+        "tsv/s1": {
+          "busy_cycles": 12,
+          "bytes": 192
+        },
+        "channel/s1/ch8/pc0/data": {
+          "busy_cycles": 12,
+          "bytes": 192
+        },
+        "tsv/s4": {
+          "busy_cycles": 10,
+          "bytes": 160
+        },
+        "channel/s4/ch8/pc0/data": {
+          "busy_cycles": 10,
+          "bytes": 160
+        },
+        "tsv/s3": {
+          "busy_cycles": 8,
+          "bytes": 128
+        },
+        "channel/s3/ch8/pc0/data": {
+          "busy_cycles": 8,
+          "bytes": 128
+        },
+        "tsv/s2": {
+          "busy_cycles": 14,
+          "bytes": 224
+        },
+        "channel/s2/ch8/pc0/data": {
+          "busy_cycles": 14,
+          "bytes": 224
+        },
+        "channel/s0/ch8/pc0/data": {
+          "busy_cycles": 28,
+          "bytes": 448
+        },
+        "convert/s0": {
+          "busy_cycles": 72,
+          "bytes": 3840
+        },
+        "channel/s2/ch0": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s2/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch0": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s3/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch0": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s4/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s0/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch0": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch1": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch2": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch3": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch4": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch5": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch6": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch7": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch9": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch10": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch11": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch12": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch13": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch14": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "channel/s1/ch15": {
+          "busy_cycles": 272,
+          "bytes": 0
+        },
+        "layout/s0": {
+          "busy_cycles": 6,
+          "bytes": 1536
+        },
+        "coordinator/s0": {
+          "busy_cycles": 36,
+          "bytes": 280
+        },
+        "pim/s0/d4/ch0": {
+          "busy_cycles": 88,
+          "bytes": 0
+        },
+        "pim/s0/d5/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d6/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        },
+        "pim/s0/d7/ch0": {
+          "busy_cycles": 56,
+          "bytes": 0
+        }
+      },
+      "refresh_commands": 21760,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "cross-stack-host-2560": {
+      "tasks": 5,
+      "requests": 16,
+      "read_bytes": 256,
+      "write_bytes": 256,
+      "complete_cycle": 149,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 512,
+      "command_count": 18,
+      "hardware_events": 16,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 9,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "ucie/s0": {
+          "busy_cycles": 1,
+          "bytes": 256
+        },
+        "gpu_crossbar": {
+          "busy_cycles": 1,
+          "bytes": 256
+        },
+        "ucie/s1": {
+          "busy_cycles": 1,
+          "bytes": 256
+        },
+        "channel/s1/ch0": {
+          "busy_cycles": 9,
+          "bytes": 0
+        },
+        "tsv/s1": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "channel/s1/ch0/pc0/data": {
+          "busy_cycles": 16,
+          "bytes": 256
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    },
+    "cross-stack-host-1": {
+      "tasks": 5,
+      "requests": 16,
+      "read_bytes": 256,
+      "write_bytes": 256,
+      "complete_cycle": 481,
+      "buffer_peak_bytes_by_stack_head_group": {},
+      "tsv_bytes": 512,
+      "command_count": 18,
+      "hardware_events": 16,
+      "resource_occupancy": {
+        "channel/s0/ch0": {
+          "busy_cycles": 9,
+          "bytes": 0
+        },
+        "tsv/s0": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "channel/s0/ch0/pc0/data": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "ucie/s0": {
+          "busy_cycles": 1,
+          "bytes": 256
+        },
+        "gpu_crossbar": {
+          "busy_cycles": 333,
+          "bytes": 256
+        },
+        "ucie/s1": {
+          "busy_cycles": 1,
+          "bytes": 256
+        },
+        "channel/s1/ch0": {
+          "busy_cycles": 9,
+          "bytes": 0
+        },
+        "tsv/s1": {
+          "busy_cycles": 16,
+          "bytes": 256
+        },
+        "channel/s1/ch0/pc0/data": {
+          "busy_cycles": 16,
+          "bytes": 256
+        }
+      },
+      "refresh_commands": 0,
+      "cycles_per_second": 1300390117.0351105
+    }
+  },
+  "unit_tests_log": "tests.log",
+  "baseline_run": "../h6-engineering-v1-attacc",
+  "calibration": "internal command/resource invariants and AttAcc regression only; no silicon/RTL or paper-throughput calibration"
+}

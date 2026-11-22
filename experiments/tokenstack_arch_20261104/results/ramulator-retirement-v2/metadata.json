@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/home/ubuntu22/gem5/attacc_simulator/ramulator2/build/ramulator2",
+    "-f",
+    "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/ramulator-retirement-v2/config/attacc_bank.yaml"
+  ],
+  "argv": [
+    "experiments/tokenstack_arch_20261104/scripts/run_ramulator_bridge.py",
+    "ramulator-retirement-v2"
+  ],
+  "ramulator_commit": "b7c70275f04126c647edb989270cc429776955d1",
+  "attacc_commit": "c60005143a6b492d7ef83231723386478b59a506",
+  "binary_sha256": "c7528ec4488709bed28ed0fce5eeafaec0c349cc0cf33c9a2c90851b937e6add",
+  "trace_sha256": "6008913d577038f3602f97a412cadbeb0ed3c96c0a2c8c66fc161720b8022997",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
+}

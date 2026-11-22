@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "profile": "a100a_compute_five_stack_tokenstack_v1",
+  "gpu": {
+    "model": "A100a",
+    "devices": 1,
+    "precision": "W16A16",
+    "peak_flops_per_second": 312000000000000,
+    "compute_utilization": 0.8,
+    "launch_overhead_cycles": 0
+  },
+  "SMs": 108,
+  "attacc_default_compute_utilization": 0.8,
+  "effective_flops_per_second": 249600000000000.0,
+  "capacity_bytes": {
+    "total": 64424509440,
+    "capacity_layers": 42949672960,
+    "compute_layers": 21474836480,
+    "gpu_arena": 21474836480,
+    "cold_kv_arena": 21474836480
+  },
+  "bandwidth_GBps": {
+    "dram_interface_per_stack": 665.7997399219767,
+    "tsv_per_stack": 896,
+    "ucie_per_stack": 512,
+    "host_crossbar_total": 2560,
+    "host_memory_path_upper_bound": 2560
+  },
+  "attacc_overrides": {
+    "NUM_DEVICE": 1,
+    "MEM_CAPACITY_PER_DEVICE": 64424509440,
+    "OFF_MEM_BW_PER_DEVICE": 2560000000000
+  },
+  "unmodeled_cache_provenance": {
+    "L1_bytes_per_SM": 196608,
+    "L2_bytes": 41943040
+  },
+  "clock_ps": 769,
+  "bandwidth_units": "decimal GB/s = 10^9 B/s; capacities reported in bytes/GiB",
+  "compute_policy": "ceil(FLOPs/(peak*utilization)/tCK) + explicit launch overhead; one shared GPU lane",
+  "memory_policy": "load -> compute -> store; live DRAM/TSV/UCIe/crossbar callbacks; no analytical memory term",
+  "attacc_source_sha256": {
+    "src/config.py": "9c568d6a66edc26f5d9f891d07a718e1fcd223579ddbdeb7e1a11f819e9aa9e3",
+    "src/model.py": "afc2a9354010dc95be273bcb0e390f36d018c1d56d8cb58a50298a9d20215d08",
+    "src/type.py": "5045fe5d777321b531185e0f0bee489193a3aca330c3704c6ce10f62d2ba8b22"
+  }
+}

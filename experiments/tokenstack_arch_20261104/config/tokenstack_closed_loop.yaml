@@ -1,0 +1,44 @@
+# Conservative behavior-level Base Die, cycle-level AttAcc DRAM/PIM backend.
+# Values below are smoke-test assumptions, not a calibrated TokenStack device.
+Frontend:
+  impl: TokenStackTrace
+  clock_ratio: 1
+  path: TO_BE_SET_BY_RUNNER
+  request_log: TO_BE_SET_BY_RUNNER
+  job_log: TO_BE_SET_BY_RUNNER
+  resource_log: TO_BE_SET_BY_RUNNER
+  burst_bytes: 32 # B; actual HBM3-PIM prefetch(8)*DQ(32)/8, checked at setup
+  capacity_base: 0 # B; synthetic disjoint address regions, not physical dies
+  compute_base: 1048576 # B
+  region_bytes: 1048576 # B per logical region; TODO: verify physical Layer map
+  buffer_bytes: 16384 # B, one whole logical FP16 page reserved; synthetic
+  queue_depth: 8 # waiting jobs; one active DMA/attention transaction excluded
+  compressed_num: 3 # K8V4 / FP16 bytes = 3/8, equal K and V element counts
+  compressed_den: 8 # scale/zero-point metadata excluded
+  base_die_link_GBps: 896 # decimal GB/s per Stack, paper experiment assumption
+  # This is an ADDITIONAL serial internal hop beyond the DRAM nBL data bus.
+  # TODO: verify physical path/overlap; quant/dequant assumed throughput matched.
+  max_cycles: 1000000 # cycles at actual DRAM tCK; fail rather than hang
+MemorySystem:
+  impl: PIMDRAM
+  clock_ratio: 1
+  DRAM:
+    impl: HBM3-PIM
+    org:
+      preset: HBM3_8Gb_2R
+      channel: 1 # minimal single shared timing domain, not full paper topology
+    timing:
+      preset: HBM3_5.2Gbps # AttAcc preset; backend derives tCK_ps=769
+  Controller:
+    impl: HBM3-PIM
+    tokenstack_closed_loop: true # default false: original baseline path
+    Scheduler:
+      impl: PIM
+    RefreshManager:
+      impl: AllBankHBM3
+    plugins:
+    - ControllerPlugin:
+        impl: HBM3TraceRecorder
+        path: TO_BE_SET_BY_RUNNER
+  AddrMapper:
+    impl: HBM3-PIM

@@ -1,0 +1,15 @@
+[ 16%] Built target ramulator-controller
+[ 56%] Built target yaml-cpp
+[ 67%] Built target spdlog
+[ 75%] Built target ramulator-base
+[ 79%] Built target ramulator-frontend
+[ 82%] Built target ramulator-translation
+Consolidate compiler generated dependencies of target ramulator-memorysystem
+[ 83%] Building CXX object src/memory_system/CMakeFiles/ramulator-memorysystem.dir/impl/tokenstack_memory.cpp.o
+[ 89%] Built target ramulator-addrmapper
+[ 91%] Built target ramulator-dram
+[ 95%] Built target ramulator-memorysystem
+[ 97%] Linking CXX shared library ../libramulator.so
+[ 97%] Built target ramulator
+[ 98%] Linking CXX executable ramulator2
+[100%] Built target ramulator-exe

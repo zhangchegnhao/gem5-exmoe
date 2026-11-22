@@ -1,0 +1,1075 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index dc6ded5..2e5de36 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1,5 +1,4 @@
+ add_subdirectory(base)
+-add_subdirectory(test)
+ add_subdirectory(frontend)
+ add_subdirectory(translation)
+ add_subdirectory(memory_system)
+diff --git a/src/addr_mapper/CMakeLists.txt b/src/addr_mapper/CMakeLists.txt
+index 3eee428..1e8e0f1 100644
+--- a/src/addr_mapper/CMakeLists.txt
++++ b/src/addr_mapper/CMakeLists.txt
+@@ -5,6 +5,8 @@ target_sources(
+   addr_mapper.h 
+ 
+   impl/linear_mappers.cpp
++  impl/hbm3_linear_mappers.cpp
++  impl/hbm3_pim_linear_mappers.cpp
+   impl/rit.cpp
+   impl/rit.h
+ )
+diff --git a/src/addr_mapper/impl/linear_mappers.cpp b/src/addr_mapper/impl/linear_mappers.cpp
+index 3792f08..a3f1e86 100644
+--- a/src/addr_mapper/impl/linear_mappers.cpp
++++ b/src/addr_mapper/impl/linear_mappers.cpp
+@@ -123,4 +123,5 @@ class MOP4CLXOR final : public LinearMapperBase, public Implementation {
+     }
+ };
+ 
++
+ }   // namespace Ramulator
+\ No newline at end of file
+diff --git a/src/base/base.h b/src/base/base.h
+index b6cd44b..54ecdc8 100644
+--- a/src/base/base.h
++++ b/src/base/base.h
+@@ -175,14 +175,14 @@ class Implementation {
+         // Print all my stats
+         emitter << m_stats;
+         // Print all my children
+-        for (auto child_impl : m_children) {
+-          if (child_impl->has_stats()) {
+-            // TODO: Is this a bug in yaml-cpp that I have to emit NewLine twice?
+-            emitter << YAML::Newline;
+-            emitter << YAML::Newline;
+-          }
+-          child_impl->print_stats(emitter);
+-        }
++//        for (auto child_impl : m_children) {
++//          if (child_impl->has_stats()) {
++//            // TODO: Is this a bug in yaml-cpp that I have to emit NewLine twice?
++//            emitter << YAML::Newline;
++//            emitter << YAML::Newline;
++//          }
++//          child_impl->print_stats(emitter);
++//        }
+       emitter << YAML::EndMap;
+       emitter << YAML::Newline;
+     };
+diff --git a/src/base/request.h b/src/base/request.h
+index 2c9d406..c8e3467 100644
+--- a/src/base/request.h
++++ b/src/base/request.h
+@@ -17,8 +17,21 @@ struct Request {
+   // 0 = Read, 1 = Write. The device spec defines all others
+   struct Type {
+     enum : int {
++      // DRAM requests
+       Read = 0, 
+-      Write,
++      Write = 1,
++
++      // PIM requests
++      PIM_MAC_AB = 4,
++      PIM_MAC_SB = 5,
++      PIM_MAC_PB = 6,
++      PIM_WR_GB = 7,
++      PIM_MV_SB = 8,
++      PIM_MV_GB = 9,
++      PIM_SFM = 10,
++      PIM_SET_MODEL = 11,
++      PIM_SET_HEAD = 12,
++      PIM_BARRIER = 13
+     };
+   };
+ 
+diff --git a/src/dram/CMakeLists.txt b/src/dram/CMakeLists.txt
+index 3b781b6..edf7c0c 100644
+--- a/src/dram/CMakeLists.txt
++++ b/src/dram/CMakeLists.txt
+@@ -6,14 +6,8 @@ target_sources(
+   
+   lambdas/preq.h  lambdas/rowhit.h  lambdas/rowopen.h 
+ 
+-  impl/DDR3.cpp
+-  impl/DDR4.cpp
+-  impl/DDR4-VRR.cpp
+-  impl/DDR5.cpp
+-  impl/LPDDR5.cpp
+-  impl/HBM.cpp
+-  impl/HBM2.cpp
+   impl/HBM3.cpp
++  impl/HBM3-PIM.cpp
+ )
+ 
+ target_link_libraries(
+diff --git a/src/dram/impl/HBM3.cpp b/src/dram/impl/HBM3.cpp
+index fc921ea..fa388a1 100644
+--- a/src/dram/impl/HBM3.cpp
++++ b/src/dram/impl/HBM3.cpp
+@@ -1,5 +1,6 @@
+ #include "dram/dram.h"
+ #include "dram/lambdas.h"
++// Considering QDR DQ pins, we double dq pins and halve burst length. So, rate 2 actually means 4 Gbps DQs for HBM3.
+ 
+ namespace Ramulator {
+ 
+@@ -8,26 +9,43 @@ class HBM3 : public IDRAM, public Implementation {
+ 
+   public:
+     inline static const std::map<std::string, Organization> org_presets = {
+-      //   name     density   DQ    Ch Pch  Bg Ba   Ro     Co
+-      {"HBM3_2Gb",   {2<<10,  128,  {1, 2,  4,  4, 1<<13, 1<<6}}},
+-      {"HBM3_4Gb",   {4<<10,  128,  {1, 2,  4,  4, 1<<14, 1<<6}}},
+-      {"HBM3_8Gb",   {6<<10,  128,  {1, 2,  4,  4, 1<<15, 1<<6}}},
++      // DQ for Pseudo Channel
++      // 1/2/3/4R means 1/2/3/4 ranks for 4/8/12/16-Hi stack
++      // We refer to JEDEC Standard (JESD238A).
++      //   name          density    DQ    Ch Pch  Ra  Bg  Ba   Ro     Co
++      {"HBM3_2Gb_1R",    {2<<10,    32,  {1,  2,  1,  4,  4, 1<<13,  1<<5}}},
++      {"HBM3_4Gb_1R",    {4<<10,    32,  {1,  2,  1,  4,  4, 1<<14,  1<<5}}},
++      {"HBM3_8Gb_1R",    {8<<10,    32,  {1,  2,  1,  4,  4, 1<<15,  1<<5}}},
++      {"HBM3_4Gb_2R",    {4<<10,    32,  {1,  2,  2,  4,  4, 1<<13,  1<<5}}},
++      {"HBM3_8Gb_2R",    {8<<10,    32,  {1,  2,  2,  4,  4, 1<<14,  1<<5}}},
++      {"HBM3_16Gb_2R",   {16<<10,   32,  {1,  2,  2,  4,  4, 1<<15,  1<<5}}},
++      {"HBM3_6Gb_3R",    {6<<10,    32,  {1,  2,  3,  4,  4, 1<<13,  1<<5}}},
++      {"HBM3_12Gb_3R",   {12<<10,   32,  {1,  2,  3,  4,  4, 1<<14,  1<<5}}},
++      {"HBM3_24Gb_3R",   {24<<10,   32,  {1,  2,  3,  4,  4, 1<<15,  1<<5}}},
++      {"HBM3_8Gb_4R",    {8<<10,    32,  {1,  2,  4,  4,  4, 1<<13,  1<<5}}},
++      {"HBM3_16Gb_4R",   {16<<10,   32,  {1,  2,  4,  4,  4, 1<<14,  1<<5}}},
++      {"HBM3_32Gb_4R",   {32<<10,   32,  {1,  2,  4,  4,  4, 1<<15,  1<<5}}},
+     };
+ 
+     inline static const std::map<std::string, std::vector<int>> timing_presets = {
+       //   name       rate   nBL  nCL  nRCDRD  nRCDWR  nRP  nRAS  nRC  nWR  nRTPS  nRTPL  nCWL  nCCDS  nCCDL  nRRDS  nRRDL  nWTRS  nWTRL  nRTW  nFAW  nRFC  nRFCSB  nREFI  nREFISB  nRREFD  tCK_ps
+-      {"HBM3_2Gbps",  {2000,   4,   7,    7,      7,     7,   17,  19,   8,    2,     3,    2,    1,      2,     2,     3,     3,     4,    3,    15,   -1,   160,   3900,     -1,      8,   1000}},
++      {"HBM3_4.8Gbps",  {4800,   2,  17,   17,     17,    17,   41,  58,  20,    5,     8,    5,    2,      4,     2,     4,     8,    10,    3,    36,   -1,   240,   4680,     -1,     10,   1200}},
++      {"HBM3_5.2Gbps",  {5200,   2,  19,   19,     19,    19,   45,  63,  21,    6,     8,    6,    2,      4,     2,     4,     8,    11,    3,    39,   -1,   260,   5070,     -1,     11,   1300}},
++      {"HBM3_5.6Gbps",  {5600,   2,  20,   20,     20,    20,   48,  68,  23,    6,     9,    6,    2,      4,     2,     4,     9,    12,    3,    42,   -1,   280,   5460,     -1,     12,   1400}},
++      {"HBM3_6.0Gbps",  {6000,   2,  21,   21,     21,    21,   51,  72,  24,    6,     9,    6,    2,      4,     2,     4,     9,    12,    3,    45,   -1,   300,   5850,     -1,     12,   1500}},
++      {"HBM3_6.4Gbps",  {6400,   2,  23,   23,     23,    23,   55,  77,  26,    7,    10,    7,    2,      4,     2,     4,    10,    13,    3,    48,   -1,   320,   6240,     -1,     13,   1600}},
+       // TODO: Find more sources on HBM3 timings...
++      // We could not find released HBM3 timing parameters. So, we mostly refer to the absolute value (ns) of the HBM2 timing parameters in DRAMSim3 (https://github.com/umd-memsys/DRAMsim3/blob/master/configs/HBM2_8Gb_x128.ini, commit: 29817593b3389f1337235d63cac515024ab8fd6e)
+     };
+ 
+ 
+   /************************************************
+    *                Organization
+    ***********************************************/   
+-    const int m_internal_prefetch_size = 2;
++    const int m_internal_prefetch_size = 8;
+ 
+     inline static constexpr ImplDef m_levels = {
+-      "channel", "pseudochannel", "bankgroup", "bank", "row", "column",    
++      "channel", "pseudochannel", "rank", "bankgroup", "bank", "row", "column",    
+     };
+ 
+ 
+@@ -108,6 +126,7 @@ class HBM3 : public IDRAM, public Implementation {
+       m_levels, m_states, {
+         {"channel",       "N/A"}, 
+         {"pseudochannel", "N/A"}, 
++        {"rank",         "N/A"}, // SID
+         {"bankgroup",     "N/A"},
+         {"bank",          "Closed"},
+         {"row",           "Closed"},
+@@ -169,7 +188,7 @@ class HBM3 : public IDRAM, public Implementation {
+   private:
+     void set_organization() {
+       // Channel width
+-      m_channel_width = param_group("org").param<int>("channel_width").default_val(64);
++      m_channel_width = param_group("org").param<int>("channel_width").default_val(32);
+ 
+       // Organization
+       m_organization.count.resize(m_levels.size(), -1);
+@@ -201,11 +220,13 @@ class HBM3 : public IDRAM, public Implementation {
+ 
+       // Sanity check: is the calculated channel density the same as the provided one?
+       size_t _density = size_t(m_organization.count[m_levels["pseudochannel"]]) *
++                        size_t(m_organization.count[m_levels["rank"]]) *
+                         size_t(m_organization.count[m_levels["bankgroup"]]) *
+                         size_t(m_organization.count[m_levels["bank"]]) *
+                         size_t(m_organization.count[m_levels["row"]]) *
+                         size_t(m_organization.count[m_levels["column"]]) *
+-                        size_t(m_organization.dq);
++                        size_t(m_organization.dq) *
++                        size_t(m_internal_prefetch_size);
+       _density >>= 20;
+       if (m_organization.density != _density) {
+         throw ConfigurationError(
+@@ -239,34 +260,38 @@ class HBM3 : public IDRAM, public Implementation {
+         }
+         m_timing_vals("rate") = *dq;
+       }
+-      int tCK_ps = 1E6 / (m_timing_vals("rate") / 2);
++      int tCK_ps = 1E6 / (m_timing_vals("rate") / 4); // QDR DQ pins
+       m_timing_vals("tCK_ps") = tCK_ps;
+ 
+       // Refresh timings
+       // tRFC table (unit is nanosecond!)
+-      constexpr int tRFC_TABLE[1][4] = {
+-      //  2Gb   4Gb   8Gb  16Gb
+-        { 160,  260,  350,  450},
++      constexpr int tRFC_TABLE[1][8] = {
++      //  2Gb   4Gb   6Gb   8Gb   12Gb  16Gb  24Gb  32Gb
++        { 160,  260,  310,  350,  410,  450,  610,  650},
+       };
+ 
+       // tRFC table (unit is nanosecond!)
+-      constexpr int tREFISB_TABLE[1][4] = {
+-      //  2Gb    4Gb    8Gb    16Gb
+-        { 4875,  4875,  2438,  2438},
++      constexpr int tREFISB_TABLE[1][8] = {
++      //  4-Hi   8-Hi   12-Hi  16-Hi
++        { 244,   122,    82,    61},
+       };
+ 
+       int density_id = [](int density_Mb) -> int { 
+         switch (density_Mb) {
+           case 2048:  return 0;
+           case 4096:  return 1;
+-          case 8192:  return 2;
+-          case 16384: return 3;
++          case 6144:  return 2;
++          case 8192:  return 3;
++          case 12288: return 4;
++          case 16384: return 5;
++          case 24576: return 6;
++          case 32768: return 7;
+           default:    return -1;
+         }
+       }(m_organization.density);
+ 
+       m_timing_vals("nRFC")  = JEDEC_rounding(tRFC_TABLE[0][density_id], tCK_ps);
+-      m_timing_vals("nREFISB")  = JEDEC_rounding(tRFC_TABLE[0][density_id], tCK_ps);
++      m_timing_vals("nREFISB")  = JEDEC_rounding(tREFISB_TABLE[0][m_organization.count[m_levels["rank"]]], tCK_ps);
+ 
+       // Overwrite timing parameters with any user-provided value
+       // Rate and tCK should not be overwritten
+@@ -299,38 +324,15 @@ class HBM3 : public IDRAM, public Implementation {
+           /// 2-cycle ACT command (for row commands)
+           {.level = "channel", .preceding = {"ACT"}, .following = {"ACT", "PRE", "PREA", "REFab", "REFsb", "RFMab", "RFMsb"}, .latency = 2},
+ 
+-          /*** Pseudo Channel (Table 3 — Array Access Timings Counted Individually Per Pseudo Channel, JESD-235C) ***/ 
+-          // RAS <-> RAS
+-          {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nRRDS")},
+-          /// 4-activation window restriction
+-          {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nFAW"), .window = 4},
+-
+-          /// ACT actually happens on the 2-nd cycle of ACT, so +1 cycle to nRRD
+-          {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"REFsb", "RFMsb"}, .latency = V("nRRDS") + 1},
+-          /// nRREFD is the latency between REFsb <-> REFsb to *different* banks
+-          {.level = "pseudochannel", .preceding = {"REFsb", "RFMsb"}, .following = {"REFsb", "RFMsb"}, .latency = V("nRREFD")},
+-          /// nRREFD is the latency between REFsb <-> ACT to *different* banks. -1 as ACT happens on its 2nd cycle
+-          {.level = "pseudochannel", .preceding = {"REFsb", "RFMsb"}, .following = {"ACT"}, .latency = V("nRREFD") - 1},
+-
++          /*** Pseudo Channel ***/ 
+           // CAS <-> CAS
+           /// Data bus occupancy
+           {.level = "pseudochannel", .preceding = {"RD", "RDA"}, .following = {"RD", "RDA"}, .latency = V("nBL")},
+           {.level = "pseudochannel", .preceding = {"WR", "WRA"}, .following = {"WR", "WRA"}, .latency = V("nBL")},
+-
+-          // CAS <-> CAS
+-          /// nCCDS is the minimal latency for column commands 
+-          {.level = "pseudochannel", .preceding = {"RD", "RDA"}, .following = {"RD", "RDA"}, .latency = V("nCCDS")},
+-          {.level = "pseudochannel", .preceding = {"WR", "WRA"}, .following = {"WR", "WRA"}, .latency = V("nCCDS")},
+-          /// RD <-> WR, Minimum Read to Write, Assuming tWPRE = 1 tCK                          
+-          {.level = "pseudochannel", .preceding = {"RD", "RDA"}, .following = {"WR", "WRA"}, .latency = V("nCL") + V("nBL") + 2 - V("nCWL")},
+-          /// WR <-> RD, Minimum Read after Write
+-          {.level = "pseudochannel", .preceding = {"WR", "WRA"}, .following = {"RD", "RDA"}, .latency = V("nCWL") + V("nBL") + V("nWTRS")},
+-          /// CAS <-> PREab
++          /// CAS <-> PREA
+           {.level = "pseudochannel", .preceding = {"RD"}, .following = {"PREA"}, .latency = V("nRTPS")},
+           {.level = "pseudochannel", .preceding = {"WR"}, .following = {"PREA"}, .latency = V("nCWL") + V("nBL") + V("nWR")},          
+           /// RAS <-> RAS
+-          {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nRRDS")},          
+-          {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nFAW"), .window = 4},          
+           {.level = "pseudochannel", .preceding = {"ACT"}, .following = {"PREA"}, .latency = V("nRAS")},          
+           {.level = "pseudochannel", .preceding = {"PREA"}, .following = {"ACT"}, .latency = V("nRP")},          
+           /// RAS <-> REF
+@@ -340,6 +342,34 @@ class HBM3 : public IDRAM, public Implementation {
+           {.level = "pseudochannel", .preceding = {"WRA"}, .following = {"REFab", "RFMab"}, .latency = V("nCWL") + V("nBL") + V("nWR") + V("nRP")},          
+           {.level = "pseudochannel", .preceding = {"REFab", "RFMab"}, .following = {"ACT", "REFsb", "RFMsb"}, .latency = V("nRFC")},          
+ 
++
++          /*** Rank (or different BankGroup) (Table 3 — Array Access Timings Counted Individually Per Pseudo Channel, JESD-235C) ***/  
++          // RAS <-> RAS
++          {.level = "rank", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nRRDS")},
++          /// 4-activation window restriction
++          {.level = "rank", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nFAW"), .window = 4},
++
++          /// ACT actually happens on the 2-nd cycle of ACT, so +1 cycle to nRRD
++          {.level = "rank", .preceding = {"ACT"}, .following = {"REFsb", "RFMsb"}, .latency = V("nRRDS") + 1},
++          /// nRREFD is the latency between REFsb <-> REFsb to *different* banks
++          {.level = "rank", .preceding = {"REFsb", "RFMsb"}, .following = {"REFsb", "RFMsb"}, .latency = V("nRREFD")},
++          /// nRREFD is the latency between REFsb <-> ACT to *different* banks. -1 as ACT happens on its 2nd cycle
++          {.level = "rank", .preceding = {"REFsb", "RFMsb"}, .following = {"ACT"}, .latency = V("nRREFD") - 1},
++
++          // CAS <-> CAS
++          /// nCCDS is the minimal latency for column commands 
++          {.level = "rank", .preceding = {"RD", "RDA"}, .following = {"RD", "RDA"}, .latency = V("nCCDS")},
++          {.level = "rank", .preceding = {"WR", "WRA"}, .following = {"WR", "WRA"}, .latency = V("nCCDS")},
++          /// RD <-> WR, Minimum Read to Write, Assuming tWPRE = 1 tCK                          
++          {.level = "rank", .preceding = {"RD", "RDA"}, .following = {"WR", "WRA"}, .latency = V("nCL") + V("nBL") + 2 - V("nCWL")},
++          /// WR <-> RD, Minimum Read after Write
++          {.level = "rank", .preceding = {"WR", "WRA"}, .following = {"RD", "RDA"}, .latency = V("nCWL") + V("nBL") + V("nWTRS")},
++          /// RAS <-> RAS
++          {.level = "rank", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nRRDS")},          
++          {.level = "rank", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nFAW"), .window = 4},          
++          {.level = "rank", .preceding = {"ACT"}, .following = {"PREA"}, .latency = V("nRAS")},          
++          {.level = "rank", .preceding = {"PREA"}, .following = {"ACT"}, .latency = V("nRP")},          
++
+           /*** Same Bank Group ***/ 
+           /// CAS <-> CAS
+           {.level = "bankgroup", .preceding = {"RD", "RDA"}, .following = {"RD", "RDA"}, .latency = V("nCCDL")},          
+@@ -352,7 +382,6 @@ class HBM3 : public IDRAM, public Implementation {
+ 
+           {.level = "bank", .preceding = {"RD"},  .following = {"PRE"}, .latency = V("nRTPS")},  
+ 
+-
+           /*** Bank ***/ 
+           {.level = "bank", .preceding = {"ACT"}, .following = {"ACT"}, .latency = V("nRC")},  
+           {.level = "bank", .preceding = {"ACT"}, .following = {"RD", "RDA"}, .latency = V("nRCDRD")},  
+@@ -372,10 +401,10 @@ class HBM3 : public IDRAM, public Implementation {
+     void set_actions() {
+       m_actions.resize(m_levels.size(), std::vector<ActionFunc_t<Node>>(m_commands.size()));
+ 
+-      // Channel Actions
+-      m_actions[m_levels["channel"]][m_commands["PREA"]] = Lambdas::Action::Channel::PREab<HBM3>;
++      // Pseudo Channel Actions
++      m_actions[m_levels["channel"]][m_commands["PREA"]] = Lambdas::Action::Channel::PREA<HBM3>;
+ 
+-      // Bank actions
++      // Bank Actions
+       m_actions[m_levels["bank"]][m_commands["ACT"]] = Lambdas::Action::Bank::ACT<HBM3>;
+       m_actions[m_levels["bank"]][m_commands["PRE"]] = Lambdas::Action::Bank::PRE<HBM3>;
+       m_actions[m_levels["bank"]][m_commands["RDA"]] = Lambdas::Action::Bank::PRE<HBM3>;
+@@ -385,10 +414,10 @@ class HBM3 : public IDRAM, public Implementation {
+     void set_preqs() {
+       m_preqs.resize(m_levels.size(), std::vector<PreqFunc_t<Node>>(m_commands.size()));
+ 
+-      // Channel Actions
++      // Pseudo Channel Preqs
+       m_preqs[m_levels["channel"]][m_commands["REFab"]] = Lambdas::Preq::Channel::RequireAllBanksClosed<HBM3>;
+ 
+-      // Bank actions
++      // Bank Preqs
+       m_preqs[m_levels["bank"]][m_commands["REFsb"]] = Lambdas::Preq::Bank::RequireBankClosed<HBM3>;
+       m_preqs[m_levels["bank"]][m_commands["RD"]] = Lambdas::Preq::Bank::RequireRowOpen<HBM3>;
+       m_preqs[m_levels["bank"]][m_commands["WR"]] = Lambdas::Preq::Bank::RequireRowOpen<HBM3>;
+diff --git a/src/dram/lambdas/action.h b/src/dram/lambdas/action.h
+index bf3807b..18af034 100644
+--- a/src/dram/lambdas/action.h
++++ b/src/dram/lambdas/action.h
+@@ -24,6 +24,155 @@ namespace Bank {
+     node->m_state = T::m_states["Closed"];
+     node->m_row_state.clear();
+   };
++
++  template <class T>
++  void ACTAB(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    // For HBM3
++    if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      typename T::Node* channel = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++      for (auto pc : channel->m_child_nodes) {
++        for (auto rank : pc->m_child_nodes) {
++          for (auto bg : rank->m_child_nodes) {
++            for (auto bank : bg->m_child_nodes) {
++              bank->m_state = T::m_states["Opened"];
++              bank->m_row_state[target_id] = T::m_states["Opened"];
++            }
++          }
++        }
++      }
++    } else {
++      static_assert(
++        false_v<T>,
++        "[Action::Bank] Unsupported organization. Please write your own ACTAB function."
++      );
++    }
++  };
++
++  template <class T>
++  void ACTSB(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    // For HBM3
++    if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++      for (auto pch : ch->m_child_nodes) {
++        for (auto rank : pch->m_child_nodes) {
++          for (auto bg : rank->m_child_nodes) {
++            for (auto bank : bg->m_child_nodes) {
++              if (bank->m_node_id == node->m_node_id) {
++                bank->m_state = T::m_states["Opened"];
++                bank->m_row_state[target_id] = T::m_states["Opened"];
++              }
++            }
++          }
++        }
++      }
++    } else {
++      static_assert(
++        false_v<T>,
++        "[Action::Bank] Unsupported organization. Please write your own ACTSB function."
++      );
++    }
++  };
++
++  template <class T>
++  void ACTPB(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    // For HBM3
++    if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++      for (auto pch : ch->m_child_nodes) {
++        for (auto rank : pch->m_child_nodes) {
++          if (rank->m_node_id == node->m_parent_node->m_parent_node->m_node_id) {
++            for (auto bg : rank->m_child_nodes) {
++              if (bg->m_node_id == node->m_parent_node->m_node_id) {
++                for (auto bank : bg->m_child_nodes) {
++                  if (bank->m_node_id == node->m_node_id) {
++                    bank->m_state = T::m_states["Opened"];
++                    bank->m_row_state[target_id] = T::m_states["Opened"];
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    } else {
++      static_assert(
++        false_v<T>,
++        "[Action::Bank] Unsupported organization. Please write your own ACTPB function."
++      );
++    }
++  };
++
++  template <class T>
++  void PRESB(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    // For HBM3
++    if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++      for (auto pch : ch->m_child_nodes) {
++        for (auto rank : pch->m_child_nodes) {
++          if (rank->m_node_id == node->m_parent_node->m_parent_node->m_node_id) {
++            for (auto bg : rank->m_child_nodes) {
++              if (bg->m_node_id == node->m_parent_node->m_node_id) {
++                for (auto bank : bg->m_child_nodes) {
++                  if (bank->m_node_id == node->m_node_id) {
++                    bank->m_state = T::m_states["Closed"];
++                    bank->m_row_state.clear();
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    } else {
++      static_assert(
++        false_v<T>,
++        "[Action::Bank] Unsupported organization. Please write your own PREPB function."
++      );
++    }
++  };
++
++  template <class T>
++  void PREsb(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    typename T::Node* rank = node->m_parent_node->m_parent_node;
++    for (auto bg : rank->m_child_nodes) {
++      for (auto bank : bg->m_child_nodes) {
++        if (bank->m_node_id == node->m_node_id) {
++          bank->m_state = T::m_states["Closed"];
++          bank->m_row_state.clear();
++        }
++      }
++    }
++  };  
++
++  template <class T>
++  void PREPB(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    // For HBM3
++    if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++      for (auto pch : ch->m_child_nodes) {
++        for (auto rank : pch->m_child_nodes) {
++          if (rank->m_node_id == node->m_parent_node->m_parent_node->m_node_id) {
++            for (auto bg : rank->m_child_nodes) {
++              if (bg->m_node_id == node->m_parent_node->m_node_id) {
++                for (auto bank : bg->m_child_nodes) {
++                  if (bank->m_node_id == node->m_node_id) {
++                    bank->m_state = T::m_states["Closed"];
++                    bank->m_row_state.clear();
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    } else {
++      static_assert(
++        false_v<T>,
++        "[Action::Bank] Unsupported organization. Please write your own ACTPB function."
++      );
++    }
++  };
++
+ }       // namespace Bank
+ 
+ namespace BankGroup {
+@@ -40,7 +189,6 @@ namespace BankGroup {
+     }
+   };  
+ 
+-
+   template <class T>
+   void SameBankActions(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
+     AddrVec_t same_bank_addr(T::m_levels.size(), -1);
+@@ -49,18 +197,62 @@ namespace BankGroup {
+     typename T::Node* rank = node->m_parent_node;
+     for (auto bg : rank->m_child_nodes) {
+       for (auto bank : bg->m_child_nodes) {
+-        if (bank->m_node_id == target_id) {      // Ch  Ra  Bg     Ba      Ro  Co
++        if (bank->m_node_id == target_id) {
+           bank->update_timing(cmd, same_bank_addr, clk);
+         }
+       }
+     }
+   }
++
++  template <class T>
++  void PIMSameBankActions(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++    AddrVec_t same_bank_addr(T::m_levels.size(), -1);
++    same_bank_addr[T::m_levels["bank"]] = target_id;
++
++    typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node;
++    for (auto pch : ch->m_child_nodes) {
++      for (auto rank : pch->m_child_nodes) {
++        for (auto bg : rank->m_child_nodes) {
++          for (auto bank : bg->m_child_nodes) {
++            if (bank->m_node_id == target_id) {
++              bank->update_timing(cmd, same_bank_addr, clk);
++            }
++          }
++        }
++      }
++    }
++  }
++
++
++  template <class T>
++  void PIMPerBankActions(typename T::Node* node, int cmd, int target_id, Clk_t clk) { // pCH Broadcast
++    AddrVec_t same_bank_addr(T::m_levels.size(), -1);
++    same_bank_addr[T::m_levels["bank"]] = target_id;
++
++    typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node;
++    for (auto pch : ch->m_child_nodes) {
++      for (auto rank : pch->m_child_nodes) {
++        if (rank->m_node_id == node->m_parent_node->m_parent_node->m_node_id) {
++          for (auto bg : rank->m_child_nodes) {
++            if (bg->m_node_id == node->m_parent_node->m_node_id) {
++              for (auto bank : bg->m_child_nodes) {
++                if (bank->m_node_id == target_id) {
++                  bank->update_timing(cmd, same_bank_addr, clk);
++                }
++              }
++            }
++          }
++        }
++      }
++    }
++  }
++
+ }       // namespace BankGroup
+ 
+ 
+ namespace Rank {
+   template <class T>
+-  void PREab(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++  void PREA(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
+     if constexpr (T::m_levels["bank"] - T::m_levels["rank"] == 1) {
+       for (auto bank : node->m_child_nodes) {
+         bank->m_state = T::m_states["Closed"];
+@@ -76,7 +268,7 @@ namespace Rank {
+     } else {
+       static_assert(
+         false_v<T>, 
+-        "[Action::Rank] Unsupported organization. Please write your own PREab function."
++        "[Action::Rank] Unsupported organization. Please write your own PREA function."
+       );
+     }
+   };
+@@ -98,7 +290,7 @@ namespace Rank {
+ namespace Channel {
+   // TODO: Make these nicer...
+   template <class T>
+-  void PREab(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++  void PREA(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
+     if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 2) {
+       for (auto bg : node->m_child_nodes) {
+         for (auto bank : bg->m_child_nodes) {
+@@ -115,14 +307,26 @@ namespace Channel {
+           }
+         }
+       }
++    } else if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++      for (auto pc : node->m_child_nodes) {
++        for (auto rank : pc->m_child_nodes) {
++          for (auto bg : rank->m_child_nodes) {
++            for (auto bank : bg->m_child_nodes) {
++              bank->m_state = T::m_states["Closed"];
++              bank->m_row_state.clear();
++            }
++          }
++        }
++      }
+     } else {
+       static_assert(
+         false_v<T>, 
+-        "[Action::Rank] Unsupported organization. Please write your own PREab function."
++        "[Action::Rank] Unsupported organization. Please write your own PREA function."
+       );
+     }
+   };
+ }      // namespace Channel
++
+ }       // namespace Action
+ }       // namespace Lambdas
+ };      // namespace Ramulator
+diff --git a/src/dram/lambdas/preq.h b/src/dram/lambdas/preq.h
+index 843f966..8c0792a 100644
+--- a/src/dram/lambdas/preq.h
++++ b/src/dram/lambdas/preq.h
+@@ -36,6 +36,112 @@ int RequireBankClosed(typename T::Node* node, int cmd, int target_id, Clk_t clk)
+     } 
+   }
+ };  
++
++template <class T>
++int RequireAllBanksRowOpen(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++  // For HBM3
++  if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++    typename T::Node* channel = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++    for (auto pc : channel->m_child_nodes) {
++      for (auto rank : pc->m_child_nodes) {
++        for (auto bg : rank->m_child_nodes) {
++          for (auto bank: bg->m_child_nodes) {
++            switch (bank->m_state) {
++              case T::m_states["Closed"]: return T::m_commands["ACTAB"];
++              case T::m_states["Opened"]: {
++                if (bank->m_row_state.find(target_id) != bank->m_row_state.end()) {
++                  continue;
++                } else {
++                  return T::m_commands["PREA"];
++                }
++                return cmd;
++              }
++              default: {
++                spdlog::error("[Preq::Bank] Invalid bank state for an RD/WR command!");
++                std::exit(-1);
++              }
++            }
++          }
++        }
++      }
++    }
++  }
++  return cmd;
++};
++
++template <class T>
++int RequirePIMSameBanksRowOpen(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++  // For HBM3
++  if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++    typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++    for (auto pch : ch->m_child_nodes) {
++      for (auto rank : pch->m_child_nodes) {
++        for (auto bg : rank->m_child_nodes) {
++          for (auto bank: bg->m_child_nodes) {
++            if (bank->m_node_id == node->m_node_id) {
++              switch (bank->m_state) {
++                case T::m_states["Closed"]: return T::m_commands["ACTSB"];
++                case T::m_states["Opened"]: {
++                  if (bank->m_row_state.find(target_id) != bank->m_row_state.end()) {
++                    continue;
++                  } else {
++                    return T::m_commands["PRESB"];
++                  }
++                  return cmd;
++                }
++                default: {
++                  spdlog::error("[Preq::Bank] Invalid bank state for an RD/WR command!");
++                  std::exit(-1);
++                }
++              }
++            }
++          }
++        }
++      }
++    }
++  }
++  return cmd;
++};
++
++template <class T>
++int RequirePIMPerBanksRowOpen(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
++  // For HBM3
++  if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++    typename T::Node* ch = node->m_parent_node->m_parent_node->m_parent_node->m_parent_node;
++    for (auto pch : ch->m_child_nodes) {
++      for (auto rank : pch->m_child_nodes) {
++        if (rank->m_node_id == node->m_parent_node->m_parent_node->m_node_id) {
++          for (auto bg : rank->m_child_nodes) {
++            if (bg->m_node_id == node->m_parent_node->m_node_id) {
++              for (auto bank : bg->m_child_nodes) {
++                if (bank->m_node_id == node->m_node_id) {
++                  switch (bank->m_state) {
++                    case T::m_states["Closed"]: return T::m_commands["ACTPB"];
++                    case T::m_states["Opened"]: {
++                      if (bank->m_row_state.find(target_id) != bank->m_row_state.end()) {
++                        continue;
++                      } else {
++                        return T::m_commands["PREPB"];
++                      }
++                      return cmd;
++                    }
++                    default: {
++                      spdlog::error("[Preq::Bank] Invalid bank state for an RD/WR command!");
++                      std::exit(-1);
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    }
++  }
++  return cmd;
++};
++
++
+ }       // namespace Bank
+ 
+ namespace Rank {
+@@ -81,6 +187,7 @@ int RequireSameBanksClosed(typename T::Node* node, int cmd, int target_id, Clk_t
+   }
+ };
+ }       // namespace Rank
++
+ namespace Channel {
+   template <class T>
+   int RequireAllBanksClosed(typename T::Node* node, int cmd, int target_id, Clk_t clk) {
+@@ -106,10 +213,25 @@ namespace Channel {
+           }
+         }
+       }
++  } else if constexpr (T::m_levels["bank"] - T::m_levels["channel"] == 4) {
++    for (auto pc : node->m_child_nodes) {
++      for (auto rank : pc->m_child_nodes) {
++        for (auto bg : rank->m_child_nodes) {
++          for (auto bank: bg->m_child_nodes) {
++            if (bank->m_state == T::m_states["Closed"]) {
++              continue;
++            } else {
++              return T::m_commands["PREA"];
++            }
++          }
++        }
++      }
++    }
+     }
+     return cmd;
+   };
+ }       // namespace Channel
++
+ }       // namespace Preq
+ }       // namespace Lambdas
+ };      // namespace Ramulator
+diff --git a/src/dram_controller/CMakeLists.txt b/src/dram_controller/CMakeLists.txt
+index 25ac82e..fbc2866 100644
+--- a/src/dram_controller/CMakeLists.txt
++++ b/src/dram_controller/CMakeLists.txt
+@@ -9,20 +9,19 @@ target_sources(
+ 
+   impl/dummy_controller.cpp
+   impl/generic_dram_controller.cpp
++  impl/hbm3_controller.cpp
++  impl/hbm3_pim_controller.cpp
+   
+   impl/scheduler/generic_scheduler.cpp
++  impl/scheduler/pim_scheduler.cpp
+ 
+   impl/refresh/all_bank_refresh.cpp
++  impl/refresh/all_bank_refresh_hbm3.cpp
++  impl/refresh/no_refresh.cpp
+ 
+-  # impl/plugin/trr.cpp
++  impl/plugin/hbm3_trace_recorder.cpp
+   impl/plugin/trace_recorder.cpp
+   impl/plugin/cmd_counter.cpp
+-  impl/plugin/para.cpp
+-  impl/plugin/graphene.cpp
+-  impl/plugin/oracle_rh.cpp
+-  impl/plugin/twice.cpp
+-  impl/plugin/hydra.cpp
+-  impl/plugin/rrs.cpp
+ 
+   )
+ 
+diff --git a/src/dram_controller/controller.h b/src/dram_controller/controller.h
+index f6e252b..3a8cd14 100644
+--- a/src/dram_controller/controller.h
++++ b/src/dram_controller/controller.h
+@@ -47,6 +47,11 @@ class IDRAMController : public Clocked<IDRAMController> {
+      */
+     virtual void tick() = 0;
+    
++    virtual bool is_pending() = 0;
++
++    // For debugging
++    Clk_t get_clk() {return m_clk;}
++
+ };
+ 
+ }       // namespace Ramulator
+diff --git a/src/dram_controller/impl/dummy_controller.cpp b/src/dram_controller/impl/dummy_controller.cpp
+index d610f29..c5bb452 100644
+--- a/src/dram_controller/impl/dummy_controller.cpp
++++ b/src/dram_controller/impl/dummy_controller.cpp
+@@ -28,6 +28,10 @@ class DummyController final : public IDRAMController, public Implementation {
+       return;
+     }
+ 
++    bool is_pending() override {
++      return true;
++    }
++
+ };
+ 
+ }   // namespace Ramulator
+\ No newline at end of file
+diff --git a/src/dram_controller/impl/generic_dram_controller.cpp b/src/dram_controller/impl/generic_dram_controller.cpp
+index 8cd8293..8a95b42 100644
+--- a/src/dram_controller/impl/generic_dram_controller.cpp
++++ b/src/dram_controller/impl/generic_dram_controller.cpp
+@@ -135,6 +135,11 @@ class GenericDRAMController final : public IDRAMController, public Implementatio
+     };
+ 
+ 
++    bool is_pending() override {
++      bool is_pending = m_active_buffer.size() ||  m_priority_buffer.size() || m_read_buffer.size() || m_write_buffer.size() || pending.size();
++      return is_pending;
++    };
++
+   private:
+     /**
+      * @brief    Helper function to serve the completed read requests
+diff --git a/src/dram_controller/impl/scheduler/generic_scheduler.cpp b/src/dram_controller/impl/scheduler/generic_scheduler.cpp
+index 2d0b389..7cd801b 100644
+--- a/src/dram_controller/impl/scheduler/generic_scheduler.cpp
++++ b/src/dram_controller/impl/scheduler/generic_scheduler.cpp
+@@ -18,6 +18,17 @@ class FRFCFS : public IScheduler, public Implementation {
+       m_dram = cast_parent<IDRAMController>()->m_dram;
+     };
+ 
++    std::vector<AddrVec_t> rowhit_list;
++ 
++    AddrVec_t get_bank_addr_vec (Request req) {
++      AddrVec_t bank_addr_vec;
++      for (auto itr = req.addr_vec.begin(); itr != (req.addr_vec.begin() + m_dram->m_levels("row")); itr++) {
++        bank_addr_vec.push_back(*itr);
++      }
++      return bank_addr_vec;
++    };
++
++
+     ReqBuffer::iterator compare(ReqBuffer::iterator req1, ReqBuffer::iterator req2) override {
+       bool ready1 = m_dram->check_ready(req1->command, req1->addr_vec);
+       bool ready2 = m_dram->check_ready(req2->command, req2->addr_vec);
+@@ -25,7 +36,13 @@ class FRFCFS : public IScheduler, public Implementation {
+       if (ready1 ^ ready2) {
+         if (ready1) {
+           return req1;
+-        } else {
++        }
++        else {
++          if (!m_dram->check_rowbuffer_hit(req2->command, req2->addr_vec)) {
++            if (std::find(rowhit_list.begin(), rowhit_list.end(), get_bank_addr_vec(*req2)) != rowhit_list.end()) {
++              return req1;
++            }
++          }
+           return req2;
+         }
+       }
+@@ -38,6 +55,7 @@ class FRFCFS : public IScheduler, public Implementation {
+       } 
+     }
+ 
++
+     ReqBuffer::iterator get_best_request(ReqBuffer& buffer) override {
+       if (buffer.size() == 0) {
+         return buffer.end();
+@@ -47,7 +65,16 @@ class FRFCFS : public IScheduler, public Implementation {
+         req.command = m_dram->get_preq_command(req.final_command, req.addr_vec);
+       }
+ 
++      // Store row buffer hit history
++      rowhit_list.clear();
++      for (auto& req : buffer) {
++        if (m_dram->check_rowbuffer_hit(req.command, req.addr_vec)) {
++          rowhit_list.push_back(get_bank_addr_vec(req));
++        }
++      }
++
+       auto candidate = buffer.begin();
++
+       for (auto next = std::next(buffer.begin(), 1); next != buffer.end(); next++) {
+         candidate = compare(candidate, next);
+       }
+diff --git a/src/frontend/CMakeLists.txt b/src/frontend/CMakeLists.txt
+index 70ea393..03990ff 100644
+--- a/src/frontend/CMakeLists.txt
++++ b/src/frontend/CMakeLists.txt
+@@ -5,14 +5,7 @@ target_sources(
+   frontend.h
+ 
+   impl/memory_trace/loadstore_trace.cpp
+-  impl/memory_trace/readwrite_trace.cpp
+-
+-  impl/processor/simpleO3/simpleO3.cpp
+-  impl/processor/simpleO3/core.h      impl/processor/simpleO3/core.cpp
+-  impl/processor/simpleO3/llc.h       impl/processor/simpleO3/llc.cpp
+-  impl/processor/simpleO3/trace.h     impl/processor/simpleO3/trace.cpp
+-
+-  impl/external_wrapper/gem5_frontend.cpp
++  impl/memory_trace/pim_loadstore_trace.cpp
+ )
+ 
+ target_link_libraries(
+diff --git a/src/frontend/impl/memory_trace/loadstore_trace.cpp b/src/frontend/impl/memory_trace/loadstore_trace.cpp
+index c786e9f..913e832 100644
+--- a/src/frontend/impl/memory_trace/loadstore_trace.cpp
++++ b/src/frontend/impl/memory_trace/loadstore_trace.cpp
+@@ -39,12 +39,21 @@ class LoadStoreTrace : public IFrontEnd, public Implementation {
+ 
+ 
+     void tick() override {
++      if (is_finished()) {
++        return;
++      }
++      bool req_full = false;
++      while(!req_full && !is_finished()) {
+       const Trace& t = m_trace[m_curr_trace_idx];
+       bool request_sent = m_memory_system->send({t.addr, t.is_write ? Request::Type::Write : Request::Type::Read});
+       if (request_sent) {
+         m_curr_trace_idx = (m_curr_trace_idx + 1) % m_trace_length;
+         m_trace_count++;
+       }
++        else {
++          req_full = true;
++        }
++      }
+     };
+ 
+ 
+diff --git a/src/main.cpp b/src/main.cpp
+index f5412be..7e15cc1 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -8,7 +8,6 @@
+ #include "base/config.h"
+ #include "frontend/frontend.h"
+ #include "memory_system/memory_system.h"
+-#include "example/example_ifce.h"
+ 
+ int main(int argc, char* argv[]) {
+   // Parse command line arguments
+@@ -102,13 +101,14 @@ int main(int argc, char* argv[]) {
+       frontend->tick();
+     }
+ 
+-    if (frontend->is_finished()) {
+-      break;
+-    }
+-
+     if ((i % tick_mult) % frontend_tick == 0) {
+       memory_system->tick();
+     }
++
++    if (frontend->is_finished() & !memory_system->is_pending()) {
++      break;
++    }
++
+   }
+ 
+   // Finalize the simulation. Recursively print all statistics from all components
+diff --git a/src/memory_system/CMakeLists.txt b/src/memory_system/CMakeLists.txt
+index a65a9c0..3d12780 100644
+--- a/src/memory_system/CMakeLists.txt
++++ b/src/memory_system/CMakeLists.txt
+@@ -6,6 +6,7 @@ target_sources(
+ 
+   impl/dummy_memory_system.cpp
+   impl/generic_DRAM_system.cpp
++  impl/PIM_DRAM_system.cpp
+ )
+ 
+ target_link_libraries(
+diff --git a/src/memory_system/impl/dummy_memory_system.cpp b/src/memory_system/impl/dummy_memory_system.cpp
+index ce7750e..abe125d 100644
+--- a/src/memory_system/impl/dummy_memory_system.cpp
++++ b/src/memory_system/impl/dummy_memory_system.cpp
+@@ -18,6 +18,8 @@ class DummyMemorySystem final : public IMemorySystem, public Implementation {
+     };
+ 
+     void tick() override {};
++
++    bool is_pending() override {};
+ };
+   
+ }   // namespace Ramulator
+\ No newline at end of file
+diff --git a/src/memory_system/impl/generic_DRAM_system.cpp b/src/memory_system/impl/generic_DRAM_system.cpp
+index a7cce15..a97109f 100644
+--- a/src/memory_system/impl/generic_DRAM_system.cpp
++++ b/src/memory_system/impl/generic_DRAM_system.cpp
+@@ -82,11 +82,19 @@ class GenericDRAMSystem final : public IMemorySystem, public Implementation {
+ 
+     float get_tCK() override {
+       return m_dram->m_timing_vals("tCK_ps") / 1000.0f;
+-    }
++    };
+ 
+     // const SpecDef& get_supported_requests() override {
+     //   return m_dram->m_requests;
+     // };
++
++    bool is_pending() override {
++      bool is_pending = false;
++      for (auto controller : m_controllers) {
++        is_pending |= controller->is_pending();
++      }
++      return is_pending;
++    };
+ };
+   
+ }   // namespace 
+diff --git a/src/memory_system/memory_system.h b/src/memory_system/memory_system.h
+index 10b06e0..cb17b01 100644
+--- a/src/memory_system/memory_system.h
++++ b/src/memory_system/memory_system.h
+@@ -71,6 +71,9 @@ class IMemorySystem : public TopLevel<IMemorySystem> {
+     // virtual const SpecDef& get_supported_requests() = 0;
+ 
+     virtual float get_tCK() { return -1.0f; };
++
++    // jhpar: Add
++    virtual bool is_pending() = 0;
+ };
+ 
+ }        // namespace Ramulator

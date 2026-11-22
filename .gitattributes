@@ -1,0 +1,6 @@
+# Keep the exact bytes of the initial upstream sources, patches and measured logs.
+# Some upstream CMake files use CRLF; automatic normalization would break hashes.
+* -text
+*.pdf binary
+*.tar binary
+*.tar.gz binary

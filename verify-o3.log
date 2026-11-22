@@ -1,0 +1,71 @@
+/home/ubuntu22/gem5/experiments/bin/hello:  ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=dbda6317f8cc787fbde55f4b7e4af05762cbb9ad, for GNU/Linux 3.2.0, not stripped
+/home/ubuntu22/gem5/experiments/bin/matmul: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=635866ff5f8a032c07ffd289dc6cf38f27a8edcf, for GNU/Linux 3.2.0, not stripped
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.1.0.3
+gem5 compiled Nov  4 2026 20:44:31
+gem5 started Nov  4 2026 20:45:55
+gem5 executing on ubuntu22, pid 56
+command line: /home/ubuntu22/gem5/gem5-src/build/X86/gem5.opt --outdir=/home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/hello /home/ubuntu22/gem5/experiments/configs/x86_se.py --cpu o3 /home/ubuntu22/gem5/experiments/bin/hello
+
+info: Standard input is not a terminal, disabling listeners.
+src/sim/simulate.cc:199: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:86: warn: ignoring syscall set_robust_list(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall rseq(...)
+src/sim/mem_state.cc:448: info: Increasing stack size by one page.
+src/sim/syscall_emul.hh:1117: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/ubuntu22/gem5/experiments/bin/hello'
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+Hello, gem5! Environment check passed.
+Simulation exited at tick 61270000: exiting with last active thread context
+Hello, gem5! Environment check passed.
+Statistics: /home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/hello/stats.txt
+  simSeconds: 0.000061
+  simTicks: 61270000
+  simInsts: 10529
+  hostSeconds: 0.08
+  system.cpu.numCycles: 61271
+  system.cpu.cpi: 5.819261
+  system.cpu.ipc: 0.171843
+  system.cpu.dcache.overallMissRate::total: 0.082939
+  system.l2cache.overallMissRate::total: 0.971271
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.1.0.3
+gem5 compiled Nov  4 2026 20:44:31
+gem5 started Nov  4 2026 20:45:55
+gem5 executing on ubuntu22, pid 61
+command line: /home/ubuntu22/gem5/gem5-src/build/X86/gem5.opt --outdir=/home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/matmul /home/ubuntu22/gem5/experiments/configs/x86_se.py --cpu o3 /home/ubuntu22/gem5/experiments/bin/matmul 32
+
+info: Standard input is not a terminal, disabling listeners.
+src/sim/simulate.cc:199: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:86: warn: ignoring syscall set_robust_list(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall rseq(...)
+src/sim/mem_state.cc:448: info: Increasing stack size by one page.
+src/sim/syscall_emul.hh:1117: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/ubuntu22/gem5/experiments/bin/matmul'
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+matmul n=32 checksum=6
+Simulation exited at tick 239052000: exiting with last active thread context
+matmul n=32 checksum=6
+Statistics: /home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34/matmul/stats.txt
+  simSeconds: 0.000239
+  simTicks: 239052000
+  simInsts: 282637
+  hostSeconds: 0.75
+  system.cpu.numCycles: 239053
+  system.cpu.cpi: 0.845795
+  system.cpu.ipc: 1.182319
+  system.cpu.dcache.overallMissRate::total: 0.194820
+  system.l2cache.overallMissRate::total: 0.170751
+Verified results: /home/ubuntu22/gem5/experiments/results/20261104-204555-o3-34

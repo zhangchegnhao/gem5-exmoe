@@ -1,0 +1,455 @@
+schema_version: 1
+tasks:
+- id: move_p0_acquire
+  source: promotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: move_p0
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page0
+- id: move_p0_rd0
+  source: promotion
+  depends_on:
+  - move_p0_acquire
+  requests:
+  - type: 0
+    address: 0
+- id: move_p0_convert0
+  source: promotion
+  depends_on:
+  - move_p0_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p0_rd1
+  source: promotion
+  depends_on:
+  - move_p0_acquire
+  requests:
+  - type: 0
+    address: 32
+- id: move_p0_convert1
+  source: promotion
+  depends_on:
+  - move_p0_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p0_rd2
+  source: promotion
+  depends_on:
+  - move_p0_acquire
+  requests:
+  - type: 0
+    address: 64
+- id: move_p0_convert2
+  source: promotion
+  depends_on:
+  - move_p0_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p0_rd3
+  source: promotion
+  depends_on:
+  - move_p0_acquire
+  requests:
+  - type: 0
+    address: 96
+- id: move_p0_convert3
+  source: promotion
+  depends_on:
+  - move_p0_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p0_layout
+  source: promotion
+  depends_on:
+  - move_p0_convert0
+  - move_p0_convert1
+  - move_p0_convert2
+  - move_p0_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: move_p0_write
+  source: promotion
+  depends_on:
+  - move_p0_layout
+  requests:
+  - type: 1
+    address: 8589934592
+    byte_mask: 4294967295
+  - type: 1
+    address: 8589934624
+    byte_mask: 255
+  - type: 1
+    address: 8594128928
+    byte_mask: 255
+  - type: 1
+    address: 8598323232
+    byte_mask: 255
+  - type: 1
+    address: 8602517536
+    byte_mask: 255
+  - type: 1
+    address: 9663676416
+    byte_mask: 4294967295
+  - type: 1
+    address: 9663676448
+    byte_mask: 255
+  - type: 1
+    address: 9667870752
+    byte_mask: 255
+  - type: 1
+    address: 9672065056
+    byte_mask: 255
+  - type: 1
+    address: 9676259360
+    byte_mask: 255
+  - type: 1
+    address: 10737418240
+    byte_mask: 4294967295
+  - type: 1
+    address: 10737418272
+    byte_mask: 255
+  - type: 1
+    address: 10741612576
+    byte_mask: 255
+  - type: 1
+    address: 10745806880
+    byte_mask: 255
+  - type: 1
+    address: 10750001184
+    byte_mask: 255
+  - type: 1
+    address: 11811160064
+    byte_mask: 4294967295
+  - type: 1
+    address: 11811160096
+    byte_mask: 255
+  - type: 1
+    address: 11815354400
+    byte_mask: 255
+  - type: 1
+    address: 11819548704
+    byte_mask: 255
+  - type: 1
+    address: 11823743008
+    byte_mask: 255
+- id: move_p0_commit
+  source: promotion
+  depends_on:
+  - move_p0_write
+  release: move_p0
+- id: move_p1_acquire
+  source: promotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: move_p1
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page1
+- id: move_p1_rd0
+  source: promotion
+  depends_on:
+  - move_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483648
+- id: move_p1_convert0
+  source: promotion
+  depends_on:
+  - move_p1_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p1_rd1
+  source: promotion
+  depends_on:
+  - move_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483680
+- id: move_p1_convert1
+  source: promotion
+  depends_on:
+  - move_p1_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p1_rd2
+  source: promotion
+  depends_on:
+  - move_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483712
+- id: move_p1_convert2
+  source: promotion
+  depends_on:
+  - move_p1_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p1_rd3
+  source: promotion
+  depends_on:
+  - move_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483744
+- id: move_p1_convert3
+  source: promotion
+  depends_on:
+  - move_p1_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p1_layout
+  source: promotion
+  depends_on:
+  - move_p1_convert0
+  - move_p1_convert1
+  - move_p1_convert2
+  - move_p1_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: move_p1_write
+  source: promotion
+  depends_on:
+  - move_p1_layout
+  requests:
+  - type: 1
+    address: 8589934624
+    byte_mask: 65280
+  - type: 1
+    address: 8594128896
+    byte_mask: 4294967295
+  - type: 1
+    address: 8594128928
+    byte_mask: 65280
+  - type: 1
+    address: 8598323232
+    byte_mask: 65280
+  - type: 1
+    address: 8602517536
+    byte_mask: 65280
+  - type: 1
+    address: 9663676448
+    byte_mask: 65280
+  - type: 1
+    address: 9667870720
+    byte_mask: 4294967295
+  - type: 1
+    address: 9667870752
+    byte_mask: 65280
+  - type: 1
+    address: 9672065056
+    byte_mask: 65280
+  - type: 1
+    address: 9676259360
+    byte_mask: 65280
+  - type: 1
+    address: 10737418272
+    byte_mask: 65280
+  - type: 1
+    address: 10741612544
+    byte_mask: 4294967295
+  - type: 1
+    address: 10741612576
+    byte_mask: 65280
+  - type: 1
+    address: 10745806880
+    byte_mask: 65280
+  - type: 1
+    address: 10750001184
+    byte_mask: 65280
+  - type: 1
+    address: 11811160096
+    byte_mask: 65280
+  - type: 1
+    address: 11815354368
+    byte_mask: 4294967295
+  - type: 1
+    address: 11815354400
+    byte_mask: 65280
+  - type: 1
+    address: 11819548704
+    byte_mask: 65280
+  - type: 1
+    address: 11823743008
+    byte_mask: 65280
+- id: move_p1_commit
+  source: promotion
+  depends_on:
+  - move_p1_write
+  release: move_p1
+- id: move_p2_acquire
+  source: promotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: move_p2
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page2
+- id: move_p2_rd0
+  source: promotion
+  depends_on:
+  - move_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967296
+- id: move_p2_convert0
+  source: promotion
+  depends_on:
+  - move_p2_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p2_rd1
+  source: promotion
+  depends_on:
+  - move_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967328
+- id: move_p2_convert1
+  source: promotion
+  depends_on:
+  - move_p2_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p2_rd2
+  source: promotion
+  depends_on:
+  - move_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967360
+- id: move_p2_convert2
+  source: promotion
+  depends_on:
+  - move_p2_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p2_rd3
+  source: promotion
+  depends_on:
+  - move_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967392
+- id: move_p2_convert3
+  source: promotion
+  depends_on:
+  - move_p2_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: move_p2_layout
+  source: promotion
+  depends_on:
+  - move_p2_convert0
+  - move_p2_convert1
+  - move_p2_convert2
+  - move_p2_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: move_p2_write
+  source: promotion
+  depends_on:
+  - move_p2_layout
+  requests:
+  - type: 1
+    address: 8589934624
+    byte_mask: 16711680
+  - type: 1
+    address: 8594128928
+    byte_mask: 16711680
+  - type: 1
+    address: 8598323200
+    byte_mask: 4294967295
+  - type: 1
+    address: 8598323232
+    byte_mask: 16711680
+  - type: 1
+    address: 8602517536
+    byte_mask: 16711680
+  - type: 1
+    address: 9663676448
+    byte_mask: 16711680
+  - type: 1
+    address: 9667870752
+    byte_mask: 16711680
+  - type: 1
+    address: 9672065024
+    byte_mask: 4294967295
+  - type: 1
+    address: 9672065056
+    byte_mask: 16711680
+  - type: 1
+    address: 9676259360
+    byte_mask: 16711680
+  - type: 1
+    address: 10737418272
+    byte_mask: 16711680
+  - type: 1
+    address: 10741612576
+    byte_mask: 16711680
+  - type: 1
+    address: 10745806848
+    byte_mask: 4294967295
+  - type: 1
+    address: 10745806880
+    byte_mask: 16711680
+  - type: 1
+    address: 10750001184
+    byte_mask: 16711680
+  - type: 1
+    address: 11811160096
+    byte_mask: 16711680
+  - type: 1
+    address: 11815354400
+    byte_mask: 16711680
+  - type: 1
+    address: 11819548672
+    byte_mask: 4294967295
+  - type: 1
+    address: 11819548704
+    byte_mask: 16711680
+  - type: 1
+    address: 11823743008
+    byte_mask: 16711680
+- id: move_p2_commit
+  source: promotion
+  depends_on:
+  - move_p2_write
+  release: move_p2
+- id: move_done
+  source: promotion
+  depends_on:
+  - move_p0_commit
+  - move_p1_commit
+  - move_p2_commit

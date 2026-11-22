@@ -1,0 +1,30 @@
+Frontend:
+  impl: PIMLoadStoreTrace
+  path: /home/ubuntu22/gem5/experiments/attacc_baseline_20261104/results/20261104-repro-check/traces/attacc_buffer.trace
+  clock_ratio: 1
+  Translation:
+    impl: NoTranslation
+    max_addr: 2147483648
+  completion_path: /home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1-attacc/buffer-retirements.csv
+MemorySystem:
+  impl: PIMDRAM
+  clock_ratio: 1
+  DRAM:
+    impl: HBM3-PIM
+    org:
+      preset: HBM3_8Gb_2R
+      channel: 16
+    timing:
+      preset: HBM3_5.2Gbps
+  Controller:
+    impl: HBM3-PIM
+    Scheduler:
+      impl: PIM
+    RefreshManager:
+      impl: AllBankHBM3
+    plugins:
+    - ControllerPlugin:
+        impl: HBM3TraceRecorder
+        path: /home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1-attacc/buffer.cmd
+  AddrMapper:
+    impl: HBM3-PIM

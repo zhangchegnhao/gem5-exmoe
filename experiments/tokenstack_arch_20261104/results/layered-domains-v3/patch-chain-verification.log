@@ -1,0 +1,51 @@
+['patch', '-p1', '--dry-run', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/ramulator-retirement-v1.patch']
+checking file src/frontend/impl/memory_trace/pim_loadstore_trace.cpp
+checking file src/dram_controller/impl/hbm3_pim_controller.cpp
+checking file src/dram_controller/impl/scheduler/pim_scheduler.cpp
+
+
+['patch', '-p1', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/ramulator-retirement-v1.patch']
+patching file src/frontend/impl/memory_trace/pim_loadstore_trace.cpp
+patching file src/dram_controller/impl/hbm3_pim_controller.cpp
+patching file src/dram_controller/impl/scheduler/pim_scheduler.cpp
+
+
+['patch', '-p1', '--dry-run', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/tokenstack-closed-loop-v1.patch']
+checking file src/dram_controller/impl/hbm3_pim_controller.cpp
+checking file src/frontend/CMakeLists.txt
+checking file src/dram_controller/tokenstack_controller.h
+checking file src/frontend/impl/memory_trace/tokenstack_trace.cpp
+
+
+['patch', '-p1', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/tokenstack-closed-loop-v1.patch']
+patching file src/dram_controller/impl/hbm3_pim_controller.cpp
+patching file src/frontend/CMakeLists.txt
+patching file src/dram_controller/tokenstack_controller.h
+patching file src/frontend/impl/memory_trace/tokenstack_trace.cpp
+
+
+['patch', '-p1', '--dry-run', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/tokenstack-layered-domains-v1.patch']
+checking file src/frontend/impl/memory_trace/tokenstack_trace.cpp
+checking file src/memory_system/CMakeLists.txt
+checking file src/memory_system/tokenstack_memory.h
+checking file src/memory_system/impl/tokenstack_memory.cpp
+
+
+['patch', '-p1', '-i', '/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/patches/tokenstack-layered-domains-v1.patch']
+patching file src/frontend/impl/memory_trace/tokenstack_trace.cpp
+patching file src/memory_system/CMakeLists.txt
+patching file src/memory_system/tokenstack_memory.h
+patching file src/memory_system/impl/tokenstack_memory.cpp
+
+
+{
+  "src/frontend/impl/memory_trace/pim_loadstore_trace.cpp": true,
+  "src/dram_controller/impl/hbm3_pim_controller.cpp": true,
+  "src/dram_controller/impl/scheduler/pim_scheduler.cpp": true,
+  "src/frontend/CMakeLists.txt": true,
+  "src/dram_controller/tokenstack_controller.h": true,
+  "src/frontend/impl/memory_trace/tokenstack_trace.cpp": true,
+  "src/memory_system/CMakeLists.txt": true,
+  "src/memory_system/tokenstack_memory.h": true,
+  "src/memory_system/impl/tokenstack_memory.cpp": true
+}

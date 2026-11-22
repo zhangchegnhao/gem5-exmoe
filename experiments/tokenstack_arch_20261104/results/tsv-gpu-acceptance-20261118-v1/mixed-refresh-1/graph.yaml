@@ -1,0 +1,2350 @@
+schema_version: 1
+tasks:
+- id: background_p0_acquire
+  source: demotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: background_p0
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block1_page0
+- id: background_p0_rd0
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 8590000128
+- id: background_p0_convert0
+  source: demotion
+  depends_on:
+  - background_p0_rd0
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd1
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 8590000160
+- id: background_p0_convert1
+  source: demotion
+  depends_on:
+  - background_p0_rd1
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd2
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 8594194464
+- id: background_p0_convert2
+  source: demotion
+  depends_on:
+  - background_p0_rd2
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd3
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 8598388768
+- id: background_p0_convert3
+  source: demotion
+  depends_on:
+  - background_p0_rd3
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd4
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 8602583072
+- id: background_p0_convert4
+  source: demotion
+  depends_on:
+  - background_p0_rd4
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd5
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 9663741952
+- id: background_p0_convert5
+  source: demotion
+  depends_on:
+  - background_p0_rd5
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd6
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 9663741984
+- id: background_p0_convert6
+  source: demotion
+  depends_on:
+  - background_p0_rd6
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd7
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 9667936288
+- id: background_p0_convert7
+  source: demotion
+  depends_on:
+  - background_p0_rd7
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd8
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 9672130592
+- id: background_p0_convert8
+  source: demotion
+  depends_on:
+  - background_p0_rd8
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd9
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 9676324896
+- id: background_p0_convert9
+  source: demotion
+  depends_on:
+  - background_p0_rd9
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd10
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 10737483776
+- id: background_p0_convert10
+  source: demotion
+  depends_on:
+  - background_p0_rd10
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd11
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 10737483808
+- id: background_p0_convert11
+  source: demotion
+  depends_on:
+  - background_p0_rd11
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd12
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 10741678112
+- id: background_p0_convert12
+  source: demotion
+  depends_on:
+  - background_p0_rd12
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd13
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 10745872416
+- id: background_p0_convert13
+  source: demotion
+  depends_on:
+  - background_p0_rd13
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd14
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 10750066720
+- id: background_p0_convert14
+  source: demotion
+  depends_on:
+  - background_p0_rd14
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd15
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 11811225600
+- id: background_p0_convert15
+  source: demotion
+  depends_on:
+  - background_p0_rd15
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd16
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 11811225632
+- id: background_p0_convert16
+  source: demotion
+  depends_on:
+  - background_p0_rd16
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd17
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 11815419936
+- id: background_p0_convert17
+  source: demotion
+  depends_on:
+  - background_p0_rd17
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd18
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 11819614240
+- id: background_p0_convert18
+  source: demotion
+  depends_on:
+  - background_p0_rd18
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_rd19
+  source: demotion
+  depends_on:
+  - background_p0_acquire
+  requests:
+  - type: 0
+    address: 11823808544
+- id: background_p0_convert19
+  source: demotion
+  depends_on:
+  - background_p0_rd19
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p0_layout
+  source: demotion
+  depends_on:
+  - background_p0_convert0
+  - background_p0_convert1
+  - background_p0_convert2
+  - background_p0_convert3
+  - background_p0_convert4
+  - background_p0_convert5
+  - background_p0_convert6
+  - background_p0_convert7
+  - background_p0_convert8
+  - background_p0_convert9
+  - background_p0_convert10
+  - background_p0_convert11
+  - background_p0_convert12
+  - background_p0_convert13
+  - background_p0_convert14
+  - background_p0_convert15
+  - background_p0_convert16
+  - background_p0_convert17
+  - background_p0_convert18
+  - background_p0_convert19
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: background_p0_write
+  source: demotion
+  depends_on:
+  - background_p0_layout
+  requests:
+  - type: 1
+    address: 1073741824
+    byte_mask: 4294967295
+  - type: 1
+    address: 1073741856
+    byte_mask: 4294967295
+  - type: 1
+    address: 1073741888
+    byte_mask: 4294967295
+  - type: 1
+    address: 1073741920
+    byte_mask: 4294967295
+- id: background_p0_commit
+  source: demotion
+  depends_on:
+  - background_p0_write
+  release: background_p0
+- id: background_p1_acquire
+  source: demotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: background_p1
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block1_page1
+- id: background_p1_rd0
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 8590000160
+- id: background_p1_convert0
+  source: demotion
+  depends_on:
+  - background_p1_rd0
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd1
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 8594194432
+- id: background_p1_convert1
+  source: demotion
+  depends_on:
+  - background_p1_rd1
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd2
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 8594194464
+- id: background_p1_convert2
+  source: demotion
+  depends_on:
+  - background_p1_rd2
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd3
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 8598388768
+- id: background_p1_convert3
+  source: demotion
+  depends_on:
+  - background_p1_rd3
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd4
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 8602583072
+- id: background_p1_convert4
+  source: demotion
+  depends_on:
+  - background_p1_rd4
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd5
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 9663741984
+- id: background_p1_convert5
+  source: demotion
+  depends_on:
+  - background_p1_rd5
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd6
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 9667936256
+- id: background_p1_convert6
+  source: demotion
+  depends_on:
+  - background_p1_rd6
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd7
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 9667936288
+- id: background_p1_convert7
+  source: demotion
+  depends_on:
+  - background_p1_rd7
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd8
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 9672130592
+- id: background_p1_convert8
+  source: demotion
+  depends_on:
+  - background_p1_rd8
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd9
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 9676324896
+- id: background_p1_convert9
+  source: demotion
+  depends_on:
+  - background_p1_rd9
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd10
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 10737483808
+- id: background_p1_convert10
+  source: demotion
+  depends_on:
+  - background_p1_rd10
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd11
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 10741678080
+- id: background_p1_convert11
+  source: demotion
+  depends_on:
+  - background_p1_rd11
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd12
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 10741678112
+- id: background_p1_convert12
+  source: demotion
+  depends_on:
+  - background_p1_rd12
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd13
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 10745872416
+- id: background_p1_convert13
+  source: demotion
+  depends_on:
+  - background_p1_rd13
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd14
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 10750066720
+- id: background_p1_convert14
+  source: demotion
+  depends_on:
+  - background_p1_rd14
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd15
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 11811225632
+- id: background_p1_convert15
+  source: demotion
+  depends_on:
+  - background_p1_rd15
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd16
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 11815419904
+- id: background_p1_convert16
+  source: demotion
+  depends_on:
+  - background_p1_rd16
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd17
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 11815419936
+- id: background_p1_convert17
+  source: demotion
+  depends_on:
+  - background_p1_rd17
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd18
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 11819614240
+- id: background_p1_convert18
+  source: demotion
+  depends_on:
+  - background_p1_rd18
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_rd19
+  source: demotion
+  depends_on:
+  - background_p1_acquire
+  requests:
+  - type: 0
+    address: 11823808544
+- id: background_p1_convert19
+  source: demotion
+  depends_on:
+  - background_p1_rd19
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p1_layout
+  source: demotion
+  depends_on:
+  - background_p1_convert0
+  - background_p1_convert1
+  - background_p1_convert2
+  - background_p1_convert3
+  - background_p1_convert4
+  - background_p1_convert5
+  - background_p1_convert6
+  - background_p1_convert7
+  - background_p1_convert8
+  - background_p1_convert9
+  - background_p1_convert10
+  - background_p1_convert11
+  - background_p1_convert12
+  - background_p1_convert13
+  - background_p1_convert14
+  - background_p1_convert15
+  - background_p1_convert16
+  - background_p1_convert17
+  - background_p1_convert18
+  - background_p1_convert19
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: background_p1_write
+  source: demotion
+  depends_on:
+  - background_p1_layout
+  requests:
+  - type: 1
+    address: 3221225472
+    byte_mask: 4294967295
+  - type: 1
+    address: 3221225504
+    byte_mask: 4294967295
+  - type: 1
+    address: 3221225536
+    byte_mask: 4294967295
+  - type: 1
+    address: 3221225568
+    byte_mask: 4294967295
+- id: background_p1_commit
+  source: demotion
+  depends_on:
+  - background_p1_write
+  release: background_p1
+- id: background_p2_acquire
+  source: demotion
+  issue_cycle: 0
+  depends_on: []
+  acquire: background_p2
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block1_page2
+- id: background_p2_rd0
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 8590000160
+- id: background_p2_convert0
+  source: demotion
+  depends_on:
+  - background_p2_rd0
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd1
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 8594194464
+- id: background_p2_convert1
+  source: demotion
+  depends_on:
+  - background_p2_rd1
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd2
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 8598388736
+- id: background_p2_convert2
+  source: demotion
+  depends_on:
+  - background_p2_rd2
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd3
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 8598388768
+- id: background_p2_convert3
+  source: demotion
+  depends_on:
+  - background_p2_rd3
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd4
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 8602583072
+- id: background_p2_convert4
+  source: demotion
+  depends_on:
+  - background_p2_rd4
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd5
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 9663741984
+- id: background_p2_convert5
+  source: demotion
+  depends_on:
+  - background_p2_rd5
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd6
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 9667936288
+- id: background_p2_convert6
+  source: demotion
+  depends_on:
+  - background_p2_rd6
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd7
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 9672130560
+- id: background_p2_convert7
+  source: demotion
+  depends_on:
+  - background_p2_rd7
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd8
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 9672130592
+- id: background_p2_convert8
+  source: demotion
+  depends_on:
+  - background_p2_rd8
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd9
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 9676324896
+- id: background_p2_convert9
+  source: demotion
+  depends_on:
+  - background_p2_rd9
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd10
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 10737483808
+- id: background_p2_convert10
+  source: demotion
+  depends_on:
+  - background_p2_rd10
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd11
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 10741678112
+- id: background_p2_convert11
+  source: demotion
+  depends_on:
+  - background_p2_rd11
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd12
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 10745872384
+- id: background_p2_convert12
+  source: demotion
+  depends_on:
+  - background_p2_rd12
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd13
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 10745872416
+- id: background_p2_convert13
+  source: demotion
+  depends_on:
+  - background_p2_rd13
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd14
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 10750066720
+- id: background_p2_convert14
+  source: demotion
+  depends_on:
+  - background_p2_rd14
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd15
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 11811225632
+- id: background_p2_convert15
+  source: demotion
+  depends_on:
+  - background_p2_rd15
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd16
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 11815419936
+- id: background_p2_convert16
+  source: demotion
+  depends_on:
+  - background_p2_rd16
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd17
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 11819614208
+- id: background_p2_convert17
+  source: demotion
+  depends_on:
+  - background_p2_rd17
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd18
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 11819614240
+- id: background_p2_convert18
+  source: demotion
+  depends_on:
+  - background_p2_rd18
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_rd19
+  source: demotion
+  depends_on:
+  - background_p2_acquire
+  requests:
+  - type: 0
+    address: 11823808544
+- id: background_p2_convert19
+  source: demotion
+  depends_on:
+  - background_p2_rd19
+  resource: convert
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: background_p2_layout
+  source: demotion
+  depends_on:
+  - background_p2_convert0
+  - background_p2_convert1
+  - background_p2_convert2
+  - background_p2_convert3
+  - background_p2_convert4
+  - background_p2_convert5
+  - background_p2_convert6
+  - background_p2_convert7
+  - background_p2_convert8
+  - background_p2_convert9
+  - background_p2_convert10
+  - background_p2_convert11
+  - background_p2_convert12
+  - background_p2_convert13
+  - background_p2_convert14
+  - background_p2_convert15
+  - background_p2_convert16
+  - background_p2_convert17
+  - background_p2_convert18
+  - background_p2_convert19
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: background_p2_write
+  source: demotion
+  depends_on:
+  - background_p2_layout
+  requests:
+  - type: 1
+    address: 5368709120
+    byte_mask: 4294967295
+  - type: 1
+    address: 5368709152
+    byte_mask: 4294967295
+  - type: 1
+    address: 5368709184
+    byte_mask: 4294967295
+  - type: 1
+    address: 5368709216
+    byte_mask: 4294967295
+- id: background_p2_commit
+  source: demotion
+  depends_on:
+  - background_p2_write
+  release: background_p2
+- id: background_done
+  source: demotion
+  depends_on:
+  - background_p0_commit
+  - background_p1_commit
+  - background_p2_commit
+- id: promote_p0_acquire
+  source: promotion
+  issue_cycle: 8
+  depends_on: []
+  acquire: promote_p0
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page0
+- id: promote_p0_rd0
+  source: promotion
+  depends_on:
+  - promote_p0_acquire
+  requests:
+  - type: 0
+    address: 0
+- id: promote_p0_convert0
+  source: promotion
+  depends_on:
+  - promote_p0_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p0_rd1
+  source: promotion
+  depends_on:
+  - promote_p0_acquire
+  requests:
+  - type: 0
+    address: 32
+- id: promote_p0_convert1
+  source: promotion
+  depends_on:
+  - promote_p0_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p0_rd2
+  source: promotion
+  depends_on:
+  - promote_p0_acquire
+  requests:
+  - type: 0
+    address: 64
+- id: promote_p0_convert2
+  source: promotion
+  depends_on:
+  - promote_p0_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p0_rd3
+  source: promotion
+  depends_on:
+  - promote_p0_acquire
+  requests:
+  - type: 0
+    address: 96
+- id: promote_p0_convert3
+  source: promotion
+  depends_on:
+  - promote_p0_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p0_layout
+  source: promotion
+  depends_on:
+  - promote_p0_convert0
+  - promote_p0_convert1
+  - promote_p0_convert2
+  - promote_p0_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: promote_p0_write
+  source: promotion
+  depends_on:
+  - promote_p0_layout
+  requests:
+  - type: 1
+    address: 8589934592
+    byte_mask: 4294967295
+  - type: 1
+    address: 8589934624
+    byte_mask: 255
+  - type: 1
+    address: 8594128928
+    byte_mask: 255
+  - type: 1
+    address: 8598323232
+    byte_mask: 255
+  - type: 1
+    address: 8602517536
+    byte_mask: 255
+  - type: 1
+    address: 9663676416
+    byte_mask: 4294967295
+  - type: 1
+    address: 9663676448
+    byte_mask: 255
+  - type: 1
+    address: 9667870752
+    byte_mask: 255
+  - type: 1
+    address: 9672065056
+    byte_mask: 255
+  - type: 1
+    address: 9676259360
+    byte_mask: 255
+  - type: 1
+    address: 10737418240
+    byte_mask: 4294967295
+  - type: 1
+    address: 10737418272
+    byte_mask: 255
+  - type: 1
+    address: 10741612576
+    byte_mask: 255
+  - type: 1
+    address: 10745806880
+    byte_mask: 255
+  - type: 1
+    address: 10750001184
+    byte_mask: 255
+  - type: 1
+    address: 11811160064
+    byte_mask: 4294967295
+  - type: 1
+    address: 11811160096
+    byte_mask: 255
+  - type: 1
+    address: 11815354400
+    byte_mask: 255
+  - type: 1
+    address: 11819548704
+    byte_mask: 255
+  - type: 1
+    address: 11823743008
+    byte_mask: 255
+- id: promote_p0_commit
+  source: promotion
+  depends_on:
+  - promote_p0_write
+  release: promote_p0
+- id: promote_p1_acquire
+  source: promotion
+  issue_cycle: 8
+  depends_on: []
+  acquire: promote_p1
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page1
+- id: promote_p1_rd0
+  source: promotion
+  depends_on:
+  - promote_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483648
+- id: promote_p1_convert0
+  source: promotion
+  depends_on:
+  - promote_p1_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p1_rd1
+  source: promotion
+  depends_on:
+  - promote_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483680
+- id: promote_p1_convert1
+  source: promotion
+  depends_on:
+  - promote_p1_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p1_rd2
+  source: promotion
+  depends_on:
+  - promote_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483712
+- id: promote_p1_convert2
+  source: promotion
+  depends_on:
+  - promote_p1_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p1_rd3
+  source: promotion
+  depends_on:
+  - promote_p1_acquire
+  requests:
+  - type: 0
+    address: 2147483744
+- id: promote_p1_convert3
+  source: promotion
+  depends_on:
+  - promote_p1_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p1_layout
+  source: promotion
+  depends_on:
+  - promote_p1_convert0
+  - promote_p1_convert1
+  - promote_p1_convert2
+  - promote_p1_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: promote_p1_write
+  source: promotion
+  depends_on:
+  - promote_p1_layout
+  requests:
+  - type: 1
+    address: 8589934624
+    byte_mask: 65280
+  - type: 1
+    address: 8594128896
+    byte_mask: 4294967295
+  - type: 1
+    address: 8594128928
+    byte_mask: 65280
+  - type: 1
+    address: 8598323232
+    byte_mask: 65280
+  - type: 1
+    address: 8602517536
+    byte_mask: 65280
+  - type: 1
+    address: 9663676448
+    byte_mask: 65280
+  - type: 1
+    address: 9667870720
+    byte_mask: 4294967295
+  - type: 1
+    address: 9667870752
+    byte_mask: 65280
+  - type: 1
+    address: 9672065056
+    byte_mask: 65280
+  - type: 1
+    address: 9676259360
+    byte_mask: 65280
+  - type: 1
+    address: 10737418272
+    byte_mask: 65280
+  - type: 1
+    address: 10741612544
+    byte_mask: 4294967295
+  - type: 1
+    address: 10741612576
+    byte_mask: 65280
+  - type: 1
+    address: 10745806880
+    byte_mask: 65280
+  - type: 1
+    address: 10750001184
+    byte_mask: 65280
+  - type: 1
+    address: 11811160096
+    byte_mask: 65280
+  - type: 1
+    address: 11815354368
+    byte_mask: 4294967295
+  - type: 1
+    address: 11815354400
+    byte_mask: 65280
+  - type: 1
+    address: 11819548704
+    byte_mask: 65280
+  - type: 1
+    address: 11823743008
+    byte_mask: 65280
+- id: promote_p1_commit
+  source: promotion
+  depends_on:
+  - promote_p1_write
+  release: promote_p1
+- id: promote_p2_acquire
+  source: promotion
+  issue_cycle: 8
+  depends_on: []
+  acquire: promote_p2
+  buffer_group: 0
+  buffer_bytes: 256
+  page_lock: s0_h0_block0_page2
+- id: promote_p2_rd0
+  source: promotion
+  depends_on:
+  - promote_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967296
+- id: promote_p2_convert0
+  source: promotion
+  depends_on:
+  - promote_p2_rd0
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p2_rd1
+  source: promotion
+  depends_on:
+  - promote_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967328
+- id: promote_p2_convert1
+  source: promotion
+  depends_on:
+  - promote_p2_rd1
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p2_rd2
+  source: promotion
+  depends_on:
+  - promote_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967360
+- id: promote_p2_convert2
+  source: promotion
+  depends_on:
+  - promote_p2_rd2
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p2_rd3
+  source: promotion
+  depends_on:
+  - promote_p2_acquire
+  requests:
+  - type: 0
+    address: 4294967392
+- id: promote_p2_convert3
+  source: promotion
+  depends_on:
+  - promote_p2_rd3
+  resource: convert
+  stack: 0
+  bytes: 160
+  cycles: 0
+- id: promote_p2_layout
+  source: promotion
+  depends_on:
+  - promote_p2_convert0
+  - promote_p2_convert1
+  - promote_p2_convert2
+  - promote_p2_convert3
+  resource: transpose
+  stack: 0
+  bytes: 256
+  cycles: 0
+- id: promote_p2_write
+  source: promotion
+  depends_on:
+  - promote_p2_layout
+  requests:
+  - type: 1
+    address: 8589934624
+    byte_mask: 16711680
+  - type: 1
+    address: 8594128928
+    byte_mask: 16711680
+  - type: 1
+    address: 8598323200
+    byte_mask: 4294967295
+  - type: 1
+    address: 8598323232
+    byte_mask: 16711680
+  - type: 1
+    address: 8602517536
+    byte_mask: 16711680
+  - type: 1
+    address: 9663676448
+    byte_mask: 16711680
+  - type: 1
+    address: 9667870752
+    byte_mask: 16711680
+  - type: 1
+    address: 9672065024
+    byte_mask: 4294967295
+  - type: 1
+    address: 9672065056
+    byte_mask: 16711680
+  - type: 1
+    address: 9676259360
+    byte_mask: 16711680
+  - type: 1
+    address: 10737418272
+    byte_mask: 16711680
+  - type: 1
+    address: 10741612576
+    byte_mask: 16711680
+  - type: 1
+    address: 10745806848
+    byte_mask: 4294967295
+  - type: 1
+    address: 10745806880
+    byte_mask: 16711680
+  - type: 1
+    address: 10750001184
+    byte_mask: 16711680
+  - type: 1
+    address: 11811160096
+    byte_mask: 16711680
+  - type: 1
+    address: 11815354400
+    byte_mask: 16711680
+  - type: 1
+    address: 11819548672
+    byte_mask: 4294967295
+  - type: 1
+    address: 11819548704
+    byte_mask: 16711680
+  - type: 1
+    address: 11823743008
+    byte_mask: 16711680
+- id: promote_p2_commit
+  source: promotion
+  depends_on:
+  - promote_p2_write
+  release: promote_p2
+- id: promote_done
+  source: promotion
+  depends_on:
+  - promote_p0_commit
+  - promote_p1_commit
+  - promote_p2_commit
+- id: foreground_query_broadcast
+  source: pim
+  issue_cycle: 0
+  depends_on:
+  - promote_done
+  resource: coordinator
+  stack: 0
+  bytes: 128
+  cycles: 0
+- id: foreground_qk_0
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 8589934592
+- id: foreground_qk_1
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 8594128896
+- id: foreground_qk_2
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 8598323200
+- id: foreground_qk_3
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 9663676416
+- id: foreground_qk_4
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 9667870720
+- id: foreground_qk_5
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 9672065024
+- id: foreground_qk_6
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 10737418240
+- id: foreground_qk_7
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 10741612544
+- id: foreground_qk_8
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 10745806848
+- id: foreground_qk_9
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 11811160064
+- id: foreground_qk_10
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 11815354368
+- id: foreground_qk_11
+  source: pim
+  depends_on:
+  - foreground_query_broadcast
+  requests:
+  - type: 6
+    address: 11819548672
+- id: foreground_qk_gather
+  source: pim
+  depends_on:
+  - foreground_qk_0
+  - foreground_qk_1
+  - foreground_qk_2
+  - foreground_qk_3
+  - foreground_qk_4
+  - foreground_qk_5
+  - foreground_qk_6
+  - foreground_qk_7
+  - foreground_qk_8
+  - foreground_qk_9
+  - foreground_qk_10
+  - foreground_qk_11
+  resource: coordinator
+  stack: 0
+  bytes: 24
+  cycles: 0
+- id: foreground_softmax
+  source: pim
+  depends_on:
+  - foreground_qk_gather
+  requests:
+  - type: 10
+    address: 8589934592
+- id: foreground_weights_broadcast
+  source: pim
+  depends_on:
+  - foreground_softmax
+  resource: coordinator
+  stack: 0
+  bytes: 96
+  cycles: 0
+- id: foreground_av_0
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 8589934624
+- id: foreground_av_1
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 8594128928
+- id: foreground_av_2
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 8598323232
+- id: foreground_av_3
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 8602517536
+- id: foreground_av_4
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 9663676448
+- id: foreground_av_5
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 9667870752
+- id: foreground_av_6
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 9672065056
+- id: foreground_av_7
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 9676259360
+- id: foreground_av_8
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 10737418272
+- id: foreground_av_9
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 10741612576
+- id: foreground_av_10
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 10745806880
+- id: foreground_av_11
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 10750001184
+- id: foreground_av_12
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 11811160096
+- id: foreground_av_13
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 11815354400
+- id: foreground_av_14
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 11819548704
+- id: foreground_av_15
+  source: pim
+  depends_on:
+  - foreground_weights_broadcast
+  requests:
+  - type: 6
+    address: 11823743008
+- id: foreground_av_gather
+  source: pim
+  depends_on:
+  - foreground_av_0
+  - foreground_av_1
+  - foreground_av_2
+  - foreground_av_3
+  - foreground_av_4
+  - foreground_av_5
+  - foreground_av_6
+  - foreground_av_7
+  - foreground_av_8
+  - foreground_av_9
+  - foreground_av_10
+  - foreground_av_11
+  - foreground_av_12
+  - foreground_av_13
+  - foreground_av_14
+  - foreground_av_15
+  resource: coordinator
+  stack: 0
+  bytes: 32
+  cycles: 0
+- id: foreground_done
+  source: pim
+  depends_on:
+  - foreground_av_gather
+- id: gpu0_ingress
+  source: gpu
+  issue_cycle: 28
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu0_memory
+  source: gpu
+  depends_on:
+  - gpu0_ingress
+  requests:
+  - type: 1
+    address: 10200548000
+- id: gpu0_egress
+  source: gpu
+  depends_on:
+  - gpu0_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu1_ingress
+  source: gpu
+  issue_cycle: 28
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu1_memory
+  source: gpu
+  depends_on:
+  - gpu1_ingress
+  requests:
+  - type: 0
+    address: 11274289408
+- id: gpu1_egress
+  source: gpu
+  depends_on:
+  - gpu1_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu2_ingress
+  source: gpu
+  issue_cycle: 4
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu2_memory
+  source: gpu
+  depends_on:
+  - gpu2_ingress
+  requests:
+  - type: 0
+    address: 5368709440
+- id: gpu2_egress
+  source: gpu
+  depends_on:
+  - gpu2_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu3_ingress
+  source: gpu
+  issue_cycle: 27
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu3_memory
+  source: gpu
+  depends_on:
+  - gpu3_ingress
+  requests:
+  - type: 1
+    address: 5368709952
+- id: gpu3_egress
+  source: gpu
+  depends_on:
+  - gpu3_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu4_ingress
+  source: gpu
+  issue_cycle: 10
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu4_memory
+  source: gpu
+  depends_on:
+  - gpu4_ingress
+  requests:
+  - type: 0
+    address: 9126805760
+- id: gpu4_egress
+  source: gpu
+  depends_on:
+  - gpu4_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu5_ingress
+  source: gpu
+  issue_cycle: 56
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu5_memory
+  source: gpu
+  depends_on:
+  - gpu5_ingress
+  requests:
+  - type: 0
+    address: 1073742752
+- id: gpu5_egress
+  source: gpu
+  depends_on:
+  - gpu5_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu6_ingress
+  source: gpu
+  issue_cycle: 41
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu6_memory
+  source: gpu
+  depends_on:
+  - gpu6_ingress
+  requests:
+  - type: 1
+    address: 7516193696
+- id: gpu6_egress
+  source: gpu
+  depends_on:
+  - gpu6_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu7_ingress
+  source: gpu
+  issue_cycle: 34
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu7_memory
+  source: gpu
+  depends_on:
+  - gpu7_ingress
+  requests:
+  - type: 0
+    address: 11274289280
+- id: gpu7_egress
+  source: gpu
+  depends_on:
+  - gpu7_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu8_ingress
+  source: gpu
+  issue_cycle: 36
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu8_memory
+  source: gpu
+  depends_on:
+  - gpu8_ingress
+  requests:
+  - type: 0
+    address: 10200547584
+- id: gpu8_egress
+  source: gpu
+  depends_on:
+  - gpu8_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu9_ingress
+  source: gpu
+  issue_cycle: 50
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu9_memory
+  source: gpu
+  depends_on:
+  - gpu9_ingress
+  requests:
+  - type: 1
+    address: 7516193312
+- id: gpu9_egress
+  source: gpu
+  depends_on:
+  - gpu9_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu10_ingress
+  source: gpu
+  issue_cycle: 41
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu10_memory
+  source: gpu
+  depends_on:
+  - gpu10_ingress
+  requests:
+  - type: 0
+    address: 9126805728
+- id: gpu10_egress
+  source: gpu
+  depends_on:
+  - gpu10_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu11_ingress
+  source: gpu
+  issue_cycle: 32
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu11_memory
+  source: gpu
+  depends_on:
+  - gpu11_ingress
+  requests:
+  - type: 0
+    address: 5368709920
+- id: gpu11_egress
+  source: gpu
+  depends_on:
+  - gpu11_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu12_ingress
+  source: gpu
+  issue_cycle: 33
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu12_memory
+  source: gpu
+  depends_on:
+  - gpu12_ingress
+  requests:
+  - type: 1
+    address: 10200548192
+- id: gpu12_egress
+  source: gpu
+  depends_on:
+  - gpu12_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu13_ingress
+  source: gpu
+  issue_cycle: 15
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu13_memory
+  source: gpu
+  depends_on:
+  - gpu13_ingress
+  requests:
+  - type: 0
+    address: 1073742528
+- id: gpu13_egress
+  source: gpu
+  depends_on:
+  - gpu13_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu14_ingress
+  source: gpu
+  issue_cycle: 0
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu14_memory
+  source: gpu
+  depends_on:
+  - gpu14_ingress
+  requests:
+  - type: 0
+    address: 5368709920
+- id: gpu14_egress
+  source: gpu
+  depends_on:
+  - gpu14_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu15_ingress
+  source: gpu
+  issue_cycle: 41
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu15_memory
+  source: gpu
+  depends_on:
+  - gpu15_ingress
+  requests:
+  - type: 1
+    address: 12348031872
+- id: gpu15_egress
+  source: gpu
+  depends_on:
+  - gpu15_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu16_ingress
+  source: gpu
+  issue_cycle: 16
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu16_memory
+  source: gpu
+  depends_on:
+  - gpu16_ingress
+  requests:
+  - type: 0
+    address: 7516193568
+- id: gpu16_egress
+  source: gpu
+  depends_on:
+  - gpu16_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu17_ingress
+  source: gpu
+  issue_cycle: 55
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu17_memory
+  source: gpu
+  depends_on:
+  - gpu17_ingress
+  requests:
+  - type: 0
+    address: 3221225984
+- id: gpu17_egress
+  source: gpu
+  depends_on:
+  - gpu17_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu18_ingress
+  source: gpu
+  issue_cycle: 25
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu18_memory
+  source: gpu
+  depends_on:
+  - gpu18_ingress
+  requests:
+  - type: 1
+    address: 3221225568
+- id: gpu18_egress
+  source: gpu
+  depends_on:
+  - gpu18_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu19_ingress
+  source: gpu
+  issue_cycle: 16
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu19_memory
+  source: gpu
+  depends_on:
+  - gpu19_ingress
+  requests:
+  - type: 0
+    address: 9126805600
+- id: gpu19_egress
+  source: gpu
+  depends_on:
+  - gpu19_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu20_ingress
+  source: gpu
+  issue_cycle: 47
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu20_memory
+  source: gpu
+  depends_on:
+  - gpu20_ingress
+  requests:
+  - type: 0
+    address: 5368709184
+- id: gpu20_egress
+  source: gpu
+  depends_on:
+  - gpu20_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu21_ingress
+  source: gpu
+  issue_cycle: 0
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu21_memory
+  source: gpu
+  depends_on:
+  - gpu21_ingress
+  requests:
+  - type: 1
+    address: 3221226400
+- id: gpu21_egress
+  source: gpu
+  depends_on:
+  - gpu21_memory
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu22_ingress
+  source: gpu
+  issue_cycle: 7
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu22_memory
+  source: gpu
+  depends_on:
+  - gpu22_ingress
+  requests:
+  - type: 0
+    address: 1073741856
+- id: gpu22_egress
+  source: gpu
+  depends_on:
+  - gpu22_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1
+- id: gpu23_ingress
+  source: gpu
+  issue_cycle: 4
+  depends_on: []
+  resource: ucie
+  stack: 0
+  bytes: 0
+  cycles: 1
+- id: gpu23_memory
+  source: gpu
+  depends_on:
+  - gpu23_ingress
+  requests:
+  - type: 0
+    address: 10200547648
+- id: gpu23_egress
+  source: gpu
+  depends_on:
+  - gpu23_memory
+  resource: ucie
+  stack: 0
+  bytes: 32
+  cycles: 1

@@ -1,0 +1,9 @@
+------   Make a trace of bank-level AttAcc   ------
+All Arguments:
+     dhead: 128
+     nhead: 1
+     seqlen: 128
+     maxlen: 128
+     dbyte: 2
+     output: /home/ubuntu22/gem5/experiments/attacc_baseline_20261104/results/20261104-repro-check/traces/attacc_bank.trace
+---------------------------------------------------

@@ -1,0 +1,9050 @@
+{
+  "schema_version": 1,
+  "workload": {
+    "schema_version": 1,
+    "workload": "query_projection_pim_attention_output_projection",
+    "issue_cycle": 0,
+    "hidden_dim": 80,
+    "tokens_per_head": 8,
+    "background_tokens_per_head": 12,
+    "background_issue_cycle": 0
+  },
+  "kernels": [
+    {
+      "task_id": "query_projection",
+      "shape_m_n_k": [
+        1,
+        80,
+        80
+      ],
+      "FLOPs": 12800,
+      "attacc_tensor_bytes": [
+        160,
+        12800,
+        160
+      ],
+      "compute_cycles": 67,
+      "launch_cycles": 0,
+      "total_cycles": 67,
+      "compute_rounding_ps": 240.94871794871796
+    },
+    {
+      "task_id": "output_projection",
+      "shape_m_n_k": [
+        1,
+        80,
+        80
+      ],
+      "FLOPs": 12800,
+      "attacc_tensor_bytes": [
+        160,
+        12800,
+        160
+      ],
+      "compute_cycles": 67,
+      "launch_cycles": 0,
+      "total_cycles": 67,
+      "compute_rounding_ps": 240.94871794871796
+    }
+  ],
+  "allocations": [
+    {
+      "name": "input",
+      "logical_bytes": 160,
+      "physical_bytes": 160,
+      "reserved_bytes": 256,
+      "chunks": [
+        {
+          "address": 2097152,
+          "bytes": 160,
+          "valid_bytes": 160,
+          "stack": 0
+        }
+      ]
+    },
+    {
+      "name": "query_weights",
+      "logical_bytes": 12800,
+      "physical_bytes": 12800,
+      "reserved_bytes": 12800,
+      "chunks": [
+        {
+          "address": 12886999040,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 25771900928,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38656802816,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51541704704,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 136314880,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13021216768,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 25906118656,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38791020544,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51675922432,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 270532608,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13155434496,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26040336384,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38925238272,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51810140160,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 404750336,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13289652224,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26174554112,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39059456000,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51944357888,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 538968064,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13423869952,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26308771840,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39193673728,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52078575616,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 673185792,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13558087680,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26442989568,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39327891456,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52212793344,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 807403520,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13692305408,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26577207296,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39462109184,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52347011072,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 941621248,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13826523136,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26711425024,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39596326912,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52481228800,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1075838976,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13960740864,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26845642752,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39730544640,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52615446528,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1210056704,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14094958592,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26979860480,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39864762368,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52749664256,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1344274432,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        }
+      ]
+    },
+    {
+      "name": "output_weights",
+      "logical_bytes": 12800,
+      "physical_bytes": 12800,
+      "reserved_bytes": 12800,
+      "chunks": [
+        {
+          "address": 14229176320,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27114078208,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39998980096,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52883881984,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1478492160,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14363394048,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27248295936,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 40133197824,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 53018099712,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1612709888,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14497611776,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27382513664,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 40267415552,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 53152317440,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1746927616,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14631829504,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27516731392,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 40401633280,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 53286535168,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 1881145344,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14766047232,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27650949120,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 40535851008,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 53420752896,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 2015363072,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 14900264960,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 27785166848,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 40670068736,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 53554970624,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 69206016,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 12954107904,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 25839009792,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38723911680,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51608813568,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 203423744,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13088325632,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 25973227520,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38858129408,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51743031296,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 337641472,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13222543360,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26107445248,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 38992347136,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 51877249024,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 471859200,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        },
+        {
+          "address": 13356761088,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 1
+        },
+        {
+          "address": 26241662976,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 2
+        },
+        {
+          "address": 39126564864,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 3
+        },
+        {
+          "address": 52011466752,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 4
+        },
+        {
+          "address": 606076928,
+          "bytes": 256,
+          "valid_bytes": 256,
+          "stack": 0
+        }
+      ]
+    },
+    {
+      "name": "output",
+      "logical_bytes": 160,
+      "physical_bytes": 160,
+      "reserved_bytes": 256,
+      "chunks": [
+        {
+          "address": 13490978816,
+          "bytes": 160,
+          "valid_bytes": 160,
+          "stack": 1
+        }
+      ]
+    }
+  ],
+  "gpu_reserved_bytes": 26112,
+  "subgraphs": {
+    "promote_s0": {
+      "schema_version": 1,
+      "kind": "promotion",
+      "tokens": 8,
+      "dim": 16,
+      "logical_bytes": 512,
+      "read_bytes": 256,
+      "write_bytes": 1280,
+      "pages": [
+        {
+          "page_id": "promote_s0_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 0,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s0_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "promote_s0_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 2147483648,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s0_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "promote_s0_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "attention_s0": {
+      "schema_version": 1,
+      "tokens": 8,
+      "dim": 16,
+      "logical_MACs": 256,
+      "issued_MACPB": 24,
+      "command_elements": {
+        "attention_s0_qk_0": {
+          "tensor": "K",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              0,
+              15,
+              0
+            ]
+          ],
+          "address": 8589934592,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_1": {
+          "tensor": "K",
+          "elements": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ],
+          "address": 8594128896,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_2": {
+          "tensor": "K",
+          "elements": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ]
+          ],
+          "address": 9663676416,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_3": {
+          "tensor": "K",
+          "elements": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ]
+          ],
+          "address": 9667870720,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_4": {
+          "tensor": "K",
+          "elements": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ]
+          ],
+          "address": 10737418240,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_5": {
+          "tensor": "K",
+          "elements": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ]
+          ],
+          "address": 10741612544,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_6": {
+          "tensor": "K",
+          "elements": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ]
+          ],
+          "address": 11811160064,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_qk_7": {
+          "tensor": "K",
+          "elements": [
+            [
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 11815354368,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_0": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ],
+          "address": 8589934624,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_1": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ]
+          ],
+          "address": 8594128928,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_2": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ]
+          ],
+          "address": 8598323232,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_3": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ],
+          "address": 8602517536,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_4": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ]
+          ],
+          "address": 9663676448,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_5": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ]
+          ],
+          "address": 9667870752,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_6": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ]
+          ],
+          "address": 9672065056,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_7": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ]
+          ],
+          "address": 9676259360,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_8": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ]
+          ],
+          "address": 10737418272,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_9": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ]
+          ],
+          "address": 10741612576,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_10": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ]
+          ],
+          "address": 10745806880,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_11": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ]
+          ],
+          "address": 10750001184,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_12": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ]
+          ],
+          "address": 11811160096,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_13": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ]
+          ],
+          "address": 11815354400,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_14": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ]
+          ],
+          "address": 11819548704,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s0_av_15": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 11823743008,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        }
+      },
+      "traffic_bytes": {
+        "query_broadcast": 128,
+        "score_gather": 16,
+        "weight_broadcast": 64,
+        "output_gather": 32
+      },
+      "partial_reduce_bytes": 0,
+      "done_task": "attention_s0_done",
+      "softmax_placement": "Base Die behavior with AttAcc SFM timing marker; configured uncalibrated tail",
+      "inactive_PC_policy": "broadcast computes are timing-accounted; inactive logical lanes discarded",
+      "pim_unit_occupancy_scope": "channel"
+    },
+    "demote_s0": {
+      "schema_version": 1,
+      "kind": "demotion",
+      "tokens": 12,
+      "dim": 16,
+      "logical_bytes": 768,
+      "read_bytes": 1920,
+      "write_bytes": 384,
+      "pages": [
+        {
+          "page_id": "demote_s0_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 1073741824,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s0_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s0_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 3221225472,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s0_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s0_p2",
+          "start_token": 8,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 5368709120,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s0_p2_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "demote_s0_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "promote_s1": {
+      "schema_version": 1,
+      "kind": "promotion",
+      "tokens": 8,
+      "dim": 16,
+      "logical_bytes": 512,
+      "read_bytes": 256,
+      "write_bytes": 1280,
+      "pages": [
+        {
+          "page_id": "promote_s1_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 12884901888,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s1_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "promote_s1_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 15032385536,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s1_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "promote_s1_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "attention_s1": {
+      "schema_version": 1,
+      "tokens": 8,
+      "dim": 16,
+      "logical_MACs": 256,
+      "issued_MACPB": 24,
+      "command_elements": {
+        "attention_s1_qk_0": {
+          "tensor": "K",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              0,
+              15,
+              0
+            ]
+          ],
+          "address": 21474836480,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_1": {
+          "tensor": "K",
+          "elements": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ],
+          "address": 21479030784,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_2": {
+          "tensor": "K",
+          "elements": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ]
+          ],
+          "address": 22548578304,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_3": {
+          "tensor": "K",
+          "elements": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ]
+          ],
+          "address": 22552772608,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_4": {
+          "tensor": "K",
+          "elements": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ]
+          ],
+          "address": 23622320128,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_5": {
+          "tensor": "K",
+          "elements": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ]
+          ],
+          "address": 23626514432,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_6": {
+          "tensor": "K",
+          "elements": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ]
+          ],
+          "address": 24696061952,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_qk_7": {
+          "tensor": "K",
+          "elements": [
+            [
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 24700256256,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_0": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ],
+          "address": 21474836512,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_1": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ]
+          ],
+          "address": 21479030816,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_2": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ]
+          ],
+          "address": 21483225120,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_3": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ],
+          "address": 21487419424,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_4": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ]
+          ],
+          "address": 22548578336,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_5": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ]
+          ],
+          "address": 22552772640,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_6": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ]
+          ],
+          "address": 22556966944,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_7": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ]
+          ],
+          "address": 22561161248,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_8": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ]
+          ],
+          "address": 23622320160,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_9": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ]
+          ],
+          "address": 23626514464,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_10": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ]
+          ],
+          "address": 23630708768,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_11": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ]
+          ],
+          "address": 23634903072,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_12": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ]
+          ],
+          "address": 24696061984,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_13": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ]
+          ],
+          "address": 24700256288,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_14": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ]
+          ],
+          "address": 24704450592,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s1_av_15": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 24708644896,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        }
+      },
+      "traffic_bytes": {
+        "query_broadcast": 128,
+        "score_gather": 16,
+        "weight_broadcast": 64,
+        "output_gather": 32
+      },
+      "partial_reduce_bytes": 0,
+      "done_task": "attention_s1_done",
+      "softmax_placement": "Base Die behavior with AttAcc SFM timing marker; configured uncalibrated tail",
+      "inactive_PC_policy": "broadcast computes are timing-accounted; inactive logical lanes discarded",
+      "pim_unit_occupancy_scope": "channel"
+    },
+    "demote_s1": {
+      "schema_version": 1,
+      "kind": "demotion",
+      "tokens": 12,
+      "dim": 16,
+      "logical_bytes": 768,
+      "read_bytes": 1920,
+      "write_bytes": 384,
+      "pages": [
+        {
+          "page_id": "demote_s1_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 13958643712,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s1_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s1_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 16106127360,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s1_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s1_p2",
+          "start_token": 8,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 18253611008,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s1_p2_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "demote_s1_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "promote_s2": {
+      "schema_version": 1,
+      "kind": "promotion",
+      "tokens": 8,
+      "dim": 16,
+      "logical_bytes": 512,
+      "read_bytes": 256,
+      "write_bytes": 1280,
+      "pages": [
+        {
+          "page_id": "promote_s2_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 25769803776,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s2_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "promote_s2_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 27917287424,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s2_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "promote_s2_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "attention_s2": {
+      "schema_version": 1,
+      "tokens": 8,
+      "dim": 16,
+      "logical_MACs": 256,
+      "issued_MACPB": 24,
+      "command_elements": {
+        "attention_s2_qk_0": {
+          "tensor": "K",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              0,
+              15,
+              0
+            ]
+          ],
+          "address": 34359738368,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_1": {
+          "tensor": "K",
+          "elements": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ],
+          "address": 34363932672,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_2": {
+          "tensor": "K",
+          "elements": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ]
+          ],
+          "address": 35433480192,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_3": {
+          "tensor": "K",
+          "elements": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ]
+          ],
+          "address": 35437674496,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_4": {
+          "tensor": "K",
+          "elements": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ]
+          ],
+          "address": 36507222016,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_5": {
+          "tensor": "K",
+          "elements": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ]
+          ],
+          "address": 36511416320,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_6": {
+          "tensor": "K",
+          "elements": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ]
+          ],
+          "address": 37580963840,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_qk_7": {
+          "tensor": "K",
+          "elements": [
+            [
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 37585158144,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_0": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ],
+          "address": 34359738400,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_1": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ]
+          ],
+          "address": 34363932704,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_2": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ]
+          ],
+          "address": 34368127008,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_3": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ],
+          "address": 34372321312,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_4": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ]
+          ],
+          "address": 35433480224,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_5": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ]
+          ],
+          "address": 35437674528,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_6": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ]
+          ],
+          "address": 35441868832,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_7": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ]
+          ],
+          "address": 35446063136,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_8": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ]
+          ],
+          "address": 36507222048,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_9": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ]
+          ],
+          "address": 36511416352,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_10": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ]
+          ],
+          "address": 36515610656,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_11": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ]
+          ],
+          "address": 36519804960,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_12": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ]
+          ],
+          "address": 37580963872,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_13": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ]
+          ],
+          "address": 37585158176,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_14": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ]
+          ],
+          "address": 37589352480,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s2_av_15": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 37593546784,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        }
+      },
+      "traffic_bytes": {
+        "query_broadcast": 128,
+        "score_gather": 16,
+        "weight_broadcast": 64,
+        "output_gather": 32
+      },
+      "partial_reduce_bytes": 0,
+      "done_task": "attention_s2_done",
+      "softmax_placement": "Base Die behavior with AttAcc SFM timing marker; configured uncalibrated tail",
+      "inactive_PC_policy": "broadcast computes are timing-accounted; inactive logical lanes discarded",
+      "pim_unit_occupancy_scope": "channel"
+    },
+    "demote_s2": {
+      "schema_version": 1,
+      "kind": "demotion",
+      "tokens": 12,
+      "dim": 16,
+      "logical_bytes": 768,
+      "read_bytes": 1920,
+      "write_bytes": 384,
+      "pages": [
+        {
+          "page_id": "demote_s2_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 26843545600,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s2_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s2_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 28991029248,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s2_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s2_p2",
+          "start_token": 8,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 31138512896,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s2_p2_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "demote_s2_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "promote_s3": {
+      "schema_version": 1,
+      "kind": "promotion",
+      "tokens": 8,
+      "dim": 16,
+      "logical_bytes": 512,
+      "read_bytes": 256,
+      "write_bytes": 1280,
+      "pages": [
+        {
+          "page_id": "promote_s3_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 38654705664,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s3_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "promote_s3_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 40802189312,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s3_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "promote_s3_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "attention_s3": {
+      "schema_version": 1,
+      "tokens": 8,
+      "dim": 16,
+      "logical_MACs": 256,
+      "issued_MACPB": 24,
+      "command_elements": {
+        "attention_s3_qk_0": {
+          "tensor": "K",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              0,
+              15,
+              0
+            ]
+          ],
+          "address": 47244640256,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_1": {
+          "tensor": "K",
+          "elements": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ],
+          "address": 47248834560,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_2": {
+          "tensor": "K",
+          "elements": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ]
+          ],
+          "address": 48318382080,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_3": {
+          "tensor": "K",
+          "elements": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ]
+          ],
+          "address": 48322576384,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_4": {
+          "tensor": "K",
+          "elements": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ]
+          ],
+          "address": 49392123904,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_5": {
+          "tensor": "K",
+          "elements": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ]
+          ],
+          "address": 49396318208,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_6": {
+          "tensor": "K",
+          "elements": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ]
+          ],
+          "address": 50465865728,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_qk_7": {
+          "tensor": "K",
+          "elements": [
+            [
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 50470060032,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_0": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ],
+          "address": 47244640288,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_1": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ]
+          ],
+          "address": 47248834592,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_2": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ]
+          ],
+          "address": 47253028896,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_3": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ],
+          "address": 47257223200,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_4": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ]
+          ],
+          "address": 48318382112,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_5": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ]
+          ],
+          "address": 48322576416,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_6": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ]
+          ],
+          "address": 48326770720,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_7": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ]
+          ],
+          "address": 48330965024,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_8": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ]
+          ],
+          "address": 49392123936,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_9": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ]
+          ],
+          "address": 49396318240,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_10": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ]
+          ],
+          "address": 49400512544,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_11": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ]
+          ],
+          "address": 49404706848,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_12": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ]
+          ],
+          "address": 50465865760,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_13": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ]
+          ],
+          "address": 50470060064,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_14": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ]
+          ],
+          "address": 50474254368,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s3_av_15": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 50478448672,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        }
+      },
+      "traffic_bytes": {
+        "query_broadcast": 128,
+        "score_gather": 16,
+        "weight_broadcast": 64,
+        "output_gather": 32
+      },
+      "partial_reduce_bytes": 0,
+      "done_task": "attention_s3_done",
+      "softmax_placement": "Base Die behavior with AttAcc SFM timing marker; configured uncalibrated tail",
+      "inactive_PC_policy": "broadcast computes are timing-accounted; inactive logical lanes discarded",
+      "pim_unit_occupancy_scope": "channel"
+    },
+    "demote_s3": {
+      "schema_version": 1,
+      "kind": "demotion",
+      "tokens": 12,
+      "dim": 16,
+      "logical_bytes": 768,
+      "read_bytes": 1920,
+      "write_bytes": 384,
+      "pages": [
+        {
+          "page_id": "demote_s3_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 39728447488,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s3_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s3_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 41875931136,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s3_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s3_p2",
+          "start_token": 8,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 44023414784,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s3_p2_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "demote_s3_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "promote_s4": {
+      "schema_version": 1,
+      "kind": "promotion",
+      "tokens": 8,
+      "dim": 16,
+      "logical_bytes": 512,
+      "read_bytes": 256,
+      "write_bytes": 1280,
+      "pages": [
+        {
+          "page_id": "promote_s4_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 51539607552,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s4_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "promote_s4_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 53687091200,
+          "source_bursts": 4,
+          "target_bursts": 20,
+          "commit_task": "promote_s4_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "promote_s4_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    },
+    "attention_s4": {
+      "schema_version": 1,
+      "tokens": 8,
+      "dim": 16,
+      "logical_MACs": 256,
+      "issued_MACPB": 24,
+      "command_elements": {
+        "attention_s4_qk_0": {
+          "tensor": "K",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              0,
+              15,
+              0
+            ]
+          ],
+          "address": 60129542144,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_1": {
+          "tensor": "K",
+          "elements": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ],
+          "address": 60133736448,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_2": {
+          "tensor": "K",
+          "elements": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ]
+          ],
+          "address": 61203283968,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_3": {
+          "tensor": "K",
+          "elements": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ]
+          ],
+          "address": 61207478272,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_4": {
+          "tensor": "K",
+          "elements": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ]
+          ],
+          "address": 62277025792,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_5": {
+          "tensor": "K",
+          "elements": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ]
+          ],
+          "address": 62281220096,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_6": {
+          "tensor": "K",
+          "elements": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ]
+          ],
+          "address": 63350767616,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_qk_7": {
+          "tensor": "K",
+          "elements": [
+            [
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 63354961920,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_0": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ],
+          "address": 60129542176,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_1": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              3,
+              4,
+              0
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ]
+          ],
+          "address": 60133736480,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_2": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              8,
+              0
+            ],
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              3,
+              8,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              5,
+              8,
+              0
+            ],
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ]
+          ],
+          "address": 60137930784,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_3": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              12,
+              0
+            ],
+            [
+              2,
+              12,
+              0
+            ],
+            [
+              3,
+              12,
+              0
+            ],
+            [
+              4,
+              12,
+              0
+            ],
+            [
+              5,
+              12,
+              0
+            ],
+            [
+              6,
+              12,
+              0
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ],
+          "address": 60142125088,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_4": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              6,
+              1,
+              0
+            ],
+            [
+              7,
+              1,
+              0
+            ]
+          ],
+          "address": 61203284000,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_5": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              5,
+              0
+            ],
+            [
+              4,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              7,
+              5,
+              0
+            ]
+          ],
+          "address": 61207478304,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_6": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              9,
+              0
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              3,
+              9,
+              0
+            ],
+            [
+              4,
+              9,
+              0
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              6,
+              9,
+              0
+            ],
+            [
+              7,
+              9,
+              0
+            ]
+          ],
+          "address": 61211672608,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_7": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              13,
+              0
+            ],
+            [
+              2,
+              13,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              4,
+              13,
+              0
+            ],
+            [
+              5,
+              13,
+              0
+            ],
+            [
+              6,
+              13,
+              0
+            ],
+            [
+              7,
+              13,
+              0
+            ]
+          ],
+          "address": 61215866912,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_8": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              7,
+              2,
+              0
+            ]
+          ],
+          "address": 62277025824,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_9": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              2,
+              6,
+              0
+            ],
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ],
+            [
+              7,
+              6,
+              0
+            ]
+          ],
+          "address": 62281220128,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_10": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              10,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              2,
+              10,
+              0
+            ],
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              4,
+              10,
+              0
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ]
+          ],
+          "address": 62285414432,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_11": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              14,
+              0
+            ],
+            [
+              2,
+              14,
+              0
+            ],
+            [
+              3,
+              14,
+              0
+            ],
+            [
+              4,
+              14,
+              0
+            ],
+            [
+              5,
+              14,
+              0
+            ],
+            [
+              6,
+              14,
+              0
+            ],
+            [
+              7,
+              14,
+              0
+            ]
+          ],
+          "address": 62289608736,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_12": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              7,
+              3,
+              0
+            ]
+          ],
+          "address": 63350767648,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_13": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              1,
+              7,
+              0
+            ],
+            [
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              6,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              0
+            ]
+          ],
+          "address": 63354961952,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_14": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              11,
+              0
+            ],
+            [
+              1,
+              11,
+              0
+            ],
+            [
+              2,
+              11,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              4,
+              11,
+              0
+            ],
+            [
+              5,
+              11,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              7,
+              11,
+              0
+            ]
+          ],
+          "address": 63359156256,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        },
+        "attention_s4_av_15": {
+          "tensor": "V",
+          "elements": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              15,
+              0
+            ],
+            [
+              2,
+              15,
+              0
+            ],
+            [
+              3,
+              15,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ],
+            [
+              5,
+              15,
+              0
+            ],
+            [
+              6,
+              15,
+              0
+            ],
+            [
+              7,
+              15,
+              0
+            ]
+          ],
+          "address": 63363350560,
+          "broadcast_pcs": 2,
+          "valid_pcs": [
+            0
+          ]
+        }
+      },
+      "traffic_bytes": {
+        "query_broadcast": 128,
+        "score_gather": 16,
+        "weight_broadcast": 64,
+        "output_gather": 32
+      },
+      "partial_reduce_bytes": 0,
+      "done_task": "attention_s4_done",
+      "softmax_placement": "Base Die behavior with AttAcc SFM timing marker; configured uncalibrated tail",
+      "inactive_PC_policy": "broadcast computes are timing-accounted; inactive logical lanes discarded",
+      "pim_unit_occupancy_scope": "channel"
+    },
+    "demote_s4": {
+      "schema_version": 1,
+      "kind": "demotion",
+      "tokens": 12,
+      "dim": 16,
+      "logical_bytes": 768,
+      "read_bytes": 1920,
+      "write_bytes": 384,
+      "pages": [
+        {
+          "page_id": "demote_s4_p0",
+          "start_token": 0,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 52613349376,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s4_p0_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s4_p1",
+          "start_token": 4,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 54760833024,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s4_p1_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        },
+        {
+          "page_id": "demote_s4_p2",
+          "start_token": 8,
+          "tokens": 4,
+          "sizes": {
+            "elements": 64,
+            "fp16_payload": 256,
+            "k_payload": 64,
+            "v_payload": 32,
+            "metadata": 16,
+            "cold_payload": 96,
+            "cold_physical": 128
+          },
+          "cold_address": 56908316672,
+          "source_bursts": 20,
+          "target_bursts": 4,
+          "commit_task": "demote_s4_p2_commit",
+          "hot_valid_bytes": 256,
+          "hot_burst_padding_bytes": 384
+        }
+      ],
+      "done_task": "demote_s4_done",
+      "page_buffer_bytes": 256,
+      "codec": "symmetric_groupwise_fp16_scale_engineering_v1"
+    }
+  },
+  "foreground_terminal": "decode_done",
+  "background_terminals": [
+    "demote_s0_done",
+    "demote_s1_done",
+    "demote_s2_done",
+    "demote_s3_done",
+    "demote_s4_done"
+  ],
+  "initial_state": "weights, input and cold block 0 / hot block 1 resident at issue; no initialization cost",
+  "resident_intermediates": "query and attention output stay on GPU between explicit host-port transfers",
+  "limitations": "synthetic five-head one-query timing workload; no full decoder, KV append, numerical GPU or cache execution"
+}

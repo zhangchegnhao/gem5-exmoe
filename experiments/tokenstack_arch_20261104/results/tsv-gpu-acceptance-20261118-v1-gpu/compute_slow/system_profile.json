@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "profile": "a100a_compute_five_stack_tokenstack_v1",
+  "hardware_profile": "tokenstack_hardware.yaml",
+  "stacks": 5,
+  "gpu": {
+    "model": "A100a",
+    "devices": 1,
+    "precision": "W16A16",
+    "compute_utilization": 0.0008,
+    "launch_overhead_cycles": 0,
+    "source": "AttAcc src/config.py make_xpu_config; src/model.py Layer.get_flops"
+  },
+  "memory": {
+    "gpu_capacity_bank_fraction": 0.5,
+    "transfer_chunk_bytes": 256,
+    "cache_model": "none"
+  },
+  "timing": {
+    "kernel_policy": "load_compute_store",
+    "clock": "hardware_clock_ps",
+    "foreground": "last_foreground_callback_minus_issue",
+    "background": "report_separate_drain_horizon"
+  }
+}

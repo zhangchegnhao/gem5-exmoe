@@ -1,0 +1,1692 @@
+{
+  "schema_version": 1,
+  "acceptance": "passed",
+  "foreground_issue_cycle": 0,
+  "foreground_complete_cycle": 7520,
+  "foreground_latency_cycles": 7520,
+  "foreground_latency_ps": 5782880,
+  "foreground_latency_us": 5.78288,
+  "background_complete_cycle": 336,
+  "background_drain_after_foreground_cycles": 0,
+  "all_tasks_complete_cycle": 7520,
+  "simulation_end_cycle": 7521,
+  "maintenance_drain_cycles": 1,
+  "GPU_compute_busy_cycles": 2,
+  "migration_FP16_equivalent_payload_bytes": {
+    "promotion": 2560,
+    "demotion": 3840
+  },
+  "GPU_port_payload_bytes": 26240,
+  "by_source": {
+    "demotion": {
+      "requests": 360,
+      "read_bytes": 9600,
+      "write_bytes": 1920,
+      "mask_valid_read_bytes": 9600,
+      "mask_valid_write_bytes": 1920,
+      "pim_requests": 0
+    },
+    "gpu": {
+      "requests": 810,
+      "read_bytes": 25760,
+      "write_bytes": 160,
+      "mask_valid_read_bytes": 25760,
+      "mask_valid_write_bytes": 160,
+      "pim_requests": 0
+    },
+    "promotion": {
+      "requests": 240,
+      "read_bytes": 1280,
+      "write_bytes": 6400,
+      "mask_valid_read_bytes": 1280,
+      "mask_valid_write_bytes": 2560,
+      "pim_requests": 0
+    },
+    "pim": {
+      "requests": 125,
+      "read_bytes": 0,
+      "write_bytes": 0,
+      "mask_valid_read_bytes": 0,
+      "mask_valid_write_bytes": 0,
+      "pim_requests": 125
+    }
+  },
+  "hardware": {
+    "tasks": 1274,
+    "requests": 1535,
+    "read_bytes": 36640,
+    "write_bytes": 8480,
+    "complete_cycle": 7520,
+    "buffer_peak_bytes_by_stack_head_group": {
+      "0": 512,
+      "1": 512,
+      "2": 512,
+      "3": 512,
+      "4": 512
+    },
+    "tsv_bytes": 46320,
+    "command_count": 3387,
+    "hardware_events": 1535,
+    "resource_occupancy": {
+      "channel/s0/ch0": {
+        "busy_cycles": 237,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.03151176705225369,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch0": {
+        "busy_cycles": 240,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.03191065017949741,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch1": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch2": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch3": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch4": {
+        "busy_cycles": 32,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004254753357266321,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch5": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch6": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch7": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch0": {
+        "busy_cycles": 240,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.03191065017949741,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch1": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch2": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch3": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch4": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch5": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch6": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch7": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch0": {
+        "busy_cycles": 240,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.03191065017949741,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch1": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch2": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch3": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch4": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch5": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch6": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch7": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch0": {
+        "busy_cycles": 240,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.03191065017949741,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch1": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch2": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch3": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch4": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch5": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch6": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch7": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch1": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch2": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch3": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch4": {
+        "busy_cycles": 35,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.004653636484510039,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch5": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch6": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch7": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch8": {
+        "busy_cycles": 44,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.005850285866241191,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch9": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch8": {
+        "busy_cycles": 44,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.005850285866241191,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch9": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch8": {
+        "busy_cycles": 44,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.005850285866241191,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch9": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch8": {
+        "busy_cycles": 44,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.005850285866241191,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch9": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch8": {
+        "busy_cycles": 44,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.005850285866241191,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch9": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch10": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "tsv/s3": {
+        "busy_cycles": 284,
+        "bytes": 9200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.037760936045738595,
+        "effective_GBps": 1.5906912746606856,
+        "bandwidth_utilization": 0.001775325083326658
+      },
+      "channel/s3/ch0/pc0/data": {
+        "busy_cycles": 232,
+        "bytes": 3712,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.030846961840180827,
+        "effective_GBps": 0.6418093490804854
+      },
+      "channel/s3/ch1/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch2/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch3/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch4/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch5/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch6/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch7/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "tsv/s4": {
+        "busy_cycles": 284,
+        "bytes": 9200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.037760936045738595,
+        "effective_GBps": 1.5906912746606856,
+        "bandwidth_utilization": 0.001775325083326658
+      },
+      "channel/s4/ch0/pc0/data": {
+        "busy_cycles": 232,
+        "bytes": 3712,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.030846961840180827,
+        "effective_GBps": 0.6418093490804854
+      },
+      "channel/s4/ch1/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch2/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch3/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch4/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch5/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch6/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch7/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "tsv/s0": {
+        "busy_cycles": 278,
+        "bytes": 9360,
+        "peak_bytes_per_cycle": 176.0,
+        "utilization": 0.036963169791251166,
+        "effective_GBps": 1.6183554707417411,
+        "bandwidth_utilization": 0.0018062003021671218
+      },
+      "channel/s0/ch1/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch2/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch3/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch4/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch5/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch6/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch7/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch0/pc0/data": {
+        "busy_cycles": 226,
+        "bytes": 3616,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.03004919558569339,
+        "effective_GBps": 0.6252108314318522
+      },
+      "tsv/s1": {
+        "busy_cycles": 294,
+        "bytes": 9360,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.03909054646988432,
+        "effective_GBps": 1.6183554707417411,
+        "bandwidth_utilization": 0.0018062003021671218
+      },
+      "channel/s1/ch0/pc0/data": {
+        "busy_cycles": 232,
+        "bytes": 3712,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.030846961840180827,
+        "effective_GBps": 0.6418093490804854
+      },
+      "channel/s1/ch1/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch2/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch3/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch4/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch5/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch6/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch7/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "tsv/s2": {
+        "busy_cycles": 284,
+        "bytes": 9200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.037760936045738595,
+        "effective_GBps": 1.5906912746606856,
+        "bandwidth_utilization": 0.001775325083326658
+      },
+      "channel/s2/ch0/pc0/data": {
+        "busy_cycles": 232,
+        "bytes": 3712,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.030846961840180827,
+        "effective_GBps": 0.6418093490804854
+      },
+      "channel/s2/ch1/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch2/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch3/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch4/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch5/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch6/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch7/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch8/pc0/data": {
+        "busy_cycles": 40,
+        "bytes": 640,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.005318441696582901,
+        "effective_GBps": 0.11065678432422162
+      },
+      "channel/s3/ch9/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch8/pc0/data": {
+        "busy_cycles": 40,
+        "bytes": 640,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.005318441696582901,
+        "effective_GBps": 0.11065678432422162
+      },
+      "channel/s4/ch9/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch8/pc0/data": {
+        "busy_cycles": 40,
+        "bytes": 640,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.005318441696582901,
+        "effective_GBps": 0.11065678432422162
+      },
+      "channel/s0/ch9/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch10/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch8/pc0/data": {
+        "busy_cycles": 40,
+        "bytes": 640,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.005318441696582901,
+        "effective_GBps": 0.11065678432422162
+      },
+      "channel/s1/ch9/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch8/pc0/data": {
+        "busy_cycles": 40,
+        "bytes": 640,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.005318441696582901,
+        "effective_GBps": 0.11065678432422162
+      },
+      "channel/s2/ch9/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "convert/s0": {
+        "busy_cycles": 68,
+        "bytes": 3200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.009041350884190932,
+        "effective_GBps": 0.5532839216211081
+      },
+      "convert/s1": {
+        "busy_cycles": 68,
+        "bytes": 3200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.009041350884190932,
+        "effective_GBps": 0.5532839216211081
+      },
+      "convert/s2": {
+        "busy_cycles": 68,
+        "bytes": 3200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.009041350884190932,
+        "effective_GBps": 0.5532839216211081
+      },
+      "convert/s3": {
+        "busy_cycles": 68,
+        "bytes": 3200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.009041350884190932,
+        "effective_GBps": 0.5532839216211081
+      },
+      "convert/s4": {
+        "busy_cycles": 68,
+        "bytes": 3200,
+        "peak_bytes_per_cycle": 160.0,
+        "utilization": 0.009041350884190932,
+        "effective_GBps": 0.5532839216211081
+      },
+      "ucie/s0": {
+        "busy_cycles": 6953,
+        "bytes": 5344,
+        "peak_bytes_per_cycle": 0.7687687687687688,
+        "utilization": 0.9244781279085228,
+        "effective_GBps": 0.9239841491072505
+      },
+      "ucie/s2": {
+        "busy_cycles": 6744,
+        "bytes": 5184,
+        "peak_bytes_per_cycle": 0.7687687687687688,
+        "utilization": 0.8966892700438771,
+        "effective_GBps": 0.896319953026195
+      },
+      "ucie/s1": {
+        "busy_cycles": 6953,
+        "bytes": 5344,
+        "peak_bytes_per_cycle": 0.7687687687687688,
+        "utilization": 0.9244781279085228,
+        "effective_GBps": 0.9239841491072505
+      },
+      "ucie/s3": {
+        "busy_cycles": 6744,
+        "bytes": 5184,
+        "peak_bytes_per_cycle": 0.7687687687687688,
+        "utilization": 0.8966892700438771,
+        "effective_GBps": 0.896319953026195
+      },
+      "ucie/s4": {
+        "busy_cycles": 6744,
+        "bytes": 5184,
+        "peak_bytes_per_cycle": 0.7687687687687688,
+        "utilization": 0.8966892700438771,
+        "effective_GBps": 0.896319953026195
+      },
+      "layout/s0": {
+        "busy_cycles": 5,
+        "bytes": 1280,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.0006648052120728626,
+        "effective_GBps": 0.22131356864844323
+      },
+      "layout/s3": {
+        "busy_cycles": 5,
+        "bytes": 1280,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.0006648052120728626,
+        "effective_GBps": 0.22131356864844323
+      },
+      "layout/s1": {
+        "busy_cycles": 5,
+        "bytes": 1280,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.0006648052120728626,
+        "effective_GBps": 0.22131356864844323
+      },
+      "layout/s2": {
+        "busy_cycles": 5,
+        "bytes": 1280,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.0006648052120728626,
+        "effective_GBps": 0.22131356864844323
+      },
+      "layout/s4": {
+        "busy_cycles": 5,
+        "bytes": 1280,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.0006648052120728626,
+        "effective_GBps": 0.22131356864844323
+      },
+      "gpu_crossbar": {
+        "busy_cycles": 112,
+        "bytes": 26240,
+        "peak_bytes_per_cycle": 256.0,
+        "utilization": 0.014891636750432124,
+        "effective_GBps": 4.536928157293087
+      },
+      "gpu_compute/card0": {
+        "busy_cycles": 2,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.00026592208482914504,
+        "effective_GBps": 0.0
+      },
+      "coordinator/s0": {
+        "busy_cycles": 36,
+        "bytes": 240,
+        "peak_bytes_per_cycle": 128.0,
+        "utilization": 0.004786597526924611,
+        "effective_GBps": 0.0414962941215831
+      },
+      "coordinator/s1": {
+        "busy_cycles": 36,
+        "bytes": 240,
+        "peak_bytes_per_cycle": 128.0,
+        "utilization": 0.004786597526924611,
+        "effective_GBps": 0.0414962941215831
+      },
+      "coordinator/s2": {
+        "busy_cycles": 36,
+        "bytes": 240,
+        "peak_bytes_per_cycle": 128.0,
+        "utilization": 0.004786597526924611,
+        "effective_GBps": 0.0414962941215831
+      },
+      "coordinator/s3": {
+        "busy_cycles": 36,
+        "bytes": 240,
+        "peak_bytes_per_cycle": 128.0,
+        "utilization": 0.004786597526924611,
+        "effective_GBps": 0.0414962941215831
+      },
+      "coordinator/s4": {
+        "busy_cycles": 36,
+        "bytes": 240,
+        "peak_bytes_per_cycle": 128.0,
+        "utilization": 0.004786597526924611,
+        "effective_GBps": 0.0414962941215831
+      },
+      "pim/s0/d4/ch0": {
+        "busy_cycles": 80,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.010636883393165802,
+        "effective_GBps": 0.0
+      },
+      "pim/s0/d5/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s1/d4/ch0": {
+        "busy_cycles": 80,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.010636883393165802,
+        "effective_GBps": 0.0
+      },
+      "pim/s1/d5/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s2/d4/ch0": {
+        "busy_cycles": 80,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.010636883393165802,
+        "effective_GBps": 0.0
+      },
+      "pim/s2/d5/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s3/d4/ch0": {
+        "busy_cycles": 80,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.010636883393165802,
+        "effective_GBps": 0.0
+      },
+      "pim/s0/d6/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s2/d6/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s3/d5/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s4/d4/ch0": {
+        "busy_cycles": 80,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.010636883393165802,
+        "effective_GBps": 0.0
+      },
+      "pim/s0/d7/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s1/d6/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s2/d7/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s4/d5/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s1/d7/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s3/d6/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s3/d7/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s4/d6/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "pim/s4/d7/ch0": {
+        "busy_cycles": 48,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.006382130035899481,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch11": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch12": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch13": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch14": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s0/ch15": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch10": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch11": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch12": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch13": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch14": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s1/ch15": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch10": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch11": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch12": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch13": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch14": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s2/ch15": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch10": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch11": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch12": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch13": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch14": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch15": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch10": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch11": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch12": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch13": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch14": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s4/ch15": {
+        "busy_cycles": 26,
+        "bytes": 0,
+        "peak_bytes_per_cycle": 0.0,
+        "utilization": 0.0034569871027788856,
+        "effective_GBps": 0.0
+      },
+      "channel/s3/ch0/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch1/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch10/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch11/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch12/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch13/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch14/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch15/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch0/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch1/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch10/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch11/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch12/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch13/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch14/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch15/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch0/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch1/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch2/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch11/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch12/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch13/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch14/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch15/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch0/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch1/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch10/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch11/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch12/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch13/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch14/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch15/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch0/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch1/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch10/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch11/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch12/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch13/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch14/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch15/pc0/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch2/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s3/ch3/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch2/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s4/ch3/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch3/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s0/ch4/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch2/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch3/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch2/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s2/ch3/pc1/data": {
+        "busy_cycles": 16,
+        "bytes": 256,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0021273766786331604,
+        "effective_GBps": 0.044262713729688645
+      },
+      "channel/s1/ch4/pc1/data": {
+        "busy_cycles": 10,
+        "bytes": 160,
+        "peak_bytes_per_cycle": 16.0,
+        "utilization": 0.0013296104241457252,
+        "effective_GBps": 0.027664196081055404
+      }
+    },
+    "refresh_commands": 1280,
+    "cycles_per_second": 1300390117.0351105,
+    "simulation_end_cycle": 7521,
+    "maintenance_drain_cycles": 1,
+    "request_latency_cycles": {
+      "mean": 55.565472312703584,
+      "p50": 52,
+      "p95": 104
+    }
+  },
+  "byte_accounting": "read/write bytes are physical 32B bursts; masks describe interface-valid bytes, not FP16-equivalent KV payload; PIM internal operand bytes are unmodeled",
+  "timing_rule": "terminal callback - issue; concurrent stages are not summed; backend maintenance drain reported separately"
+}

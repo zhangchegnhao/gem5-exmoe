@@ -1,0 +1,74 @@
+# Same local bank/row coordinates on independent layers. Access jobs have one LD/ST.
+schema_version: 1
+jobs:
+- id: capacity-cold
+  kind: access
+  layer: capacity
+  issue_cycle: 0
+  depends_on: []
+  requests:
+  - op: LD
+    offset: 0
+- id: compute-cold
+  kind: access
+  layer: compute
+  issue_cycle: 0
+  depends_on:
+  - capacity-cold
+  requests:
+  - op: LD
+    offset: 0
+- id: capacity-hit
+  kind: access
+  layer: capacity
+  issue_cycle: 0
+  depends_on:
+  - compute-cold
+  requests:
+  - op: LD
+    offset: 0
+- id: capacity-conflict
+  kind: access
+  layer: capacity
+  issue_cycle: 0
+  depends_on:
+  - capacity-hit
+  requests:
+  - op: LD
+    offset: 1024
+- id: compute-hit
+  kind: access
+  layer: compute
+  issue_cycle: 0
+  depends_on:
+  - capacity-conflict
+  requests:
+  - op: LD
+    offset: 0
+- id: compute-pim
+  kind: attention
+  issue_cycle: 0
+  depends_on:
+  - compute-hit
+  requests:
+  - op: PIM_WR_GB
+    offset: 2048
+  - op: PIM_MAC_AB
+    offset: 2048
+  - op: PIM_MV_SB
+    offset: 2048
+  - op: PIM_BARRIER
+    offset: 2048
+  - op: PIM_SFM
+    offset: 2048
+  - op: PIM_MAC_AB
+    offset: 2048
+- id: capacity-after-pim
+  kind: access
+  layer: capacity
+  issue_cycle: 0
+  depends_on:
+  - compute-pim
+  requests:
+  - op: LD
+    offset: 1024

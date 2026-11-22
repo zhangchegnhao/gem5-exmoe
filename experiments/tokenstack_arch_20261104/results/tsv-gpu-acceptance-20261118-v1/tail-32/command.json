@@ -1,0 +1,5 @@
+[
+  "/home/ubuntu22/gem5/attacc_simulator/ramulator2/build/ramulator2",
+  "-f",
+  "/home/ubuntu22/gem5/experiments/tokenstack_arch_20261104/results/tsv-gpu-acceptance-20261118-v1/tail-32/config.yaml"
+]

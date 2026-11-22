@@ -1,0 +1,94 @@
+{
+  "precision": "behavior-level, shared-DMA cycle approximation",
+  "topology": {
+    "layers": [
+      {
+        "stack_id": 0,
+        "layer_id": 0,
+        "kind": "capacity",
+        "capacity_bytes": 2147483648
+      },
+      {
+        "stack_id": 0,
+        "layer_id": 1,
+        "kind": "capacity",
+        "capacity_bytes": 2147483648
+      },
+      {
+        "stack_id": 0,
+        "layer_id": 2,
+        "kind": "capacity",
+        "capacity_bytes": 2147483648
+      },
+      {
+        "stack_id": 0,
+        "layer_id": 3,
+        "kind": "compute",
+        "capacity_bytes": 1073741824
+      }
+    ],
+    "bytes_per_dma_cycle": 896.0
+  },
+  "addresses": {
+    "capacity": {
+      "stack_id": 0,
+      "layer_id": 0,
+      "layer_kind": "capacity",
+      "channel": 0,
+      "pseudo_channel": 0,
+      "bank_group": 2,
+      "bank": 0,
+      "row": 4,
+      "column": 0
+    },
+    "compute": {
+      "stack_id": 0,
+      "layer_id": 3,
+      "layer_kind": "compute",
+      "channel": 0,
+      "pseudo_channel": 0,
+      "bank_group": 2,
+      "bank": 0,
+      "row": 4,
+      "column": 0
+    }
+  },
+  "migrations": [
+    {
+      "request_id": "promotion-0",
+      "start_cycle": 0,
+      "complete_cycle": 20,
+      "source_bytes": 8192,
+      "transferred_bytes": 8192,
+      "queue_cycles": 0,
+      "read_cycles": 10,
+      "write_cycles": 10,
+      "quantization_cycles": 0,
+      "buffer_peak_bytes": 8192
+    },
+    {
+      "request_id": "demotion-0",
+      "start_cycle": 20,
+      "complete_cycle": 40,
+      "source_bytes": 8192,
+      "transferred_bytes": 3072,
+      "queue_cycles": 10,
+      "read_cycles": 10,
+      "write_cycles": 4,
+      "quantization_cycles": 6,
+      "buffer_peak_bytes": 8192
+    }
+  ],
+  "stats": {
+    "promotions": 1,
+    "demotions": 1,
+    "promotion_bytes_fp16": 8192,
+    "demotion_bytes_fp16": 8192,
+    "transferred_bytes": 27648,
+    "queue_cycles": 10,
+    "transfer_cycles": 34,
+    "quantization_cycles": 6,
+    "max_buffer_bytes": 8192,
+    "last_complete_cycle": 40
+  }
+}
